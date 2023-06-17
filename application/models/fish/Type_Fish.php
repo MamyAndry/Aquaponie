@@ -12,7 +12,7 @@
 		
 		public static $PREFIX = "TYF";
 		public static $SEQUENCE = "s_type_fish";
-		public static $length = 7;
+		public static $LENGTH = 7;
 		public static $table = 'type_fish';
 
 		public $id_type_fish;
@@ -37,7 +37,7 @@
 			if( $maturity_period <= 0 ) throw new Exception("The maturity period of the fish can't be a negative value nor 0");
 			if( $maturity_size <= 0 ) throw new Exception("The maturity size of that type can't be a negative or a zero value");
  
-			$id = create_primary_key();
+			$id = create_primary_key(Type_Fish::$PREFIX , Type_Fish::$SEQUENCE, Type_Fish::$LENGTH);
 			$data = array(
 				'id_type_fish' => $this->db->escape($id),
 				'name_type_fish' => $this->db->escape($name_type_fish),
