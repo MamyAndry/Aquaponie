@@ -33,6 +33,10 @@
 		 * */
 
 		public function insert_type_fish( $name_type_fish, $maturity_period, $maturity_size ){
+			if( empty($name_type_fish) || $name_type_fish == null ) throw new Exception("The fish type can't be empty or null");
+			if( $maturity_period <= 0 ) throw new Exception("The maturity period of the fish can't be a negative value nor 0");
+			if( $maturity_size <= 0 ) throw new Exception("The maturity size of that type can't be a negative or a zero value");
+ 
 			$id = create_primary_key();
 			$data = array(
 				'id_type_fish' => $this->db->escape($id),
