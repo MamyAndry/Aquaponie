@@ -17,12 +17,12 @@ insert into field(id_field) values
     ('FILD0002');
 
 insert into field_plantation (id_field_plantation, id_field, id_type_plantation, density, surface_covered, plant_weight,insertion_date) values
-    (nextval('s_field_plantation'), 'FILD0001', 'PLNT0001', 1, 0.01, 1, '2023-06-20'),
-    (nextval('s_field_plantation'), 'FILD0002', 'PLNT0001', 1, 0.01, 1, '2023-06-20');
+    (nextval('s_field_plantation'), 'FILD0001', 'PLNT0001', 1, 0.01, 1, TO_DATE('06-20-2023', 'MM-dd-YYYY')),
+    (nextval('s_field_plantation'), 'FILD0002', 'PLNT0001', 1, 0.01, 1, TO_DATE('06-20-2023', 'MM-dd-YYYY'));
 
 insert into fish_pond (id_fish_pond, id_type_fish, id_pond, fish_gender, quantity, insertion_date) values
-    (nextval('s_fish_pond'), 'FISH0001', 'POND0001', true, 50, '06-20-2023'),
-    (nextval('s_fish_pond'), 'FISH0001', 'POND0002', false, 50, '06-20-2023');
+    (nextval('s_fish_pond'), 'FISH0001', 'POND0001', true, 50, TO_DATE('06-20-2023', 'MM-dd-YYYY')),
+    (nextval('s_fish_pond'), 'FISH0001', 'POND0002', false, 50, TO_DATE('06-20-2023', 'MM-dd-YYYY'));
 
 insert into report_pond (id_report_pond, id_fish_pond, report_date_pond, alive_fish_number, dead_fish_number) values
     (nextval('s_report_pond'), 1, '07-20-2023', 44, 6),
@@ -37,8 +37,8 @@ insert into sale_fish (id_sale_fish, id_fish_pond, quantity_sold, sale_date) val
     (nextval('s_sale_fish'), 2, 1, '07-21-2023');
 
 insert into sale_plantation (id_sale_plantation, id_field_plantation, quantity_sold, sale_date) values
-    (nextval('s_sale_plantation'), 1, 62, '07-21-2023'), -- Nombre de plant (ou fruit) vendue ilay 62
-    (nextval('s_sale_plantation'), 2, 23, '07-21-2023');
+    (nextval('s_sale_plantation'), 1, 62, TO_DATE('07-21-2023', 'MM-dd-YYYY')), -- Nombre de plant (ou fruit) vendue ilay 62
+    (nextval('s_sale_plantation'), 2, 23, TO_DATE('07-21-2023', 'MM-dd-YYYY'));
 
 insert into price_fish (id_price_fish, id_type_fish, unit_fish_price, price_category) values
     ('PFSH0001', 'FISH0001', 1000, 1),
