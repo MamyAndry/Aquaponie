@@ -1,6 +1,6 @@
 <?php
 	
-	class Pond_Detail extends CI_Model{
+	class Pond_detail extends CI_Model{
 
 		/**
 		 * @static PREFIX : For the table identification prefix
