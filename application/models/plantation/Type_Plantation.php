@@ -26,6 +26,8 @@
 
 		public $id_type_plantation;
 		public $name_type_plantation;
+		public $weight_max_baby;
+		public $weight_max_semi_mature;
 
 		/**
 		 * @author     Manoary Sarobidy
@@ -34,15 +36,23 @@
 		 * @throws     Exception ( if the name_type_plantation is null or empty )
 		 */
 
-		public function insert_type_plantation( $name_type_plantation ){
+		public function insert_type_plantation( $name_type_plantation, $weight_max_baby, $weight_max_semi_mature ){
 			if( empty($name_type_plantation) || $name_type_plantation == null ){
 				throw new Exception("The name of that plantation can't be null or empty");
+			}
+			if( $weight_max_baby <= 0 ){
+				throw new Exception("The weight max of a baby of that type can't be a negative or null value");
+			}
+			if( $weight_max_semi_mature <= 0 ){
+				throw new Exception(" The weight max of that type at a semi mature can't be negative or null ");
 			}
 
 			$id = create_primary_key( Type_Plantation::$PREFIX , Type_Plantation::$SEQUENCE, Type_Plantation::$LENGTH );
 			$data = array(
-				'id_type_plantation' => $id,
-				'name_type_plantation' => $name_type_plantation
+				'id_type_plantation' 		=> $id,
+				'name_type_plantation'		=> $name_type_plantation,
+				'weight_max_little'			=> $weight_max_baby,
+				'weight_max_semi_mature'	=> $weight_max_semi_mature
 			);
 
 			try{

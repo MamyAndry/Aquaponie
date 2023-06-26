@@ -17,8 +17,8 @@ insert into field(id_field) values
     ('FILD0002');
 
 insert into field_plantation (id_field_plantation, id_field, id_type_plantation, density, surface_covered, plant_weight,insertion_date) values
-    (nextval('s_field_plantation'), 'FILD0001', 'PLNT0001', 1, 0.01, 1, '06-20-2023'),
-    (nextval('s_field_plantation'), 'FILD0002', 'PLNT0001', 1, 0.01, 1, '06-20-2023');
+    (nextval('s_field_plantation'), 'FILD0001', 'PLNT0001', 1, 0.01, 1, '2023-06-20'),
+    (nextval('s_field_plantation'), 'FILD0002', 'PLNT0001', 1, 0.01, 1, '2023-06-20');
 
 insert into fish_pond (id_fish_pond, id_type_fish, id_pond, fish_gender, quantity, insertion_date) values
     (nextval('s_fish_pond'), 'FISH0001', 'POND0001', true, 50, '06-20-2023'),

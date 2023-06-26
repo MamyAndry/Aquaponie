@@ -14,6 +14,7 @@
 		public static $TABLE = "pond";
 
 		public $id_pond;
+		public $capacity;
 
 		/**
 		 * @author     Manoary Sarobidy
@@ -24,9 +25,12 @@
 		 * 
 		 */
 
-		public function insert_pond( $ids_type_fish, $max_quantitys ){
+		public function insert_pond( $ids_type_fish, $capacity ,$max_quantitys ){
 			if( count($ids_type_fish) != count($max_quantitys) ){
 				throw new Exception( "Verify that the number of fish you selected and the quantity are the same" );
+			}
+			if( $capacity <= 0 ){
+				throw new Exception("A pond capacity can't be negative or null");
 			}
 
 			$length = count($ids_type_fish);
@@ -45,7 +49,8 @@
 			}
 
 			$data = array(
-				'id_pond' => $id
+				'id_pond' 	=> $id,
+				'capacity' 	=> $capacity
 			);
 
 			try{
