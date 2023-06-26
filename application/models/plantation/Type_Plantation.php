@@ -10,7 +10,7 @@
 	 * 
 	 */
 	
-	class Type_Plantation extends CI_Model{
+	class Type_plantation extends CI_Model{
 
 		/**
 		 * @static PREFIX : For the table identification prefix

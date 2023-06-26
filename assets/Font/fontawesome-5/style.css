@@ -1,0 +1,294 @@
+body{
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+/* Header debut */
+#Header{
+    background-color: red;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid black; */
+    
+}
+#logo_head{
+    margin-left: 10px;
+    width: 80%;
+    height: 60px;
+    float: left;
+    margin: 0;
+    /* border-right: 2px solid white; */
+}
+span.logo1{
+    color: darkred;
+    font-size: xx-large;
+    font-style: oblique;
+    letter-spacing: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+span.logo2{
+    color: gray;
+    font-size: x-large;
+    margin-left: 5px;
+    font-style: oblique;
+    letter-spacing: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#Profil_head{
+    width: 20%;
+    /* height: 60px; */
+    margin: 0;
+    float: right;
+}  */
+/*navigation*/
+#navig{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 2%;
+    position: sticky;
+    top: 0;
+    background-color: darkgrey;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+#navig ul{
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#navig li{
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding:0 3%;
+}
+#navig a{
+    text-decoration: none;
+    color: black;
+}
+
+/* debut body */
+#body{
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: row-reverse;
+}
+/* body/publication */
+#Publication{
+    /* align-self:space-around; */
+    z-index: 0;
+    order: 2;
+    width: 50%;
+    height: auto;
+    margin: 0 5%;
+    background-color: green;
+    /* border: 2px solid black; */
+    /* border-right: 2px solid black;    */
+    display: grid;
+    grid-template-columns: auto;
+    align-content: space;
+
+}
+div.Publ_img{
+    width: 60%;
+    height: auto;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 5%;
+
+}
+div.image{
+    border-bottom: 2px solid transparent;
+    height: 90%;
+    margin-bottom: 2px;
+}
+div.peopl_act{
+    height: auto;
+    display: flex;
+    text-align: center;
+}
+div.reaction{
+    border: 1px solid black;   
+    width: 50%;
+    height: 2%;
+}
+
+div.comments{
+border: 1px solid black;
+    width: 50%;
+}
+i.react{
+    font-size: 20px;
+}
+div.Publ_vid{
+    width: 60%;
+    height: auto;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 5%;
+}
+div.video{
+    border-bottom: 2px solid black;
+    height: auto;
+    width: auto;
+}
+
+/* body/notification */
+#Notification{
+    order: 1;
+    margin-right: 1%;
+    width: 25%;
+    height: auto;
+    background-color: lightblue;
+}
+
+.user{
+    height: 65px;
+    background-color: lightgreen;
+}
+.texte{
+    background-color: pink;
+    max-height: 120px;
+    min-height: 50px;
+}
+.profil-pic{
+    height: 100%;
+    width: 15%;
+    background-color: aqua;
+    float: left;
+    border-radius: 9999px;
+    margin: auto;
+}
+.about{
+    float: right;
+    height: 100%;
+    width: 85%;
+    background-color: red;
+}
+.about .profil-name{
+    height: 50%;
+    width: 100%;
+    background-color: black;
+}
+.about .date-heure-pub{
+    height: 50%;
+    width: 100%;
+    background-color: blue;
+}
+
+
+.notif{
+    height: 60px;
+    background-color: red;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 2px;
+}
+.notif p{
+    margin: 0;
+}
+.Notif{
+
+    height: auto;
+    background-color: palevioletred;
+    border-radius: 10px;
+}
+
+.notification{
+    height: 70px;
+    background-color: darkcyan;
+}
+.n-pic{
+    border-radius: 9999px;
+    height: 100%;
+    background-color: blueviolet;
+    width: 20%;
+    float: left;
+}
+.n-about{
+    float: right;
+    height: 100%;
+    width: 80%;
+    background-color: brown;
+}
+.n-text{
+    height: 50%;
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+}
+.time-n{
+    height: 50%;
+    width: 100%;
+    background-color: darkmagenta;
+}
+.my-profile{
+    position: fixed;
+    left: 0;
+    order: 3;
+    height: fit-content;
+    width: 110px;
+    margin: 0 25px 0 10px;
+    text-align: center;
+}
+
+a.pro{
+    height: 50px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 50px;
+    margin: 5px 0;
+}
+
+.friends-disco{
+    display: none;
+    transition: display 0.5 ease-in-out;
+}
+div.my-profile:hover .friends-disco{
+    display: block;
+}
+
+i{
+    font-size: 35px;
+    color: black;
+}
+
+.sap{
+    font-size: 12px;
+    display: none;
+}
+
+.fa-pencil-alt:hover .sap.pub{
+    display: inline;
+}
+a.message i:hover .sap.mess{
+    display: inline;
+}
+a.friends i:hover .sap.amis{
+    display: inline;
+}
+a.disconnect i:hover .sap.deco{
+    display: inline;
+}
+
+/* footer */
+#footer{
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    margin-top: 0;
+}

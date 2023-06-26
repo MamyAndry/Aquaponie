@@ -69,9 +69,9 @@
  
 			$id = create_primary_key(Type_Fish::$PREFIX , Type_Fish::$SEQUENCE, Type_Fish::$LENGTH);
 			$data = array(
-				'id_type_fish'	 		=> $this->db->escape($id),
-				'name_type_fish' 		=> $this->db->escape($name_type_fish),
-				'maturity_period'		=> $this->db->escape($maturity_period),
+				'id_type_fish'	 		=> $id,
+				'name_type_fish' 		=> $name_type_fish,
+				'maturity_period'		=> $maturity_period,
 				'maturity_size' 		=> $maturity_size,
 
 				'weight_max_little'		=> $weight_max_little,
@@ -105,12 +105,12 @@
 			$query = $this->db->get('type_fish');
 			$results = array();
 			$result_array = $query->result_array();
-			for( $result_array as $row ){
+			foreach( $result_array as $row ){
 				$type = new Type_fish();
-				$type->$id_type_fish 	= $row["id_type_fish"];
-				$type->$name_type_fish 	= $row["name_type_fish"];
-				$type->$maturity_period = $row["maturity_period"];
-				$type->$maturity_size 	= $row["maturity_size"];
+				$type->id_type_fish 	= $row["id_type_fish"];
+				$type->name_type_fish 	= $row["name_type_fish"];
+				$type->maturity_period = $row["maturity_period"];
+				$type->maturity_size 	= $row["maturity_size"];
 				$results[] = $type;
 			}
 			return $results;
@@ -119,4 +119,4 @@
 	}
 
 
-.?>
+?>
