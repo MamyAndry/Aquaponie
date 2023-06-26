@@ -75,12 +75,12 @@
 			$query = $this->db->get('type_fish');
 			$results = array();
 			$result_array = $query->result_array();
-			for( $result_array as $row ){
+			foreach($result_array as $row){
 				$type = new Type_fish();
-				$type->$id_type_fish 	= $row["id_type_fish"];
-				$type->$name_type_fish 	= $row["name_type_fish"];
-				$type->$maturity_period = $row["maturity_period"];
-				$type->$maturity_size 	= $row["maturity_size"];
+				$type->id_type_fish 	= $row["id_type_fish"];
+				$type->name_type_fish 	= $row["name_type_fish"];
+				$type->maturity_period = $row["maturity_period"];
+				$type->maturity_size 	= $row["maturity_size"];
 				$results[] = $type;
 			}
 			return $results;
@@ -89,4 +89,4 @@
 	}
 
 
-.?>
+?>

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31f515d1-47b7-4614-ae41-060af2bcdbf2" name="Changes" comment="" />
+    <list default="true" id="31f515d1-47b7-4614-ae41-060af2bcdbf2" name="Changes" comment="insert affichage">
+      <change afterPath="$PROJECT_DIR$/application/controllers/Fish.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Pond.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/fish/Type_Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/fish/Type_Fish.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -36,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/UwAmp/www/Aquaponie",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -56,8 +62,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687297577872</updated>
-      <workItem from="1687297580448" duration="4238000" />
+      <workItem from="1687297580448" duration="4590000" />
+      <workItem from="1687798567306" duration="631000" />
+      <workItem from="1687800169232" duration="38000" />
+      <workItem from="1687802881139" duration="1777000" />
     </task>
+    <task id="LOCAL-00001" summary="insert affichage">
+      <created>1687322366778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687322366778</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -68,10 +85,30 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/affichagePoissonType" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="insert affichage" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert affichage" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
