@@ -15,6 +15,7 @@
 		public static $LENGTH = 7;
 		public static $table = 'sale_plantation';
 
+        public $id_sale_plantation;
 		public $id_field_plantation;
 		public $quantity_sold;
 		public $sale_date;
@@ -40,6 +41,23 @@
 			}catch( Exception $exception ){
 				throw $exception;
 			}
+		}
+
+
+		public function get_all_saled_plantation(){
+			$query = $this->db->get('sale_plantation');
+            echo $this->db->last_query($query);
+			$results = array();
+			$result_array = $query->result_array();
+			foreach( $result_array as $row ){
+				$salePlantation = new Sale_Plantation();
+				$salePlantation->id_sale_plantation = $row["id_sale_plantation"];
+				$salePlantation->id_field_plantation = $row["id_field_plantation"];
+				$salePlantation->quantity_sold = $row["quantity_sold"];
+				$salePlantation->sale_date = $row["sale_date"];
+				$results[] = $salePlantation;
+			}
+			return $results;
 		}
 
 	}
