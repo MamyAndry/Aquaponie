@@ -28,7 +28,7 @@
 		/**
 		 *	@author Layah
 		 * 	
-		 *  Insert Type Fish :
+		 *  Insert Sale Fish :
 		 * 		@args : 
 		 * 			- id_fish_pond : The pond where the fish is
 		 * 			- quantity_saled : The quantity of fish who were saled
@@ -50,7 +50,7 @@
 			);
 
 			try{
-				$this->db->insert(Sale_fish::$table, $data);
+				$this->db->insert(Sale_Fish::$table, $data);
 			}catch( Exception $exception ){
 				throw $exception;
 			}
@@ -85,7 +85,18 @@
 			return $results;
 		}
 
-		// avadika yyyy-mm-dd
+		// public function get_fish_by_category($category)
+		// {
+
+		// }
+
+		public function check_sale_quantity($id_fish_pond, $quantity_to_sell)
+		{
+			$query = " SELECT CASE WHEN ".$quantity_to_sell." > quantity THEN 'false' ELSE 'true' END AS result FROM fish_pond WHERE id_fish_pond = ".$id_fish_pond;
+			$query = $this->db->query($query);
+			$row = $query->row();
+			return $row->result;
+		}
 
 	}
 
