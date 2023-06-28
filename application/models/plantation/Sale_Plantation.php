@@ -60,6 +60,14 @@
 			return $results;
 		}
 
+        public function check_sale_quantity($id_field_plantation, $quantity_to_sell)
+		{
+			$query = " SELECT CASE WHEN ".$quantity_to_sell." > plant_number THEN 'false' ELSE 'true' END AS result FROM field_plantation WHERE id_field_plantation_pond = ".$id_field_plantation;
+			$query = $this->db->query($query);
+			$row = $query->row();
+			return $row->result;
+		}
+
 	}
 
 ?>
