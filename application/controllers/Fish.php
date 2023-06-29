@@ -17,8 +17,7 @@ class Fish extends CI_Controller {
 		$data['fishes'] = $fishes;
 		$data['page_title'] = "Fishes Pages";
 		$data['body'] = 'fish/index';
-        $data['header_plantation'] = "text-secondary";
-        $data['header_fish'] = "text-white";
+
 
 		$this->load->view('template/index' , $data);
 
@@ -27,10 +26,21 @@ class Fish extends CI_Controller {
 	public function insert(){
 		$data['page_title'] = "Fishes Pages / Insert Fishes";
 		$data['body'] = 'fish/insert_fish';
-        $data['header_plantation'] = "text-secondary";
-        $data['header_fish'] = "text-white";
-
 		$this->load->view('template/index' , $data);
+	}
+
+	// For seeing details for one type of fish
+	public function see( $fish = '' ){
+		try{
+			$fishes = $this->fish->get_Fish( $fish );
+			$data['fishes'] = $fishes;
+			$data['page_title'] = " Fish page ";
+			$data['body'] = 'fish/abouts';
+			$this->load->view('template/index' , $data);
+		}catch(Exception $e){
+			echo $e->getMessage();
+		}
+
 	}
 
 	public function save(){
@@ -123,7 +133,6 @@ class Fish extends CI_Controller {
         $this->fish->insert_type_fish( $type, $m_period, $m_length, $m_size, $w_max_baby, $w_max_avg, $s_max_baby, $s_max_avg );
 	    redirect(base_url('fish'));
     }
-
 
 }
 

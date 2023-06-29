@@ -9,7 +9,7 @@
 			<?php 
 
 				foreach( $fishes as $fish ){ ?>
-					<div class="card col-lg-3 shadow p-3 col-md-5 offset-md-1 border-0  col-sm-12 " data-aos="fade-down">
+					<div class="card col-lg-4 shadow p-3 my-lg-2 col-md-5 offset-md-1 border-0  col-sm-12 " data-aos="fade-down">
 						<div class="card-body rounded">
 							<div class="row details-rows">
 								<div class="title-row row">
@@ -34,7 +34,7 @@
 											<tr class="">
 												<td></td>
 												<td class="text-end">
-													<a href="" class="btn btn-primary">
+													<a href="<?php echo site_url('fish/see/').$fish->id_type_fish; ?>" class="btn btn-primary">
 														See more Info
 													</a>
 												</td>
