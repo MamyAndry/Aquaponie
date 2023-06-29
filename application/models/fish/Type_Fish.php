@@ -106,15 +106,62 @@
 			$results = array();
 			$result_array = $query->result_array();
 			foreach( $result_array as $row ){
-				$type = new Type_fish();
-				$type->id_type_fish 	= $row["id_type_fish"];
-				$type->name_type_fish 	= $row["name_type_fish"];
-				$type->maturity_period = $row["maturity_period"];
-				$type->maturity_size 	= $row["maturity_size"];
+				$type = Type_fish::get_instance($row);
 				$results[] = $type;
 			}
 			return $results;
 		}
+
+		public static function get_instance( $data ){
+			$type = new Type_fish();
+			$type->id_type_fish 	= $data["id_type_fish"];
+			$type->name_type_fish 	= $data["name_type_fish"];
+			$type->maturity_period = $data["maturity_period"];
+			$type->maturity_size 	= $data["maturity_size"];
+			return $type;
+		}
+
+		public function get_Type_By_Id( $idType ){
+			if( empty($idType) ){
+				throw new Exception("This type of Fish doesn't exist");
+			}
+			$sql = "select * from %s where id_type_fish like %s";
+			$sql = sprintf( $sql, Type_Fish::$table, $this->db->escape('%'.$idType.'%'));
+			$sql = $this->db->query($sql);
+			$results = $sql->result_array();
+			$fishes = array();
+			foreach( $results as $row ){
+				$type = Type_fish::get_instance($row);
+				$fishes[] = $type;
+			}
+			return $fishes;
+		}
+
+		public function get_Type( $type ){
+			if( empty($type) ){
+				throw new Exception("This type of Fish doesn't exist");
+			}
+			$sql = "select * from %s where name_type_fish like %s";
+			$sql = sprintf( $sql, Type_Fish::$table, $this->db->escape('%'.$type.'%') );
+			$sql = $this->db->query($sql);
+			$results = $sql->result_array();
+			$fishes = [];
+			foreach( $results as $row ){
+				$type = Type_fish::get_instance($row);
+				$fishes[] = $type;
+			}
+			return $fishes;
+		}
+
+		public function get_Fish( $id_or_name ){
+			$byId = $this->get_Type_By_Id( $id_or_name );
+			$byName = $this->get_Type( $id_or_name );
+			if( count($byId) == 0  && count($byName) == 0){
+				throw new Exception("This type of fish doesn't exist in your data. May be you have forgotten to add it");
+			}
+			return ( count($byId) == 0 && count($byName) > 0 ) ? $byName : $byId;
+		}
+
 
 	}
 
