@@ -48,7 +48,7 @@
             <?php } ?>
             <div class="card col-lg-3 shadow border-0 col-md-5 offset-md-1 col-sm-12"  data-aos="zoom-in" data-aos-delay="1000">
                 <div class="card-body">
-                    <div class="row my-5">
+                    <div class="row center my-5">
                         <div class="img-fluid text-decoration-none text-center">
                             <a href="<?php echo site_url('plantation/insert'); ?>" class="links text-decoration-none">
                                 <i class="fa fa-plus-circle display-1"></i>

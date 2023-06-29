@@ -12,8 +12,6 @@ class Plantation extends CI_Controller
 
         $plantations = $this->plantation->get_all_type();
 
-        $data['header_plantation'] = "text-white";
-        $data['header_fish'] = "text-secondary";
         $data['plantations'] = $plantations;
         $data['page_title'] = "Plantations Pages";
         $data['body'] = 'plantation/index';
@@ -23,8 +21,6 @@ class Plantation extends CI_Controller
     }
 
     public function insert(){
-        $data['header_plantation'] = "text-white";
-        $data['header_fish'] = "text-secondary";
         $data['page_title'] = "Plantation Pages / Insert Plantation";
         $data['body'] = 'plantation/insert_plantation';
 
