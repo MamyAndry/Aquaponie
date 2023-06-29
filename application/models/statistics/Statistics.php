@@ -9,7 +9,7 @@
         }
 
         /**
-		 * @author     Mam
+		 * @author     Mamisoa
          * isoa
 		 * @todo       get the average  value of a list of values
 		**/
