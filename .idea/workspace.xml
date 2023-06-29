@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31f515d1-47b7-4614-ae41-060af2bcdbf2" name="Changes" comment="" />
+    <list default="true" id="31f515d1-47b7-4614-ae41-060af2bcdbf2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Plantation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Plantation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/plantation/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/plantation/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -36,8 +42,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/UwAmp/www/Aquaponie",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -57,6 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1687297577872</updated>
       <workItem from="1687297580448" duration="4238000" />
+      <workItem from="1687854633623" duration="11785000" />
+      <workItem from="1687971120568" duration="10887000" />
     </task>
     <servers />
   </component>
@@ -68,7 +81,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="controllFish" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

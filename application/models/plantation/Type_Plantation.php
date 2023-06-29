@@ -51,7 +51,7 @@
 			$data = array(
 				'id_type_plantation' 		=> $id,
 				'name_type_plantation'		=> $name_type_plantation,
-				'weight_max_little'			=> $weight_max_baby,
+				'weight_max_baby'			=> $weight_max_baby,
 				'weight_max_semi_mature'	=> $weight_max_semi_mature
 			);
 
@@ -77,6 +77,8 @@
 				$type = new Type_Plantation();
 				$type->id_type_plantation = $row["id_type_plantation"];
 				$type->name_type_plantation = $row["name_type_plantation"];
+                $type->weight_max_baby = $row["weight_max_baby"];
+                $type->weight_max_semi_mature = $row["weight_max_semi_mature"];
 				$results[] = $type;
 			}
 			return $results;

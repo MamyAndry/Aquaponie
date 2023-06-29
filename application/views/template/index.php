@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/aos/dist/aos.css'); ?>">
 	<title>
 		<?php echo $page_title; ?>
+
 	</title>
 </head>
 <body>
@@ -26,5 +27,6 @@
             duration : '1000',
         });
 	</script>
+    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js')?>"></script>
 </body>
 </html>
