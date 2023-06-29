@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/aos/dist/aos.css'); ?>">
 	<title>
 		<?php echo $page_title; ?>
+
 	</title>
 </head>
 <body>

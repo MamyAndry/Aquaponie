@@ -24,9 +24,13 @@
 										</thead>
 										<tbody>
 											<tr >
-												<td class="p-2"> Maturity Period : </td>
+												<td class="p-2"> Maturity Period</td>
 												<td class="text-end"> <?php echo $fish->maturity_period; ?> month(s) </td>
 											</tr>
+                                            <tr>
+                                                <td class="p-2"> Maturity Length</td>
+                                                <td class="text-end"> <?php echo $fish->maturity_size; ?> cm </td>
+                                            </tr>
 											<tr class="">
 												<td></td>
 												<td class="text-end">
@@ -43,20 +47,20 @@
 					</div>
 			<?php } ?>
 			<div class="card col-lg-3 shadow border-0 col-md-5 offset-md-1 col-sm-12"  data-aos="zoom-in" data-aos-delay="1000">
-				<a href="<?php echo site_url('fish/insert'); ?>" class="links text-decoration-none">
-					<div class="card-body">
-						<div class="row my-5">
-							<div class="img-fluid text-decoration-none text-center">
-								<i class="fas fa-plus-circle display-1"></i>
-							</div>
-							<div class="text-center">
-								<p class="text-secondary">
-									Add more type of fish
-								</p>
-							</div>
-						</div>
-					</div>
-				</a>
+                <div class="card-body">
+                    <div class="row my-lg-5 my-md-3 my-sm-2 my-5">
+                        <div class="img-fluid text-decoration-none text-center">
+                            <a href="<?php echo site_url('fish/insert'); ?>" class="links text-decoration-none">
+                                <i class="fa fa-plus-circle display-1 "></i>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-secondary">
+                                Add more type of fish
+                            </p>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
