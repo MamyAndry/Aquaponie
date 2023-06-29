@@ -22,7 +22,7 @@
 
 		public function format_date($date)
 		{
-			return date("Y-m-d", strtotime($date));
+			return date("yyyy-MM-dd", strtotime($date));
 		}
 
 		public function insert_sale_plantation( $id_field_plantation, $quantity_saled, $saling_date ){

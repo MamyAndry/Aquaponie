@@ -46,7 +46,7 @@
                 $size = $size + $data[$i][1];
             }
 
-            $resultat = [$weight/count($data), $size/count($data)];
+            $resultat = [ $weight / count($data), $size/count($data) ];
             return $resultat;
 		}
 
