@@ -101,7 +101,7 @@
 		 * 
 		 */
 
-		public function get_all_type(){
+		public function get_all_sale(){
 			$query = $this->db->get('type_fish');
 			$results = array();
 			$result_array = $query->result_array();
