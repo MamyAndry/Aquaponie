@@ -15,6 +15,8 @@ class Fish extends CI_Controller {
 		$fishes = $this->fish->get_all_type();
 		
 		$data['fishes'] = $fishes;
+        $unities = get_unities();
+        $data['unities'] = $unities;
 		$data['page_title'] = "Fishes Pages";
 		$data['body'] = 'fish/index';
 
@@ -34,6 +36,8 @@ class Fish extends CI_Controller {
 		try{
 			$fishes = $this->fish->get_Fish( $fish );
 			$data['fishes'] = $fishes;
+            $unities = get_unities();
+            $data['unities'] = $unities;
 			$data['page_title'] = " Fish page ";
 			$data['body'] = 'fish/abouts';
 			$this->load->view('template/index' , $data);

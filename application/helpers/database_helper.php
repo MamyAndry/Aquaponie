@@ -36,6 +36,14 @@
 			return $result;
 		}
 	}
-
+	if ( !function_exists('get_unities') ){
+		function get_unities(){
+			$sql = "select * from unite";
+			$CI =& get_instance();
+			$query = $CI->db->query($sql);
+			$result = $query->result_array();
+			return $result;
+		}
+	}
 
 ?>

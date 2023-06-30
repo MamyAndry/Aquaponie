@@ -84,6 +84,56 @@
 			return $results;
 		}
 
+        public static function get_instance( $data ){
+            $type = new Type_plantation();
+            $type->id_type_plantation 	= $data["id_type_plantation"];
+            $type->name_type_plantation 	= $data["name_type_plantation"];
+            $type->weight_max_baby =$data["weight_max_baby"];
+            $type->weight_max_semi_mature=$data["weight_max_semi_mature"];
+            return $type;
+        }
+
+        public function get_Type_By_Id( $idType ){
+            if( empty($idType) ){
+                throw new Exception("This type of Plantation doesn't exist");
+            }
+            $sql = "select * from %s where id_type_plantation like %s";
+            $sql = sprintf( $sql, Type_plantation::$TABLE, $this->db->escape('%'.$idType.'%'));
+            $sql = $this->db->query($sql);
+            $results = $sql->result_array();
+            $plantations = array();
+            foreach( $results as $row ){
+                $type = Type_plantation::get_instance($row);
+                $plantations[] = $type;
+            }
+            return $plantations;
+        }
+
+        public function get_Type( $type ){
+            if( empty($type) ){
+                throw new Exception("This type of Plantation doesn't exist");
+            }
+            $sql = "select * from %s where name_type_plantation like %s";
+            $sql = sprintf( $sql, Type_plantation::$TABLE, $this->db->escape('%'.$type.'%') );
+            $sql = $this->db->query($sql);
+            $results = $sql->result_array();
+            $plantations = [];
+            foreach( $results as $row ){
+                $type = Type_plantation::get_instance($row);
+                $plantations[] = $type;
+            }
+            return $plantations;
+        }
+
+        public function get_Plantation( $id_or_name ){
+            $byId = $this->get_Type_By_Id( $id_or_name );
+            $byName = $this->get_Type( $id_or_name );
+            if( count($byId) == 0  && count($byName) == 0){
+                throw new Exception("This type of fish doesn't exist in your data. May be you have forgotten to add it");
+            }
+            return ( count($byId) == 0 && count($byName) > 0 ) ? $byName : $byId;
+        }
+
 	}
 
 

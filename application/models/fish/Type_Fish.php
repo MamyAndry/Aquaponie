@@ -118,6 +118,10 @@
 			$type->name_type_fish 	= $data["name_type_fish"];
 			$type->maturity_period = $data["maturity_period"];
 			$type->maturity_size 	= $data["maturity_size"];
+            $type->weight_max_little =$data["weight_max_little"];
+            $type->weight_max_average=$data["weight_max_average"];
+            $type->size_max_little   =$data["size_max_little"];
+            $type->size_max_average  = $data["size_max_average"];
 			return $type;
 		}
 

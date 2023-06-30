@@ -12,7 +12,7 @@
 	</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid" style="--bs-gutter-x: 0em; ">
 		<?php 
 			$this->load->view('template/Header');
 			$this->load->view( $body );

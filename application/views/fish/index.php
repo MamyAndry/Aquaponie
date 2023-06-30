@@ -25,11 +25,11 @@
 										<tbody>
 											<tr >
 												<td class="p-2"> Maturity Period</td>
-												<td class="text-end"> <?php echo $fish->maturity_period; ?> month(s) </td>
+												<td class="text-end"> <?php echo $fish->maturity_period." ".$unities[2]['nom']; ?></td>
 											</tr>
                                             <tr>
                                                 <td class="p-2"> Maturity Length</td>
-                                                <td class="text-end"> <?php echo $fish->maturity_size; ?> cm </td>
+                                                <td class="text-end"> <?php echo $fish->maturity_size." ".$unities[1]['nom']; ?></td>
                                             </tr>
 											<tr class="">
 												<td></td>
@@ -46,7 +46,7 @@
 						</div>
 					</div>
 			<?php } ?>
-			<div class="card col-lg-3 shadow border-0 col-md-5 offset-md-1 col-sm-12"  data-aos="zoom-in" data-aos-delay="1000">
+			<div class="card col-lg-4 shadow p-3 my-lg-2 col-md-5 offset-md-1 border-0  col-sm-12 "  data-aos="zoom-in" data-aos-delay="1000">
                 <div class="card-body">
                     <div class="row my-lg-5 my-md-3 my-sm-2 my-5">
                         <div class="img-fluid text-decoration-none text-center">

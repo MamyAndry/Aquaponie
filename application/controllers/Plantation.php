@@ -13,10 +13,28 @@ class Plantation extends CI_Controller
         $plantations = $this->plantation->get_all_type();
 
         $data['plantations'] = $plantations;
+        $unities = get_unities();
+        $data['unities'] = $unities;
         $data['page_title'] = "Plantations Pages";
         $data['body'] = 'plantation/index';
 
         $this->load->view('template/index' , $data);
+
+    }
+
+    // For seeing details for one type of fish
+    public function see( $plantation = '' ){
+        try{
+            $plantations = $this->plantation->get_Plantation( $plantation );
+            $data['plantations'] = $plantations;
+            $unities = get_unities();
+            $data['unities'] = $unities;
+            $data['page_title'] = " Plantation page ";
+            $data['body'] = 'plantation/abouts';
+            $this->load->view('template/index' , $data);
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
 
     }
 
