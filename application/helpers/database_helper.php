@@ -38,7 +38,7 @@
 	}
 	if ( !function_exists('get_unities') ){
 		function get_unities(){
-			$sql = "select * from unite";
+			$sql = "select * from unite order by id_unite";
 			$CI =& get_instance();
 			$query = $CI->db->query($sql);
 			$result = $query->result_array();

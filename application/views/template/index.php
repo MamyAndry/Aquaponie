@@ -27,6 +27,7 @@
             duration : '1000',
         });
 	</script>
+    <script src="<?php echo base_url('assets/js/app.js')?>"></script>
     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js')?>"></script>
 </body>
 </html>
