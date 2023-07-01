@@ -32,8 +32,8 @@
                     </li>
                 </ul>
             </li>
-            <li>
-              <a href="<?php echo site_url('pond/Ponds')?>" class="nav-link <?php echo $header_ponds; ?>">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle <?php echo $header_ponds; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Ponds
               </a>
             </li>
