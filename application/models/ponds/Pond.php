@@ -118,14 +118,18 @@
 			return $ponds;
 		}
 
+		public static function __get_instance( $data ){
+			$pond = new Pond();
+			$pond->id_pond = $data['id_pond'];
+			$pond->capacity = $data['capacity'];
+			$pond->load_pond_details();
+			return $pond;
+		}
+
 		public function load_pond_details(){
 			$details = Pond_detail::get_instance_from_pond( $this );
 			$this->details = $details;
 
-		}
-
-		public function extract_sequences(){
-			
 		}
 
 	}
