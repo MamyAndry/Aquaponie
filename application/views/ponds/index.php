@@ -27,15 +27,22 @@
                                         <td class="text-end"> <?php echo $pond->capacity; ?></td>
 
                                     </tr>
-                                    <tr>
-                                    	<td></td>
-                                    	<td class="text-end">
-                                    		<a href="" class="btn btn-primary">
-                                    			See Details
-                                    		</a>
-                                    	</td>
-                                    </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                        	<td>
+                                                <a href="" class="btn btn-dark">
+                                                    Add Fishes      
+                                                </a>   
+                                            </td>
+                                        	<td class="text-end">
+                                        		<a href="" class="btn btn-primary">
+                                        			See Details
+                                        		</a>
+                                        	</td>
+                                        </tr>
+                                        
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
