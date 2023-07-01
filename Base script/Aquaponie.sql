@@ -39,7 +39,7 @@ create table pond(
 );
 
 create table pond_details(
-    id_pond_details int primary key,
+    id_pond_details varchar(8) primary key,
     id_pond varchar(8) references pond(id_pond),
     id_type_fish varchar(8) references type_fish(id_type_fish),
     max_quantity int not null -- max quantity of type fish it can take

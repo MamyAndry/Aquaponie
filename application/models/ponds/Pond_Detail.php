@@ -1,5 +1,7 @@
 <?php
 	
+	require('application/models/fish/Type_Fish.php');
+
 	class Pond_detail extends CI_Model{
 
 		/**
@@ -10,9 +12,9 @@
 		*/
 
 		public static $LENGTH = 7;
-		public static $PREFIX = "POND";
-		public static $SEQUENCE = "s_pond";
-		public static $TABLE = "pond";
+		public static $PREFIX = "DPO";
+		public static $SEQUENCE = "s_pond_details";
+		public static $TABLE = "pond_details";
 
 		// Inona insray izao
 		// Omena attribut izy
@@ -67,8 +69,9 @@
 		}
 
 		public function get_pond_details_from_pond( $pond ){
-			$query = "select * from %s where id_pond like '%s%s%s'";
-			$query = sprintf( $query, Pond_Detail::$TABLE, '%', $this->db->escape($pond->id_pond), '%' );
+			$query = "select * from %s where id_pond like %s";
+			// $query = sprintf( $query, Pond_Detail::$TABLE, $this->db->escape('%'.$pond->id_pond.'%') );
+			$query = sprintf( $query, 'details_ponds', $this->db->escape('%'.$pond->id_pond.'%') );
 			$query = $this->db->query($query);
 			$rows = $query->result_array();
 			$details = array();
@@ -78,6 +81,7 @@
 				$detail->id_pond = $row['id_pond'];
 				$detail->id_type_fish = $row['id_type_fish'];
 				$detail->max_quantity = $row['max_quantity'];
+				$detail->fish = Type_fish::get_instance($row);
 				$detail->pond = $pond;
 				$details[] = $detail;
 			}
@@ -91,12 +95,12 @@
 			if( empty($data['id_type_fish']) ){
 				throw new Exception("Can't assign a non identified fish : Id is empty");
 			}
-			if( $$data['max_quantity'] < 0 ){
+			if( $data['max_quantity'] < 0 ){
 				throw new Exception("The max quantity of a faish can't be negative");
 			}
-			$this->$id_pond = $data["id_pond"];
-			$this->$id_type_fish = $data["id_type_fish"];
-			$this->$max_quantity = $data["max_quantity"];
+			$this->id_pond = $data["id_pond"];
+			$this->id_type_fish = $data["id_type_fish"];
+			$this->max_quantity = $data["max_quantity"];
 		}
 
 	}

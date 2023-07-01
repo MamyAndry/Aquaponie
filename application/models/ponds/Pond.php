@@ -1,5 +1,5 @@
 <?php
-	
+	require('Pond_Detail.php');
 	class Pond extends CI_Model{
 		/**
 		 * @static PREFIX : For the table identification prefix
@@ -25,7 +25,7 @@
 		 * 
 		 */
 
-		public function insert_pond( $ids_type_fish, $capacity ,$max_quantitys ){
+		public function insert_pond( $capacity ,$max_quantitys, $ids_type_fish ){
 			if( count($ids_type_fish) != count($max_quantitys) ){
 				throw new Exception( "Verify that the number of fish you selected and the quantity are the same" );
 			}
@@ -57,12 +57,30 @@
 				$this->db->trans_start();
 				$this->db->insert( Pond::$TABLE, $data );
 				for( $i = 0 ; $i < $length ; $i++ ){
-					$detail = new Pond();
+					$detail = new Pond_detail();
 					$detail->insert_pond( $id, $ids_type_fish[$i], $max_quantitys[$i], $this->db );
 				}
 				$this->db->trans_complete();
 			}catch( Exception $e ){
 				$this->db->trans_rollback();
+				throw $e;
+			}
+		}
+
+		public function insert_only_pond( $capacity ){
+			if( $capacity < 0 ){
+				throw new Exception("Capacity can't be a negative value");
+			}
+			$id = create_primary_key(Pond::$PREFIX, Pond::$SEQUENCE, Pond::$LENGTH);
+			
+			$data = array(
+				'id_pond' => $id,
+				'capacity' => $capacity
+			);
+
+			try{
+				$this->db->insert(Pond::$TABLE, $data);
+			}catch( Exeption $e ){
 				throw $e;
 			}
 		}
@@ -76,19 +94,39 @@
 			foreach( $rows as $row ){
 				$pond = new Pond();
 				$pond->id_pond = $row['id_pond'];
-				$pond->load_pond_details();
+				$pond->capacity = $row['capacity'];
+				// $pond->load_pond_details();
 				$ponds[] = $pond;
 			}
 
 			return $ponds;
 		}
 
-		public function load_pond_details(  ){
-			$details = Pond::get_instance_from_pond( $this );
+		public function get_pond( $id_pond ){
+			$sql = "select * from %s where id_pond like %s";
+			$sql = sprintf( $sql, Pond::$TABLE, $this->db->escape('%'.$id_pond.'%') );
+			$sql = $this->db->query($sql);
+			$sql_results = $sql->result_array();
+			$ponds = array();
+			foreach( $sql_results as $row ){
+				$pond = new Pond();
+				$pond->id_pond = $id_pond;
+				$pond->capacity = $row['capacity'];
+				$pond->load_pond_details();
+				$ponds[] = $pond;
+			}
+			return $ponds;
+		}
+
+		public function load_pond_details(){
+			$details = Pond_detail::get_instance_from_pond( $this );
 			$this->details = $details;
 
 		}
 
+		public function extract_sequences(){
+			
+		}
 
 	}
 

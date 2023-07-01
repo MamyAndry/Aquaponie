@@ -9,8 +9,8 @@
         ('POND0002', 3785);
 
     insert into pond_details (id_pond_details, id_pond, id_type_fish, max_quantity) values
-        (nextval('s_pond_details'), 'POND0001', 'FISH0001', 50),
-        (nextval('s_pond_details'), 'POND0002', 'FISH0001', 50);
+        ('DPO'||nextval('s_pond_details'), 'POND0001', 'FISH0001', 50),
+        ('DPO'||nextval('s_pond_details'), 'POND0002', 'FISH0001', 50);
 
     insert into field(id_field) values 
         ('FILD0001'),
