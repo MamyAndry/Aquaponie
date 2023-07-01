@@ -11,3 +11,10 @@ create or replace view details_ponds
     from pond_details as d_p
     join type_fish as t_f
     on d_p.id_type_fish = t_f.id_type_fish;
+
+create or replace view details_fields
+    as
+    select t_p.*,f_p.id_field_plantation, f_p.id_field, f_p.density, f_p.surface_covered, f_p.plant_weight, f_p.insertion_date
+    from field_plantation as f_p
+    join type_plantation as t_p
+    on f_p.id_type_plantation = t_p.id_type_plantation;
