@@ -50,7 +50,7 @@ create table field(
 );
 
 create table field_plantation(
-    id_field_plantation int primary key,
+    id_field_plantation varchar(8) primary key,
     id_field varchar(8) references field(id_field),
     id_type_plantation varchar(8) references type_plantation(id_type_plantation),
     density int, --nombre de plante ou fruit par metre carree en moyenne
@@ -60,7 +60,7 @@ create table field_plantation(
 );
 
 create table fish_pond(
-    id_fish_pond int primary key,
+    id_fish_pond varchar(8) primary key,
     id_type_fish varchar(8) references type_fish(id_type_fish),
     id_pond varchar(8) references pond(id_pond),
     fish_gender boolean not null, -- true:femelle, false:male
@@ -69,8 +69,8 @@ create table fish_pond(
 );
 
 create table report_pond(
-    id_report_pond int primary key,
-    id_fish_pond int references fish_pond(id_fish_pond),
+    id_report_pond varchar(8) primary key,
+    id_fish_pond varchar(8) references fish_pond(id_fish_pond),
     report_date_pond date not null,
     alive_fish_number int,
     dead_fish_number int,
@@ -78,8 +78,8 @@ create table report_pond(
 );
 
 create table report_field(
-    id_report_field int primary key,
-    id_field_plantation int references field_plantation(id_field_plantation),
+    id_report_field varchar(8) primary key,
+    id_field_plantation varchar(8) references field_plantation(id_field_plantation),
     report_date_field date not null,
     plant_weight decimal(10,2) not null, --en gramme : masse umitaire d'une plante ouu fruit
     density decimal(10,2) not null, -- Noter seulement le nombre de plante par metre carre
@@ -87,15 +87,15 @@ create table report_field(
 );
 
 create table sale_fish(
-    id_sale_fish int primary key,
-    id_fish_pond int references fish_pond(id_fish_pond),
+    id_sale_fish varchar(8) primary key,
+    id_fish_pond varchar(8) references fish_pond(id_fish_pond),
     quantity_sold int not null, -- Quantite de fish vendue en nombre satria tsy manapaka tsonjo
     sale_date date not null
 );
 
 create table sale_plantation(
-    id_sale_plantation int primary key,
-    id_field_plantation int references field_plantation(id_field_plantation),
+    id_sale_plantation varchar(8) primary key,
+    id_field_plantation varchar(8) references field_plantation(id_field_plantation),
     quantity_sold int not null, --nombre de plant (ou fruit) vendue
     sale_date date not null
 );
