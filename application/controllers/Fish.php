@@ -7,6 +7,8 @@ class Fish extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('fish/Type_Fish' , 'fish');
+        $unities = get_unities();
+        $this->data['unities'] = $unities;
         $this->data['header_product'] = "text-white";
         $this->data['header_ponds'] = "text-secondary";
         $this->data['header_home'] = "text-secondary";
@@ -18,8 +20,6 @@ class Fish extends CI_Controller {
 		$fishes = $this->fish->get_all_type();
 		
 		$this->data['fishes'] = $fishes;
-        $unities = get_unities();
-        $this->data['unities'] = $unities;
 		$this->data['page_title'] = "Fishes Pages";
 		$this->data['body'] = 'fish/index';
 
@@ -39,8 +39,6 @@ class Fish extends CI_Controller {
 		try{
 			$fishes = $this->fish->get_Fish( $fish );
 			$this->data['fishes'] = $fishes;
-            $unities = get_unities();
-            $this->data['unities'] = $unities;
 			$this->data['page_title'] = " Fish page ";
 			$this->data['body'] = 'fish/abouts';
 			$this->load->view('template/index' , $this->data);

@@ -8,6 +8,8 @@
 			parent::__construct();
 			$this->load->model('ponds/Pond' , 'ponds');
 			$this->load->model('fish/Type_Fish' , 'fish');
+            $unities = get_unities();
+            $this->data['unities'] = $unities;
             $this->data['header_product'] = "text-secondary";
             $this->data['header_ponds'] = "text-white";
             $this->data['header_home'] = "text-secondary";

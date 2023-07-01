@@ -5,7 +5,7 @@
 				Lists of all ponds
 			</h3>
 		</div>
-		<div class=" my-3 row fishes-types d-flex">
+		<div class=" my-3 row fishes-types d-flex justify-content-center">
             <?php
             foreach( $ponds as $pond ){ ?>
                 <div class="card col-lg-4 shadow p-3 my-2 col-md-5 offset-md-1 border-0  col-sm-12 " data-aos="fade-down">
@@ -30,7 +30,7 @@
                                     <tr>
                                     	<td></td>
                                     	<td class="text-end">
-                                    		<a href="" class="btn btn-primary">
+                                    		<a href="<?php echo base_url('pond/Ponds/see')?>/<?php echo $pond->id_pond;?>" class="btn btn-primary">
                                     			See Details
                                     		</a>
                                     	</td>

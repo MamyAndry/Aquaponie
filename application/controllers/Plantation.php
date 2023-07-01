@@ -5,6 +5,8 @@ class Plantation extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('plantation/Type_Plantation' , 'plantation');
+        $unities = get_unities();
+        $this->data['unities'] = $unities;
         $this->data['header_product'] = "text-white";
         $this->data['header_ponds'] = "text-secondary";
         $this->data['header_home'] = "text-secondary";
@@ -16,8 +18,7 @@ class Plantation extends CI_Controller
         $plantations = $this->plantation->get_all_type();
 
         $this->data['plantations'] = $plantations;
-        $unities = get_unities();
-        $this->data['unities'] = $unities;
+
         $this->data['page_title'] = "Plantations Pages";
         $this->data['body'] = 'plantation/index';
 
@@ -30,8 +31,6 @@ class Plantation extends CI_Controller
         try{
             $plantations = $this->plantation->get_Plantation( $plantation );
             $this->data['plantations'] = $plantations;
-            $unities = get_unities();
-            $this->data['unities'] = $unities;
             $this->data['page_title'] = " Plantation page ";
             $this->data['body'] = 'plantation/abouts';
             $this->load->view('template/index' , $this->data);

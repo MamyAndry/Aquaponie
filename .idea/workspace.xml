@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="31f515d1-47b7-4614-ae41-060af2bcdbf2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Fish.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Plantation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Plantation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Sale_Fish_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Sale_Fish_Statistics.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fish/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fish/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/plantation/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/plantation/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ponds/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ponds/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
       <workItem from="1687971120568" duration="13044000" />
       <workItem from="1688033931826" duration="9525000" />
       <workItem from="1688179946603" duration="382000" />
-      <workItem from="1688180675459" duration="2370000" />
+      <workItem from="1688180675459" duration="4971000" />
     </task>
     <servers />
   </component>

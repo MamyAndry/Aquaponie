@@ -5,7 +5,7 @@
 				All your fishes Types
 			</h3>
 		</div>
-		<div class=" my-3 row fishes-types d-flex">
+		<div class=" my-3 row fishes-types d-flex justify-content-center">
 			<?php 
 
 				foreach( $fishes as $fish ){ ?>
