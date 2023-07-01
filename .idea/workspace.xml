@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1e0e14d-175f-4da1-9b0b-2c8fd6a67802" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ponds/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ponds/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/template/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/Header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -36,6 +36,23 @@
               <a class="nav-link dropdown-toggle <?php echo $header_ponds; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Ponds
               </a>
+                <ul class="dropdown-menu">
+                    <li >
+                        <a href="<?php echo site_url('pond/Ponds'); ?>" class="dropdown-item">
+                            All
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Fish
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Plantation
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
               <a href="#" class="nav-link text-secondary">
