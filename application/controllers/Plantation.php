@@ -5,6 +5,11 @@ class Plantation extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('plantation/Type_Plantation' , 'plantation');
+        $unities = get_unities();
+        $this->data['unities'] = $unities;
+        $this->data['header_product'] = "text-white";
+        $this->data['header_ponds'] = "text-secondary";
+        $this->data['header_home'] = "text-secondary";
     }
 
     // To list all type of fishes
@@ -12,13 +17,12 @@ class Plantation extends CI_Controller
 
         $plantations = $this->plantation->get_all_type();
 
-        $data['plantations'] = $plantations;
-        $unities = get_unities();
-        $data['unities'] = $unities;
-        $data['page_title'] = "Plantations Pages";
-        $data['body'] = 'plantation/index';
+        $this->data['plantations'] = $plantations;
 
-        $this->load->view('template/index' , $data);
+        $this->data['page_title'] = "Plantations Pages";
+        $this->data['body'] = 'plantation/index';
+
+        $this->load->view('template/index' , $this->data);
 
     }
 
@@ -26,12 +30,10 @@ class Plantation extends CI_Controller
     public function see( $plantation = '' ){
         try{
             $plantations = $this->plantation->get_Plantation( $plantation );
-            $data['plantations'] = $plantations;
-            $unities = get_unities();
-            $data['unities'] = $unities;
-            $data['page_title'] = " Plantation page ";
-            $data['body'] = 'plantation/abouts';
-            $this->load->view('template/index' , $data);
+            $this->data['plantations'] = $plantations;
+            $this->data['page_title'] = " Plantation page ";
+            $this->data['body'] = 'plantation/abouts';
+            $this->load->view('template/index' , $this->data);
         }catch(Exception $e){
             echo $e->getMessage();
         }
@@ -39,10 +41,10 @@ class Plantation extends CI_Controller
     }
 
     public function insert(){
-        $data['page_title'] = "Plantation Pages / Insert Plantation";
-        $data['body'] = 'plantation/insert_plantation';
+        $this->data['page_title'] = "Plantation Pages / Insert Plantation";
+        $this->data['body'] = 'plantation/insert_plantation';
 
-        $this->load->view('template/index' , $data);
+        $this->load->view('template/index' , $this->data);
     }
 
     public function save(){

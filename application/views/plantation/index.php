@@ -5,7 +5,7 @@
                 All your plantations Types
             </h3>
         </div>
-        <div class=" my-3 row fishes-types d-flex">
+        <div class=" my-3 row fishes-types d-flex justify-content-center">
             <?php
 
             foreach( $plantations as $plantation ){ ?>
