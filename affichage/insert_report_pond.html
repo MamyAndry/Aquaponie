@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <title>Insert Report type</title>
+</head>
+<body>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 text-center">
+             <h3>Insert Report pond</h3>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <form class="form-control justify-content-center">
+              <div class="row mt-4 mb-3">
+                  <div class="row col-md-6 col-lg-6 mt-4 mb-3 justify-content-center">
+                      <div class="row mt-2 mb-3" >
+                          <label for="date" class="form-label w-25">Date report</label>
+                          <input type="date" class="form-date w-75" name="date" id="max">
+                      </div>
+                      <div class="row mt-2 mb-3">
+                          <label for="alive" class="form-label w-25">Alive Fish</label>
+                          <input type="number" class="form-number w-75" id="fish" name="alive">
+                      </div>
+                  </div>
+                  <div class="row col-md-6 col-lg-6 mt-4 mb-3 justify-content-center">
+                      <div class="row mt-2 mb-3">
+                          <label for="dead" class="form-label w-25">Dead Fish</label>
+                          <input type="number" class="form-number w-75" name="dead" id="surface">
+                      </div>
+                      <div class="row mt-2 mb-3">
+                          <label for="category" class="form-label w-25">Category</label>
+                          <input type="file" class="form-file w-75" id="plantation" accept=".csv" name="category" required>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="row mt-4 mb-3 justify-content-center">
+                  <input type="submit" class="btn btn-dark w-25">
+              </div>
+          </form>
+      </div>
+  </div>
+</body>
+</html>
