@@ -27,14 +27,6 @@
                                         <td class="text-end"> <?php echo $pond->capacity; ?></td>
 
                                     </tr>
-                                    <tr>
-                                    	<td></td>
-                                    	<td class="text-end">
-                                    		<a href="<?php echo base_url('pond/Ponds/see')?>/<?php echo $pond->id_pond;?>" class="btn btn-primary">
-                                    			See Details
-                                    		</a>
-                                    	</td>
-                                    </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -44,7 +36,7 @@
                                                 </a>   
                                             </td>
                                         	<td class="text-end">
-                                        		<a href="" class="btn btn-primary">
+                                        		<a href="<?php echo base_url('pond/Ponds/see')?>/<?php echo $pond->id_pond;?>" class="btn btn-primary">
                                         			See Details
                                         		</a>
                                         	</td>
@@ -61,7 +53,7 @@
                 <div class="card-body">
                     <div class="row my-lg-5 my-md-3 my-sm-2 my-5">
                         <div class="img-fluid text-decoration-none text-center">
-                            <a href="<?php echo site_url('plantation/insert'); ?>" class="links text-decoration-none">
+                            <a href="<?php echo site_url('pond/Ponds/insert'); ?>" class="links text-decoration-none">
                                 <i class="fa fa-plus-circle display-1"></i>
                             </a>
                         </div>
