@@ -71,7 +71,7 @@
 		public function get_pond_details_from_pond( $pond ){
 			$query = "select * from %s where id_pond like %s";
 			// $query = sprintf( $query, Pond_Detail::$TABLE, $this->db->escape('%'.$pond->id_pond.'%') );
-			$query = sprintf( $query, 'details_ponds', $this->db->escape('%'.$pond->id_pond.'%') );
+			$query = sprintf( $query, 'v_details_ponds', $this->db->escape('%'.$pond->id_pond.'%') );
 			$query = $this->db->query($query);
 			$rows = $query->result_array();
 			$details = array();

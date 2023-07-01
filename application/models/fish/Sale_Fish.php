@@ -24,7 +24,6 @@
 		{
 			return date("Y-m-d", strtotime($date));
 		}
-
 		/**
 		 *	@author Layah
 		 * 	
