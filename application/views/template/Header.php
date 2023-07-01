@@ -9,13 +9,13 @@
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li class="nav-item">
-              <a href="#" class="nav-link text-secondary">
+              <a href="#" class="nav-link <?php echo $header_home; ?>">
                 <i class="fa fa-home"></i>
                 Home
               </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle <?php echo $header_product; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-tree"></i>
                     Product
                 </a>
@@ -33,7 +33,7 @@
                 </ul>
             </li>
             <li>
-              <a href="#" class="nav-link text-secondary">
+              <a href="<?php echo site_url('pond/Ponds')?>" class="nav-link <?php echo $header_ponds; ?>">
                 Ponds
               </a>
             </li>

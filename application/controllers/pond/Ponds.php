@@ -8,47 +8,50 @@
 			parent::__construct();
 			$this->load->model('ponds/Pond' , 'ponds');
 			$this->load->model('fish/Type_Fish' , 'fish');
+            $this->data['header_product'] = "text-secondary";
+            $this->data['header_ponds'] = "text-white";
+            $this->data['header_home'] = "text-secondary";
 		}
 
 		public function index(){
 			$ponds = $this->ponds->get_all_ponds();
-			$data['body'] = 'ponds/index';
-			$data['page_title'] = 'Ponds Page';
-			$data['ponds'] = $ponds;
+			$this->data['body'] = 'ponds/index';
+			$this->data['page_title'] = 'Ponds Page';
+			$this->data['ponds'] = $ponds;
 
-			$this->load->view( 'template/index' , $data );
+			$this->load->view( 'template/index' , $this->data );
 		}
 
 		public function see( $id_ponds = '' ){
 			$ponds = $this->ponds->get_pond( $id_ponds );
-			$data['ponds'] = $ponds;
-			$data['body'] = 'ponds/details';
-			$data['page_title'] = 'Ponds Pages/ Details';
+			$this->data['ponds'] = $ponds;
+			$this->data['body'] = 'ponds/details';
+			$this->data['page_title'] = 'Ponds Pages/ Details';
 
-			$this->load->view( 'template/index', $data );
+			$this->load->view( 'template/index', $this->data );
 		}
 
 		public function insert(){
-			$data['page_title'] = 'Ponds Pages/ Add new pond';
-			$data['body'] = 'ponds/add_ponds';
+			$this->data['page_title'] = 'Ponds Pages/ Add new pond';
+			$this->data['body'] = 'ponds/add_ponds';
 
-			$this->load->view('template/index' , $data);
+			$this->load->view('template/index' , $this->data);
 		}
 
 		public function add_details(){
 
-			$data['page_title'] = 'Ponds Pages/ Add details';
-			$data['body'] = "ponds/add_details_pond";
+			$this->data['page_title'] = 'Ponds Pages/ Add details';
+			$this->data['body'] = "ponds/add_details_pond";
 			$capacity = $this->input->post('max_quantity');
 			$fishes = $this->fish->get_all_type();
-			$data['fishes'] = $fishes;
+			$this->data['fishes'] = $fishes;
 
 			// $pond = new Pond();
 			// $pond->capacity = $capacity;
 
 			$this->session->set_userdata('pond_insert_capacity' , $capacity);
 
-			$this->load->view('template/index', $data);
+			$this->load->view('template/index', $this->data);
 		}
 
 

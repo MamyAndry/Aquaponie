@@ -7,6 +7,9 @@ class Fish extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('fish/Type_Fish' , 'fish');
+        $this->data['header_product'] = "text-white";
+        $this->data['header_ponds'] = "text-secondary";
+        $this->data['header_home'] = "text-secondary";
 	}
 
 	// To list all type of fishes
@@ -14,33 +17,33 @@ class Fish extends CI_Controller {
 
 		$fishes = $this->fish->get_all_type();
 		
-		$data['fishes'] = $fishes;
+		$this->data['fishes'] = $fishes;
         $unities = get_unities();
-        $data['unities'] = $unities;
-		$data['page_title'] = "Fishes Pages";
-		$data['body'] = 'fish/index';
+        $this->data['unities'] = $unities;
+		$this->data['page_title'] = "Fishes Pages";
+		$this->data['body'] = 'fish/index';
 
 
-		$this->load->view('template/index' , $data);
+		$this->load->view('template/index' , $this->data);
 
 	}
 
 	public function insert(){
-		$data['page_title'] = "Fishes Pages / Insert Fishes";
-		$data['body'] = 'fish/insert_fish';
-		$this->load->view('template/index' , $data);
+		$this->data['page_title'] = "Fishes Pages / Insert Fishes";
+		$this->data['body'] = 'fish/insert_fish';
+		$this->load->view('template/index' , $this->data);
 	}
 
 	// For seeing details for one type of fish
 	public function see( $fish = '' ){
 		try{
 			$fishes = $this->fish->get_Fish( $fish );
-			$data['fishes'] = $fishes;
+			$this->data['fishes'] = $fishes;
             $unities = get_unities();
-            $data['unities'] = $unities;
-			$data['page_title'] = " Fish page ";
-			$data['body'] = 'fish/abouts';
-			$this->load->view('template/index' , $data);
+            $this->data['unities'] = $unities;
+			$this->data['page_title'] = " Fish page ";
+			$this->data['body'] = 'fish/abouts';
+			$this->load->view('template/index' , $this->data);
 		}catch(Exception $e){
 			echo $e->getMessage();
 		}
