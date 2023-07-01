@@ -12,14 +12,6 @@
 		public static $LENGTH = 7;
 		public static $SEQUENCE = "s_field_plantation";
 
-		public $id_field_plantation;
-        public $id_field;
-        public $id_type_plantation;
-        public $density;
-        public $surface_covered;
-        public $plant_weight;
-        public $insertion_date;
-
         public function format_date($date)
 		{
 			return date("Y-m-d", strtotime($date));
@@ -32,7 +24,7 @@
 			}
 			$id = create_primary_key( Field_Plantation::$PREFIX, Field_Plantation::$SEQUENCE, Field_Plantation::$LENGTH );
 			$data = array(
-				'id_field' => $id,
+				'id_field' => $id_field,
 				'id_type_plantation' => $id_plantation,
                 'density' => $density,
                 'surface_covered' => $surface_covered,
@@ -47,5 +39,44 @@
 
 		}
 
+        public static function get_instance( $data ){
+            $type = new Field_Plantation();
+            $type->id_field_plantation   = $data['id_field_plantation'];
+            $type->id_field              = $data['id_field'];
+            $type->density               = $data['density'];
+            $type->surface_covered       = $data['surface_covered'];
+            $type->plant_weight          = $data['plant_weight'];
+            $type->insertion_date        = $data['insertion_date'];
+            $type->id_type_plantation    = $data['id_type_plantation'];
+            $type->name_type_plantation  = $data['name_type_plantation'];
+            $type->weight_max_baby       = $data['weight_max_baby'];
+            $type->weight_max_semi_mature= $data['weight_max_semi_mature'];
+            return $type;
+        }
+
+        public function get_field_plantation(){
+            $query = $this->db->get('details_fields');
+            $results = array();
+            $result_array = $query->result_array();
+            foreach( $result_array as $row ){
+                $type = Field_Plantation::get_instance($row);
+                $results[] = $type;
+            }
+            return $results;
+        }
+
+        public function get_details_field_by_id_type_plantation( $id_type ){
+            if ( empty( $id_type ) ) throw new Exception("This type of plantation doesn't exist");
+            $sql = "select * from %s where id_type_plantation like %s";
+            $sql = sprintf( $sql, "details_fields", $this->db->escape('%'.$id_type.'%'));
+            $sql = $this->db->query($sql);
+            $results = $sql->result_array();
+            $plantations = array();
+            foreach( $results as $row ){
+                $type = Field_Plantation::get_instance( $row );
+                $plantations[] = $type;
+            }
+            return $plantations;
+        }
 	}
 ?>
