@@ -9,7 +9,6 @@
 			$query = sprintf($query, $CI->db->escape($seq_name));
 			$query = $CI->db->query($query);
 			$result = $query->result_array();
-			// var_dump($result);
 			return $result[0]["nextval"];
 		}
 

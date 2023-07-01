@@ -9,17 +9,17 @@
 			$this->load->model('ponds/Pond' , 'ponds');
 			$this->load->model('fish/Type_Fish' , 'fish');
             $unities = get_unities();
-            $this->data['unities'] = $unities;
-            $this->data['header_product'] = "text-secondary";
-            $this->data['header_ponds'] = "text-white";
-            $this->data['header_home'] = "text-secondary";
+            $this->data['unities'] 			= $unities;
+            $this->data['header_product'] 	= "text-secondary";
+            $this->data['header_ponds'] 	= "text-white";
+            $this->data['header_home'] 		= "text-secondary";
 		}
 
 		public function index(){
 			$ponds = $this->ponds->get_all_ponds();
-			$this->data['body'] = 'ponds/index';
-			$this->data['page_title'] = 'Ponds Page';
-			$this->data['ponds'] = $ponds;
+			$this->data['body'] 		= 'ponds/index';
+			$this->data['page_title'] 	= 'Ponds Page';
+			$this->data['ponds'] 		= $ponds;
 
 			$this->load->view( 'template/index' , $this->data );
 		}
@@ -48,9 +48,6 @@
 			$fishes = $this->fish->get_all_type();
 			$this->data['fishes'] = $fishes;
 
-			// $pond = new Pond();
-			// $pond->capacity = $capacity;
-
 			$this->session->set_userdata('pond_insert_capacity' , $capacity);
 
 			$this->load->view('template/index', $this->data);
@@ -62,7 +59,6 @@
 			$fishes = $this->input->post('fish');
 			$quantitys = $this->input->post('quantity');
 			$pond = $this->session->userdata('pond_insert_capacity');
-			var_dump($pond);
 			$fs = array();
 			try{
 				if( is_array($fishes) && is_array($quantitys) ){
@@ -81,7 +77,6 @@
 				$this->data['message'] = $e->getMessage();
 				echo json_encode($this->data);
 			}
-
 		}
 
 	}
