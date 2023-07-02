@@ -10,12 +10,14 @@
         function get_all_year(){
             
             $result = array();
-            $query = "SELECT DISTINCT EXTRACT('year' from sale_date) FROM sale_fish";
+            $query = "SELECT DISTINCT EXTRACT('year' from sale_date) as year FROM sale_fish";
+            // echo $query;
             $result_array = $this->db->query($query);
+            $result_array = $result_array->result_array();
             foreach( $result_array as $row){
-                $result[] = $row['date_part'];
+                $result[] = $row['year'];
             }
-            return $result
+            return $result;
         }
 
         /**
@@ -27,9 +29,10 @@
             
             $query = "SELECT SUM(quantity_sold) FROM sale_fish WHERE EXTRACT('year' from sale_date) = %s";
             $query = sprintf($query , $year);
-            echo $query;
+            // echo $query;
             $result = $this->db->query($query);
-            return $result['sum'];
+            $result = $result->result_array();
+            return $result[0]['sum'];
 
         }
 
@@ -38,39 +41,15 @@
 		 * @todo       get all the year in sale_date
 		 * 
 		 */
-        function get_sold_fish(){
+        function get_fish_sold(){
             
             $result = array();
-            $years = get_all_year();
+            $years = $this->get_all_year();
             foreach( $years as $year){
-                $quantity = get_quantity_sold_in_year($year);
-                $result[] = array(
-                    "year"  => $year,
-                    "quantity" =>  $quantity
-                );
+                $result[] = $this->get_quantity_sold_in_year($year);
             }
+            return $result;
         }
-
-        /**
-		 * @author     Mamisoa
-		 * @todo       get the gap type of a list of values
-		 * 
-		 */
-        function get_Fish_sold(){
-        
-            $query = $this->db->get('sale_fish');
-            $results = array();
-            $result_array = $query->result_array();
-            foreach( $result_array as $row ){
-                $type = new Type_fish();
-                $type->id_type_fish 	= $row["id_type_fish"];
-                $type->name_type_fish 	= $row["name_type_fish"];
-                $type->maturity_period  = $row["maturity_period"];
-                $type->maturity_size 	= $row["maturity_size"];
-                $results[] = $type;
-            }
-        }
-
 	}
 
 ?>

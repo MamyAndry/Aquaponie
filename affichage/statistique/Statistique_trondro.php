@@ -10,7 +10,9 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Statistiques des Trondros</h4>
-                <canvas id="singelBarChart" width="500" height="250"></canvas>
+                <canvas id="singelBarChart" width="500" height="250">
+                    
+                </canvas>
             </div>
         </div>
     </div>
