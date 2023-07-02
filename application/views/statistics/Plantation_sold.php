@@ -2,7 +2,7 @@
     <div class="row">
         <div class="row title">
             <h3 class="text-center">
-                Statistics of Fish Sold:
+                Statistics of Plant Sold:
             </h3>
         </div>
     </div>
@@ -27,7 +27,7 @@
                 labels: year,
                 datasets: [
                     {
-                        label: "Quantity of Fish Sold",
+                        label: "Quantity of Plant Sold",
                         data: sold,
                         borderColor: "rgba(117, 113, 249, 0.9)",
                         borderWidth: "0",
