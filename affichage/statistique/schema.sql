@@ -28,6 +28,13 @@ from field_plantation as f_p
          join type_plantation as t_p
               on f_p.id_type_plantation = t_p.id_type_plantation;
 
+create or replace view details_plantation_sold
+as
+select v.id_field_plantation , v.name_type_plantation  , s_f.quantity_sold , s_f.sale_date 
+from details_fields as v 
+    join sale_plantation as s_f
+        on v.id_field_plantation = s_f.id_field_plantation;
+
 
 create or replace view details_fish_sold
 as
