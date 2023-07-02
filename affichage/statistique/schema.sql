@@ -27,3 +27,16 @@ select t_p.*,f_p.id_field_plantation, f_p.id_field, f_p.density, f_p.surface_cov
 from field_plantation as f_p
          join type_plantation as t_p
               on f_p.id_type_plantation = t_p.id_type_plantation;
+
+
+create or replace view details_fish_sold
+as
+select v.id_pond  , v.name_type_fish  , s_f.quantity_sold , s_f.sale_date 
+from v_fishs_ponds as v 
+    join sale_fish as s_f
+        on v.id_fish_pond = s_f.id_fish_pond;
+
+select * from fish_pond;
+insert into fish_pond values('FIP3', 'FISH0001' , 'POND0001' , 't' ,70 , '2023-06-25');
+insert into sale_fish values('SFS3', 'FIP2' , 3 , '2023-07-25');
+delete from fish_pond where id_fish_pond = 'FIP3';

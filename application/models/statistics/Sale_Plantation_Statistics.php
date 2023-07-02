@@ -1,6 +1,6 @@
 <?php
 	
-	class Sale_Fish_Statistics extends CI_Model{
+	class Sale_Plantation_Statistics extends CI_Model{
         
         /**
 		 * @author     Mamisoa
@@ -10,7 +10,7 @@
         function get_all_year(){
             
             $result = array();
-            $query = "SELECT DISTINCT EXTRACT('year' from sale_date) as year FROM sale_fish";
+            $query = "SELECT DISTINCT EXTRACT('year' from sale_date) as year FROM sale_plantation";
             // echo $query;
             $result_array = $this->db->query($query);
             $result_array = $result_array->result_array();
@@ -22,12 +22,12 @@
 
         /**
 		 * @author     Mamisoa
-		 * @todo       get the quantity of fish sold in a year
+		 * @todo       get the quantity of plantation sold in a year given
 		 * 
 		 */
         function get_quantity_sold_in_year($year){
             
-            $query = "SELECT SUM(quantity_sold) FROM sale_fish WHERE EXTRACT('year' from sale_date) = %s";
+            $query = "SELECT SUM(quantity_sold) FROM sale_plantation WHERE EXTRACT('year' from sale_date) = %s";
             $query = sprintf($query , $year);
             // echo $query;
             $result = $this->db->query($query);
@@ -41,7 +41,7 @@
 		 * @todo       get all the year in sale_date
 		 * 
 		 */
-        function get_fish_sold(){
+        function get_plantation_sold(){
             
             $result = array();
             $years = $this->get_all_year();
@@ -51,28 +51,8 @@
             return $result;
         }
 
-        /**
-		 * @author     Mamisoa
-		 * @todo       get the details of all sale
-		 * 
-		 */
-        function details_sale(){
-         
-            $result = array();
-            $query = "SELECT * FROM details_fish_sold";
-            // echo $query;
-            $result_array = $this->db->query($query);
-            $result_array = $result_array->result_array();
-            foreach( $result_array as $row){
-                $result[] = array(
-                    'pond'=> $row['id_pond'],
-                    'name_type_fish'=> $row['name_type_fish'],
-                    'quantity_sold'=> $row['quantity_sold'],
-                    'sale_date'=> $row['sale_date']
-                );
-            }
-            // var_dump($result);
-            return $result;   
+        function get_sale_details(){
+            
         }
 	}
 
