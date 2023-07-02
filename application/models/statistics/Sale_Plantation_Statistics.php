@@ -51,8 +51,28 @@
             return $result;
         }
 
-        function get_sale_details(){
-            
+        /**
+		 * @author     Mamisoa
+		 * @todo       get the details of all plantation sale
+		 * 
+		 */
+        function details_sale(){
+         
+            $result = array();
+            $query = "SELECT * FROM details_plantation_sold";
+            // echo $query;
+            $result_array = $this->db->query($query);
+            $result_array = $result_array->result_array();
+            foreach( $result_array as $row){
+                $result[] = array(
+                    'field'=> $row['id_field_plantation'],
+                    'name_type_plantation'=> $row['name_type_plantation'],
+                    'quantity_sold'=> $row['quantity_sold'],
+                    'sale_date'=> $row['sale_date']
+                );
+            }
+            // var_dump($result);
+            return $result;   
         }
 	}
 

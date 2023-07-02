@@ -53,7 +53,7 @@
 
         /**
 		 * @author     Mamisoa
-		 * @todo       get the details of all sale
+		 * @todo       get the details of all fish sale
 		 * 
 		 */
         function details_sale(){
