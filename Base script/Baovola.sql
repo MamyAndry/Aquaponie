@@ -162,7 +162,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
 
     INSERT INTO fish_pond (id_fish_pond, id_type_fish, id_pond, fish_gender, quantity, insertion_date) VALUES
     ('FIP1','FISH0001','POND0001',TRUE,56,TO_DATE('06-20-220023', 'MM-dd-YYYY')),
-    ('FIP2','FISH0001','POND002002',FALSE,50,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
+    ('FIP2','FISH0001','POND0002',FALSE,50,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
     ('FIP3','FISH0002','POND0003',TRUE,44,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
     ('FIP4','FISH0002','POND0004',FALSE,48,TO_DATE('06-20-2023', 'MM-dd-YYYY'));
 

@@ -29,22 +29,17 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <?php echo $header_ponds; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-water"></i>
-                Ponds
+                Fields
               </a>
                 <ul class="dropdown-menu">
                     <li >
                         <a href="<?php echo site_url('pond/Ponds'); ?>" class="dropdown-item">
-                            All
+                            ponds
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-item">
-                            Fish
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-item">
-                            Plantation
+                        <a href="<?php echo site_url('field/Field'); ?>" class="dropdown-item">
+                            plantation
                         </a>
                     </li>
                 </ul>
