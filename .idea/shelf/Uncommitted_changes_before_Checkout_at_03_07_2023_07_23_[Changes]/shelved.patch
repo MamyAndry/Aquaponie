@@ -1,0 +1,13 @@
+Index: application/controllers/Sale_Fish_Statistics.php
+===================================================================
+diff --git a/application/controllers/Sale_Fish_Statistics.php b/application/controllers/Sale_Fish_Statistics.php
+--- a/application/controllers/Sale_Fish_Statistics.php	
++++ b/application/controllers/Sale_Fish_Statistics.php	
+@@ -10,6 +10,7 @@
+         $this->data['header_product'] = "text-white";
+         $this->data['header_ponds'] = "text-secondary";
+         $this->data['header_home'] = "text-secondary";
++        $this->data['header_statistcs'] = "text-secondary";
+ 	}
+ 
+ 	// To list all type of fishes

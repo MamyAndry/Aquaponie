@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1e0e14d-175f-4da1-9b0b-2c8fd6a67802" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/affichage/statistique/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/affichage/statistique/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_07_2023_07_23_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_07_2023_07_23_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_07_2023_07_23__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_07_2023_07_23__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci_session5v30hdatn6ug33fsentjpi14o6comrol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci_sessionhlastjno3ga5i02gnacb0heses13051u" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci_sessioniuc5b6s9bgu8s194b8ccu20qs1d5g4oh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci_sessionk6t1aognk0b1rdtbhs5u1oimi5iva6ih" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Fish.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Plantation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Plantation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/field/Field.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/field/Field.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/pond/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Fish.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/statistics/Fish_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/statistics/Fish_Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/statistics/Plantation_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/statistics/Plantation_Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fields/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fields/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fish/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fish/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/plantation/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/plantation/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ponds/fish/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ponds/fish/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ponds/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ponds/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/Header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,13 +34,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="pond" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2S4BDmxwJEpPvsem4kh1lhe0aq8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1e0e14d-175f-4da1-9b0b-2c8fd6a67802" name="Changes" comment="" />
+      <created>1688395863143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688395863143</updated>
+      <workItem from="1688395869462" duration="1202000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
