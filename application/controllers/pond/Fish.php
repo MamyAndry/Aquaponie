@@ -12,6 +12,7 @@
             $this->data['header_product'] 	= "text-secondary";
             $this->data['header_ponds'] 	= "text-white";
             $this->data['header_home'] 		= "text-secondary";
+            $this->data['header_statistcs'] = "text-secondary";;
 		}
 
 		public function index(){

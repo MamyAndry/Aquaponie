@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row">
+	<div class="row justify-content-center">
 		<div class="row text-title p-2 m-3">
 			<h3 class="text-center text-decoration-underline">
 				Lists of all ponds

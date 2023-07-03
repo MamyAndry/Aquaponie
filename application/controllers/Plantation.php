@@ -10,6 +10,7 @@ class Plantation extends CI_Controller
         $this->data['header_product'] = "text-white";
         $this->data['header_ponds'] = "text-secondary";
         $this->data['header_home'] = "text-secondary";
+        $this->data['header_statistcs'] = "text-secondary";
     }
 
     // To list all type of fishes

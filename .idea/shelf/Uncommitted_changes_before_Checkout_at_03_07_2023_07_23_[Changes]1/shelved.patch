@@ -1,0 +1,85 @@
+Index: application/controllers/Plantation.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/application/controllers/Plantation.php b/application/controllers/Plantation.php
+--- a/application/controllers/Plantation.php	
++++ b/application/controllers/Plantation.php	
+@@ -10,6 +10,7 @@
+         $this->data['header_product'] = "text-white";
+         $this->data['header_ponds'] = "text-secondary";
+         $this->data['header_home'] = "text-secondary";
++        $this->data['header_statistcs'] = "text-secondary";
+     }
+ 
+     // To list all type of fishes
+Index: application/controllers/Fish.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/application/controllers/Fish.php b/application/controllers/Fish.php
+--- a/application/controllers/Fish.php	
++++ b/application/controllers/Fish.php	
+@@ -12,6 +12,7 @@
+         $this->data['header_product'] = "text-white";
+         $this->data['header_ponds'] = "text-secondary";
+         $this->data['header_home'] = "text-secondary";
++        $this->data['header_statistcs'] = "text-secondary";
+ 	}
+ 
+ 	// To list all type of fishes
+Index: application/controllers/field/Field.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/application/controllers/field/Field.php b/application/controllers/field/Field.php
+--- a/application/controllers/field/Field.php	
++++ b/application/controllers/field/Field.php	
+@@ -10,6 +10,7 @@
+         $this->data['header_product'] = "text-secondary";
+         $this->data['header_ponds'] = "text-secondary";
+         $this->data['header_home'] = "text-secondary";
++        $this->data['header_statistcs'] = "text-secondary";
+     }
+ 
+     public function index(){
+Index: application/controllers/pond/Ponds.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/application/controllers/pond/Ponds.php b/application/controllers/pond/Ponds.php
+--- a/application/controllers/pond/Ponds.php	
++++ b/application/controllers/pond/Ponds.php	
+@@ -13,6 +13,7 @@
+             $this->data['header_product'] 	= "text-secondary";
+             $this->data['header_ponds'] 	= "text-white";
+             $this->data['header_home'] 		= "text-secondary";
++            $this->data['header_statistcs'] = "text-secondary";
+ 		}
+ 
+ 		public function index(){
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -2,7 +2,11 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="c1e0e14d-175f-4da1-9b0b-2c8fd6a67802" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/affichage/statistique/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/affichage/statistique/schema.sql" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/application/controllers/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Fish.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/application/controllers/Plantation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Plantation.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/application/controllers/Sale_Fish_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Sale_Fish_Statistics.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/application/controllers/field/Field.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/field/Field.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
