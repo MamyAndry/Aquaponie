@@ -286,7 +286,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('RPD'||nextval('s_report_pond'), 'FIP1', to_date('2023-06-23','yyyy-mm-dd'), 57, 1),
         ('RPD'||nextval('s_report_pond'), 'FIP2', to_date('2023-06-23','yyyy-mm-dd'), 51, 1),
         ('RPD'||nextval('s_report_pond'), 'FIP3', to_date('2023-06-23','yyyy-mm-dd'), 47, 0),
-        ('RPD'||nextval('s_report_pond'), 'FIP4', to_date('2023-06-23','yyyy-mm-dd'), 49, 1),
+        ('RPD'||nextval('s_report_pond'), 'FIP4', to_date('2023-06-23','yyyy-mm-dd'), 49, 1);
 
 --    mbola si vita
     insert into report_field (id_report_field, id_field_plantation, report_date_field, plant_weight, density, surface_covered) values 
