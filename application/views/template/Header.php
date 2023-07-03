@@ -8,12 +8,6 @@
           </a>
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li class="nav-item">
-              <a href="#" class="nav-link <?php echo $header_home; ?>">
-                <i class="fa fa-home"></i>
-                Home
-              </a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle <?php echo $header_product; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-tree"></i>
@@ -34,6 +28,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <?php echo $header_ponds; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-water"></i>
                 Ponds
               </a>
                 <ul class="dropdown-menu">
@@ -56,6 +51,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <?php echo $header_statistcs; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-chart-bar"></i>
                 Statistics
               </a>
                 <ul class="dropdown-menu">
