@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="row title">
             <h3 class="text-center">
                 Statistics of Fish Sold:
             </h3>
         </div>
-    </div>
-    <div class="row m-auto w-50">
-        <div class="card">
-            <div class="card-body">
-                <canvas id="singelBarChart" width="750" height="500"></canvas>
+        <div class="row justify-content-center">
+            <div class="card col-md-6 col-lg-6 col-6">
+                <div class="card-body">
+                    <canvas id="singelBarChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
