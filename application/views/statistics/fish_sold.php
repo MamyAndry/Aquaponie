@@ -6,7 +6,7 @@
             </h3>
         </div>
     </div>
-    <div class="row m-auto w-50">
+    <div class="row m-auto col-lg-5">
         <div class="card">
             <div class="card-body">
                 <canvas id="singelBarChart" width="750" height="500"></canvas>
@@ -19,18 +19,17 @@
 <script>
     var year = <?php echo json_encode($year); ?>;
     var sold = <?php echo json_encode($sold); ?>;
-    var color = ["#e8c3b9"];
+    var color = ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"];
     var ctx = document.getElementById("singelBarChart");
-        ctx.height = 200;
+        ctx.height = 500;
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: year,
                 datasets: [
                     {
                         label: "Quantity of Fish Sold",
                         data: sold,
-                        borderColor: color,
                         borderWidth: "0",
                         backgroundColor: color
                     }
