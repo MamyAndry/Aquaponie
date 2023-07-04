@@ -185,6 +185,12 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
 
 
     INSERT INTO fish_pond (id_fish_pond, id_type_fish, id_pond, fish_gender, quantity, insertion_date) VALUES
+<<<<<<< HEAD
+    ('FIP1','FISH0001','POND0001',TRUE,56,TO_DATE('06-20-220023', 'MM-dd-YYYY')),
+    ('FIP2','FISH0001','POND0002',FALSE,50,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
+    ('FIP3','FISH0002','POND0003',TRUE,44,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
+    ('FIP4','FISH0002','POND0004',FALSE,48,TO_DATE('06-20-2023', 'MM-dd-YYYY'));
+=======
     ('FIP1','FISH0001','POND0001',TRUE,56,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
     ('FIP2','FISH0001','POND0002',FALSE,50,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
     ('FIP3','FISH0002','POND0003',TRUE,44,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
@@ -201,6 +207,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
     ('FIP2','FISH0001','POND0002',FALSE,55,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
     ('FIP3','FISH0002','POND0003',TRUE,49,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
     ('FIP4','FISH0002','POND0004',FALSE,50,TO_DATE('03-01-2023', 'MM-dd-YYYY'));
+>>>>>>> 23d2539f83088322a7c8a5b3d9792d3b24da8d6f
 
     insert into report_pond (id_report_pond, id_fish_pond, report_date_pond, alive_fish_number, dead_fish_number) values
         ('RPD'||nextval('s_report_pond'), 'FIP1', to_date('2015-02-05','yyyy-mm-dd'), 54, 2),

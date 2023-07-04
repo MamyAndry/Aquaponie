@@ -8,7 +8,7 @@ class Field extends CI_Controller
         $unities = get_unities();
         $this->data['unities'] = $unities;
         $this->data['header_product'] 	= "text-secondary";
-        $this->data['header_ponds'] 	= "text-secondary";
+        $this->data['header_ponds'] 	= "text-white";
         $this->data['header_home'] 		= "text-secondary";
         $this->data['header_statistcs'] = "text-secondary";
     }
