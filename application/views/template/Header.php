@@ -2,9 +2,9 @@
     <div class="px-3 py-2 bg-dark text-white">
       <div class="container-fluid">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto col-lg-2 col-md-2 col-sm-1 col-3 justify-content-md-start justify-content-center">
             <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>-->
-              <i class="fa fa-sad-cry"></i>
+              <img src="<?php echo base_url('assets/image/AquaponicV2.png')?>" class="col-lg-2 col-md-2 col-3">
           </a>
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
