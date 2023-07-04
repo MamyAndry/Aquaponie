@@ -112,3 +112,62 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
     id_type_plantation varchar(8) references type_plantation(id_type_plantation),
     unit_plant_price double precision not null --Prix par gramme
 );
+
+
+-- Authentification
+
+-- Authentification
+
+create table profile(
+    id_profile varchar(8) primary key ,
+    name varchar(20)
+);
+
+insert into profile(id_profile, name) values('PRO0001', 'Admin');
+insert into profile(id_profile, name) values('PRO0002', 'Pond manager');
+
+create table aqua_user(
+    id_user varchar(8) primary key ,
+    id_profile varchar(8) references profile(id_profile),
+    name varchar(20),
+    identifier varchar(20),     -- identifiant
+    password varchar(200)       -- Mot de passe
+);
+
+select * from profile;
+
+select * from sale_fish ;
+
+SELECT SUM(quantity_sold) FROM sale_fish WHERE EXTRACT('year' from sale_date) = 2023;
+
+
+drop view v_fish_month_statistic;
+create or replace view v_fish_month_statistic as
+SELECT
+    id_type_fish,
+    to_char(sale_date,'mm') || '-' || extract('year' from sale_date) as identifier,
+    SUM(quantity_sold) AS quantity_sold
+FROM
+    (select sale_fish.*, fp.id_type_fish from sale_fish
+    join public.fish_pond fp on sale_fish.id_fish_pond = fp.id_fish_pond) a
+GROUP BY
+    id_type_fish,
+    to_char(sale_date,'mm'),
+    extract('year' from sale_date)
+ORDER BY
+    to_char(sale_date,'mm'),
+    extract('year' from sale_date),
+    id_type_fish;
+
+select * from profile;
+insert into aqua_user(id_user, id_profile, name, identifier, password) values ('AUR0001', 'PRO0001', 'rakharrs', 'rakharrs', 'pixel');
+select * from fish_pond;
+
+
+select sale_fish.*, fp.id_type_fish from sale_fish
+    join public.fish_pond fp on sale_fish.id_fish_pond = fp.id_fish_pond
+
+select * from sale_fish;
+
+select * from type_fish;
+select * from v_fish_month_statistic;
