@@ -171,3 +171,9 @@ select * from sale_fish;
 
 select * from type_fish;
 select * from v_fish_month_statistic;
+
+select * from report_field;
+
+select * from field_plantation;
+
+select * from price_fish;
