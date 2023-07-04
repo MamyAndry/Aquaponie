@@ -33,7 +33,6 @@
             $result = $this->db->query($query);
             $result = $result->result_array();
             return $result[0]['sum'];
-
         }
 
         /**
@@ -50,6 +49,7 @@
             }
             return $result;
         }
+            
 
         /**
 		 * @author     Mamisoa

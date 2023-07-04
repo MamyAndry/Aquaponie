@@ -78,5 +78,35 @@
             }
             return $plantations;
         }
+
+        public function get_details_field_by_id_field_plantation( $id_field ){
+            if ( empty( $id_field ) ) throw new Exception("This field doesn't exist");
+            $sql = "select * from %s where id_field_plantation like %s";
+            $sql = sprintf( $sql, "details_fields", $this->db->escape('%'.$id_field.'%'));
+            $sql = $this->db->query($sql);
+            $results = $sql->result_array();
+            $plantations = array();
+            foreach( $results as $row ){
+                $type = Field_Plantation::get_instance( $row );
+                $plantations[] = $type;
+            }
+            return $plantations;
+        }
+
+        public function get_number_plant( $id_field_plantation ){
+            if ( empty( $id_field_plantation ) ) throw new Exception("This field doesn't exist");
+            $result = 0;
+            $field = $this->get_details_field_by_id_field_plantation( $id_field_plantation );
+            if( !empty( $field ) ){
+                $result = $field[0]->density * $field[0]->surface_covered;
+            }
+            return $result;
+        }
+        public function add_number_plant( $fields ){
+            foreach ( $fields as $field ) {
+                $field->number_plant = $this->get_number_plant( $field->id_field_plantation );
+            }
+            return $fields;
+        }
 	}
 ?>

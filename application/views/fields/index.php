@@ -23,13 +23,13 @@
                                     </thead>
                                     <tbody>
                                     <tr >
-                                        <td class="p-2">Density</td>
-                                        <td class="text-end"> <?php echo $field_plantation->density; ?></td>
+                                        <td class="p-2">Surface covered</td>
+                                        <td class="text-end"> <?php echo $field_plantation->surface_covered; ?></td>
 
                                     </tr>
                                     <tr >
-                                        <td class="p-2">Surface covered per plants</td>
-                                        <td class="text-end"> <?php echo $field_plantation->surface_covered; ?></td>
+                                        <td class="p-2">Number of plants:</td>
+                                        <td class="text-end"> <?php echo $field_plantation->number_plant; ?> U</td>
 
                                     </tr>
                                     </tbody>
