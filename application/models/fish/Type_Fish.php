@@ -30,7 +30,7 @@
 		 * Sale stat(s) of this fish
 		 * 
 		 */
-		public $statistics;		
+		public static $statistics;		
 
 		/**
 		 *	@author Sarobidy - Manoary
@@ -172,6 +172,27 @@
 				throw new Exception("This type of fish doesn't exist in your data. May be you have forgotten to add it");
 			}
 			return ( count($byId) == 0 && count($byName) > 0 ) ? $byName : $byId;
+		}
+
+
+		/**
+		 * @author Yoann
+		 * 
+		 * Retrieving the statistic(s) 
+		 * [the quantity of fish sold] of all fish(es)
+		 * present in the 'aquaponie'
+		 * 
+		 * args : None
+		 * 
+		 * Just setting the variable statistics 
+		 * of Type_Fish class model
+		 * 
+		 */
+		public function obtain_statistics(){
+			$this->load->model('statistics/Fish_Statistic', 'stat');
+			$month_summary = $this->stat->get_all_by_month();
+			$this->statistics = $month_summary;
+			return $month_summary;
 		}
 
 
