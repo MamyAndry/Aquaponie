@@ -30,7 +30,7 @@
 		 * Sale stat(s) of this fish
 		 * 
 		 */
-		public static $statistics;		
+		public $statistics;		
 
 		/**
 		 *	@author Sarobidy - Manoary
