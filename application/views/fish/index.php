@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="row text-title p-2 my-3">
 			<h3 class="text-center text-decoration-underline">
@@ -9,7 +9,7 @@
 			<?php 
 
 				foreach( $fishes as $fish ){ ?>
-					<div class="card col-lg-4 shadow p-3 my-lg-2 col-md-5 offset-md-1 border-0  col-sm-12 " data-aos="fade-down">
+					<div class="card col-lg-3 shadow p-3 my-lg-2 col-md-5 offset-md-1 border-0  col-sm-12 " data-aos="fade-down">
 						<div class="card-body rounded">
 							<div class="row details-rows">
 								<div class="title-row row">
@@ -46,7 +46,10 @@
 						</div>
 					</div>
 			<?php } ?>
-			<div class="card col-lg-4 shadow p-3 my-lg-2 col-md-5 offset-md-1 border-0  col-sm-12 "  data-aos="zoom-in" data-aos-delay="1000">
+            <a href="#header" id="backToTopButton" class="btn-back-to-top position-fixed bottom-0 end-0 mb-4 me-4 col-1 d-none" style="z-index: 9999;">
+                <i class="fa fa-arrow-alt-circle-up display-1 text-dark-emphasis"></i>
+            </a>
+			<div class="card col-lg-3 shadow p-3 my-lg-2 col-md-5 offset-md-1 border-0  col-sm-12 "  data-aos="zoom-in" data-aos-delay="1000">
                 <div class="card-body">
                     <div class="row my-lg-5 my-md-3 my-sm-2 my-5">
                         <div class="img-fluid text-decoration-none text-center">

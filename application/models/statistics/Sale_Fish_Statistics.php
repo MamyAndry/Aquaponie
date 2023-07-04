@@ -10,7 +10,7 @@
         function get_all_year(){
             
             $result = array();
-            $query = "SELECT DISTINCT EXTRACT('year' from sale_date) as year FROM sale_fish";
+            $query = "SELECT DISTINCT EXTRACT('year' from sale_date) as year FROM sale_fish order by year";
             // echo $query;
             $result_array = $this->db->query($query);
             $result_array = $result_array->result_array();

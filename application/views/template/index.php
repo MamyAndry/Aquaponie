@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-behavior-smooth">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,5 +30,6 @@
 	</script>
     <script src="<?php echo base_url('assets/js/app.js')?>"></script>
     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/scroll.js')?>"></script>
 </body>
 </html>
