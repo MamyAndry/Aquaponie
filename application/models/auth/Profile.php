@@ -40,6 +40,28 @@
 			return $results;
 		}
 
+        /**
+         * 
+         * @author Yoann
+         * 
+         * Simple function to get the profile object from an id
+         * 
+         * Args : id of the profile
+         * 
+         */
+        public function get_profile($id){
+            $sql = "select * from profile where id_profile LIKE %s";
+            $sql = sprintf( $sql, $this->db->escape('%'.$id.'%'));
+            $query = $this->db->query($sql);
+            $row = $query->row();
+            if($row != NULL){
+                $profile = new Profile();
+                $profile->id_profile = $row["id_profile"];
+				$profile->name = $row["name"];
+				return $profile;
+            }else return NULL;
+        }
+
 	}
 
 ?>
