@@ -20,7 +20,7 @@
     var year = <?php echo json_encode($year); ?>;
     var sold = <?php echo json_encode($sold); ?>;
     var ctx = document.getElementById("singelBarChart");
-        ctx.height = 400;
+        ctx.height = 200;
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {

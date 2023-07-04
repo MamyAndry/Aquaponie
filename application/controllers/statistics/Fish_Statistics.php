@@ -20,7 +20,7 @@ class Fish_statistics extends CI_Controller {
 		$this->data['sold'] = $this->fish_statistics->get_fish_sold();
 		$this->data['details'] = $this->fish_statistics->details_sale();
 		$this->data['page_title'] = "Statistics of fish sold";
-		$this->data['body'] = 'statistics/Fish_sold';
+		$this->data['body'] = 'statistics/fish_sold';
 		$this->load->view('template/index' , $this->data);
 
 	}
