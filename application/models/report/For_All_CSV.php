@@ -10,21 +10,25 @@
 
 	class For_All_CSV extends CI_Model{
 
-		public function readCSV() {
+		public function readCSV($name, $number) {
 			$data = [];
-
-            // Vérifier si un fichier a été soumis
-			// echo ("coucouuu");
 
             if (isset($_POST['submit'])) {
                 // Vérifier si le fichier a été correctement uploadé
-                if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+                echo $name;
+                if (isset($_FILES[$name]) && $_FILES[$name]['error'] === UPLOAD_ERR_OK) {
                     // Ouvrir le fichier en mode lecture
-                    $file = fopen($_FILES['file']['tmp_name'], 'r');
+                    $file = fopen($_FILES[$name]['tmp_name'], 'r');
                     
                     // Parcourir le file ligne par ligne
                     while(($ligne = fgetcsv($file)) !== false){
                         $data[] = $ligne;
+                    }
+
+                    if(count($data) > $number){
+                        throw new Exception("Recheck the number of the columns, there are too many for this!");
+                    }else if(count($data) < $number){
+                        throw new Exception("There is not enough columns, please double check!");
                     }
 					
                     // Fermer le file
@@ -46,7 +50,7 @@
                 $size = $size + $data[$i][1];
             }
 
-            $resultat = [ $weight / count($data), $size/count($data) ];
+            $resultat = [ $weight /count($data), $size/count($data) ];
             return $resultat;
 		}
 

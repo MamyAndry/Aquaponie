@@ -17,6 +17,11 @@
 		public $id_pond;
 		public $capacity;
 
+		public function format_date($date)
+		{
+			return date("Y-m-d", strtotime($date));
+		}
+
 		// Inona daholo ny informations azo lalaovina ato
 
 		public function insert_fish_pond( $id_type_fish, $id_pond, $gender, $quantity, $when ){
@@ -33,15 +38,15 @@
 				throw new Exception("The date of insertion can't be empty");
 			}
 
-			$date = format_date($when);
+			$date = $this->format_date($when);
 			$id = create_primary_key(Fish_pond::$PREFIX, Fish_pond::$SEQUENCE, Fish_pond::$LENGTH);
 			$data = array(
-				'id' => $id,
+				'id_fish_pond' => $id,
 				'id_type_fish' => $id_type_fish,
 				'id_pond' => $id_pond,
 				'fish_gender' => $gender,
 				'quantity' => $quantity,
-				'insertion_date' => "to_date('".$date."', 'YYYY-mm-dd')"
+				'insertion_date' => $date
 			);
 
 			try{

@@ -10,7 +10,7 @@
 
 	class Sale_Fish extends CI_Model{
 		
-		public static $PREFIX = "SAF";
+		public static $PREFIX = "SFS";
 		public static $SEQUENCE = "s_sale_fish";
 		public static $LENGTH = 7;
 		public static $table = 'sale_fish';
