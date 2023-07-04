@@ -112,3 +112,26 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
     id_type_plantation varchar(8) references type_plantation(id_type_plantation),
     unit_plant_price double precision not null --Prix par gramme
 );
+
+
+-- Authentification
+
+-- Authentification
+
+create table profile(
+    id_profile varchar(8) primary key ,
+    name varchar(20)
+);
+
+insert into profile(id_profile, name) values('PRO0001', 'Admin');
+insert into profile(id_profile, name) values('PRO0002', 'Pond manager');
+
+create table aqua_user(
+    id_user varchar(8) primary key ,
+    id_profile varchar(8) references profile(id_profile),
+    name varchar(20),
+    identifier varchar(20),     -- identifiant
+    password varchar(200)       -- Mot de passe
+);
+
+select * from profile;
