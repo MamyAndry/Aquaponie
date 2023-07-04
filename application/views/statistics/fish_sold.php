@@ -21,7 +21,7 @@
     var sold = <?php echo json_encode($sold); ?>;
     var color = ["#e8c3b9"];
     var ctx = document.getElementById("singelBarChart");
-        ctx.height = 400;
+        ctx.height = 200;
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
