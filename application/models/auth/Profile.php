@@ -28,7 +28,6 @@
 		**/
         public function get_all_profile(){
 			$query = $this->db->get('profile');
-            echo $this->db->last_query($query);
 			$results = array();
 			$result_array = $query->result_array();
 			foreach( $result_array as $row ){

@@ -36,14 +36,30 @@
 			if($query->num_rows() > 0){
 				$user = new User();
 				$sign = $query->row();
-				$user->id_user = $sign['id_user'];
-				$user->id_profile = $sign['id_profile'];
-				$user->name = $sign['name'];
-				$user->identifier = $sign['identifier'];
-				$user->password = $sign['password'];
+				$user->id_user = $sign->id_user;
+				$user->id_profile = $sign->id_profile;
+				$user->name = $sign->name;
+				$user->identifier = $sign->identifier;
+				$user->password = $sign->password;
 				return $user;
 			}
 			else return false;
+		}
+
+		/**
+		 * 
+		 * @author Yoann
+		 * 
+		 * Sign in function
+		 * 
+		 */
+
+		public function sign_in($ident, $passwd){
+			$signed_in = $this->check_sign_in($ident, $passwd);
+			if($signed_in != false){
+				$_SESSION['user'] = $signed_in;
+				return true;
+			}return false;
 		}
 
 		/**
@@ -56,13 +72,25 @@
 		 * 
 		 */
 		public function is_connected(){
-			if(isset($_SESSION['user'])){
+			if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 				$user = $_SESSION['user'];
 				if(	$user->id_user == $this->id_user && 
 					$user->id_profile == $this->id_profile){
 					return true;
 				}
 			} return false;
+		}
+
+		/**
+		 * @author Yoann
+		 * 
+		 * Sign out function
+		 * 
+		 */
+		public function sign_out(){
+			if(isset($_SESSION['user'])){
+				$_SESSION['user'] = NULL;
+			}
 		}
         
 

@@ -25,6 +25,14 @@
 		public $size_max_average;
 
 		/**
+		 * @author Yoann
+		 * 
+		 * Sale stat(s) of this fish
+		 * 
+		 */
+		public $statistics;		
+
+		/**
 		 *	@author Sarobidy - Manoary
 		 * 	
 		 *  Insert Type Fish :
