@@ -19,19 +19,20 @@
 <script>
     var year = <?php echo json_encode($year); ?>;
     var sold = <?php echo json_encode($sold); ?>;
+    var color = ["#e8c3b9"];
     var ctx = document.getElementById("singelBarChart");
         ctx.height = 400;
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: year,
                 datasets: [
                     {
                         label: "Quantity of Fish Sold",
                         data: sold,
-                        borderColor: "rgba(117, 113, 249, 0.9)",
+                        borderColor: color,
                         borderWidth: "0",
-                        backgroundColor: "rgba(117, 113, 249, 0.5)"
+                        backgroundColor: color
                     }
                 ]
             },
@@ -41,7 +42,7 @@
                         ticks: {
                             beginAtZero: true
                         }
-                    }]
+                    }],
                 }
             }
         });
