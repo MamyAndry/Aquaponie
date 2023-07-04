@@ -33,7 +33,7 @@ create table type_fish(
 create table type_plantation(
     id_type_plantation varchar(10) primary key,
     name_type_plantation varchar(40) not null,
-    weight_max_baby double precision not null, -- en gram 
+    weight_max_baby double precision not null, -- en gram
     weight_max_semi_mature double precision not null
 );
 
@@ -108,7 +108,7 @@ create table price_fish( -- Le prix untaire designe pour une VENTE de fish
     id_price_fish varchar(10) primary key,
     id_type_fish varchar(8) references type_fish(id_type_fish),
     unit_fish_price double precision not null,
-    price_category int not null --gros:21 moyen:11 ou petit:1 
+    price_category int not null --gros:21 moyen:11 ou petit:1
 );
 
 create table price_plantation( -- Le prix untaire designe pour une VENTE de plantation
@@ -123,7 +123,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('FISH0002', 'Tilapia', 5, 25, 150, 800, 35, 50);
 
 
-    -- insert into type_fish (id_type_fish, name_type_fish, maturity_period, maturity_size, weight_max_little, weight_max_average, size_max_little, size_max_average) values 
+    -- insert into type_fish (id_type_fish, name_type_fish, maturity_period, maturity_size, weight_max_little, weight_max_average, size_max_little, size_max_average) values
     --     ('FISH0001', 'Tilapia', 24, 15, 250, 500, 5, 10); --valeur min : 24 mois -> 15 cm
 
     INSERT INTO type_plantation (id_type_plantation, name_type_plantation, weight_max_baby, weight_max_semi_mature)VALUES
@@ -141,7 +141,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('DPO'||nextval('s_pond_details'), 'POND0003', 'FISH0002', 175),
         ('DPO'||nextval('s_pond_details'), 'POND0004', 'FISH0002', 200);
 
-    insert into field(id_field) values 
+    insert into field(id_field) values
         ('FILD0001'),
         ('FILD0002'),
         ('FILD0003'),
@@ -185,26 +185,22 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
 
 
     INSERT INTO fish_pond (id_fish_pond, id_type_fish, id_pond, fish_gender, quantity, insertion_date) VALUES
-
-    ('FIP1','FISH0001','POND0001',TRUE,56,TO_DATE('06-20-220023', 'MM-dd-YYYY')),
-    ('FIP2','FISH0001','POND0002',FALSE,50,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
-    ('FIP3','FISH0002','POND0003',TRUE,44,TO_DATE('06-20-2023', 'MM-dd-YYYY')),
-    ('FIP4','FISH0002','POND0004',FALSE,48,TO_DATE('06-20-2023', 'MM-dd-YYYY'));
-
-    ('FIP5','FISH0001','POND0001',TRUE,60,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
-    ('FIP6','FISH0001','POND0002',FALSE,58,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
-    ('FIP7','FISH0002','POND0003',TRUE,52,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
-    ('FIP8','FISH0002','POND0004',FALSE,70,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
-    ('FIP9','FISH0001','POND0001',TRUE,45,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
-    ('FIP10','FISH0001','POND0002',FALSE,50,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
-    ('FIP11','FISH0002','POND0003',TRUE,55,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
-    ('FIP12','FISH0002','POND0004',FALSE,47,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
-    ('FIP13','FISH0001','POND0001',TRUE,60,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
-    ('FIP14','FISH0001','POND0002',FALSE,55,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
-    ('FIP15','FISH0002','POND0003',TRUE,49,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
-    ('FIP16','FISH0002','POND0004',FALSE,50,TO_DATE('03-01-2023', 'MM-dd-YYYY'));
-
-
+        ('FIP5','FISH0001','POND0001',TRUE,56,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
+        ('FIP6','FISH0001','POND0002',FALSE,50,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
+        ('FIP7','FISH0002','POND0003',TRUE,44,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
+        ('FIP8','FISH0002','POND0004',FALSE,48,TO_DATE('02-25-2015', 'MM-dd-YYYY')),
+        ('FIP9','FISH0001','POND0001',TRUE,60,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
+        ('FIP10','FISH0001','POND0002',FALSE,58,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
+        ('FIP11','FISH0002','POND0003',TRUE,52,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
+        ('FIP12','FISH0002','POND0004',FALSE,70,TO_DATE('01-15-2021', 'MM-dd-YYYY')),
+        ('FIP13','FISH0001','POND0001',TRUE,45,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
+        ('FIP14','FISH0001','POND0002',FALSE,50,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
+        ('FIP15','FISH0002','POND0003',TRUE,55,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
+        ('FIP16','FISH0002','POND0004',FALSE,47,TO_DATE('02-19-2022', 'MM-dd-YYYY')),
+        ('FIP17','FISH0001','POND0001',TRUE,60,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
+        ('FIP18','FISH0001','POND0002',FALSE,55,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
+        ('FIP19','FISH0002','POND0003',TRUE,49,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
+        ('FIP20','FISH0002','POND0004',FALSE,50,TO_DATE('03-01-2023', 'MM-dd-YYYY'));
     insert into report_pond (id_report_pond, id_fish_pond, report_date_pond, alive_fish_number, dead_fish_number) values
         ('RPD'||nextval('s_report_pond'), 'FIP1', to_date('2015-02-05','yyyy-mm-dd'), 54, 2),
         ('RPD'||nextval('s_report_pond'), 'FIP2', to_date('2015-02-05','yyyy-mm-dd'), 47, 3),
@@ -292,7 +288,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('RPD'||nextval('s_report_pond'), 'FIP4', to_date('2023-06-23','yyyy-mm-dd'), 49, 1);
 
 --    mbola si vita
-    insert into report_field (id_report_field, id_field_plantation, report_date_field, plant_weight, density, surface_covered) values 
+    insert into report_field (id_report_field, id_field_plantation, report_date_field, plant_weight, density, surface_covered) values
         ('RPF'||nextval('s_report_field'), 'FIL1', to_date('2023-07-20', 'yyyy-mm-dd'), 20, 22, 9.12),
         ('RPF'||nextval('s_report_field'), 'FIL2', to_date('2023-07-20', 'yyyy-mm-dd'), 15, 24, 9.10),
         ('RPF'||nextval('s_report_field'), 'FIL3', to_date('2023-07-20', 'yyyy-mm-dd'), 21, 21, 9.9),
@@ -301,9 +297,9 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('RPF'||nextval('s_report_field'), 'FIL6', to_date('2023-07-20', 'yyyy-mm-dd'), 20, 25, 8.9),
         ('RPF'||nextval('s_report_field'), 'FIL7', to_date('2023-07-20', 'yyyy-mm-dd'), 19, 27, 9.1),
         ('RPF'||nextval('s_report_field'), 'FIL8', to_date('2023-07-20', 'yyyy-mm-dd'), 11, 29, 8.5);
---    mbola tsy vita     
- 
-    insert into sale_fish (id_sale_fish, id_fish_pond, quantity_sold, sale_date) values 
+--    mbola tsy vita
+
+    insert into sale_fish (id_sale_fish, id_fish_pond, quantity_sold, sale_date) values
         ('SFS'||nextval('s_sale_fish'), 'FIP1', 8, to_date('2015-08-20', 'yyyy-mm-dd')),
         ('SFS'||nextval('s_sale_fish'), 'FIP2', 5, to_date('2015-08-20', 'yyyy-mm-dd')),
         ('SFS'||nextval('s_sale_fish'), 'FIP3', 9, to_date('2015-08-20', 'yyyy-mm-dd')),

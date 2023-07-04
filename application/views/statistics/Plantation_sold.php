@@ -6,7 +6,7 @@
             </h3>
         </div>
     </div>
-    <div class="row m-auto w-50">
+    <div class="row m-auto col-lg-7">
         <div class="card">
             <div class="card-body">
                 <canvas id="singelBarChart" width="750" height="500"></canvas>
@@ -23,7 +23,7 @@
     var ctx = document.getElementById("singelBarChart");
         ctx.height = 400;   
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: year,
                 datasets: [
@@ -40,7 +40,13 @@
                 scales: {
                     yAxis: [{
                         ticks: {
+                            min:0,
+                            max:40000000,
                             beginAtZero: true
+                        },
+                        gridLines: {
+                            display: true,
+                            color: color
                         }
                     }]
                 }
