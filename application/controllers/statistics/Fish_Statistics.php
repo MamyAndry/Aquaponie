@@ -36,7 +36,6 @@ class Fish_statistics extends CI_Controller {
 		$this->data['page_title'] = "Statistics of fish sold";
 		$this->data['body'] = 'statistics/fish_sold';
 		$this->load->view('template/index' , $this->data);
-
 	}
 
 
