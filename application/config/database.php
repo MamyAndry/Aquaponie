@@ -47,9 +47,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |				'ssl_key'    - Path to the private key file
 |				'ssl_cert'   - Path to the public key certificate file
 |				'ssl_ca'     - Path to the certificate authority file
+<<<<<<< HEAD
 |				'ssl_capath' - Path to a directory containing trusted CA certificates in PEM format
 |				'ssl_cipher' - List of *allowed* ciphers to be used for the encryption, separated by colons (':')
 |				'ssl_verify' - TRUE/FALSE; Whether verify the server certificate or not
+=======
+|				'ssl_capath' - Path to a directory containing trusted CA certificats in PEM format
+|				'ssl_cipher' - List of *allowed* ciphers to be used for the encryption, separated by colons (':')
+|				'ssl_verify' - TRUE/FALSE; Whether verify the server certificate or not ('mysqli' only)
+>>>>>>> 55dbcc92f9db58c2bb781c47c419183e6a0fb3bc
 |
 |	['compress'] Whether or not to use client compression (MySQL only)
 |	['stricton'] TRUE/FALSE - forces 'Strict Mode' connections
@@ -78,6 +84,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'postgres',
 	'password' => 'pixel',
+	'password' => 'postgres',
 	'database' => 'aquaponie',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
