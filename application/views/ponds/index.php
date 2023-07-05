@@ -5,7 +5,7 @@
         </form>
 
         <div class="text-end">
-            <a href="" class="btn btn-primary">
+            <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#report">
                 Add report
             </a>
         </div>
@@ -81,4 +81,37 @@
             </a>
         </div>
 	</div>
+</div>
+
+<div class="modal fade" id="report" tabindex="-1" aria-labelledby="report" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="report">Report</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?php echo base_url('report/Pond_Report') ?>" method="get" class="form" id="form-modal">
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <h3 class="text-center">
+                            Add report
+                        </h3>
+                    </div>
+                    <div class="my-3">
+                        <select name="fish" id="fish" class="form-select">
+                            <?php foreach ($ponds as $pond){ ?>
+                                <option value="<?php echo $pond->id_pond; ?>"> <?php echo $pond->id_pond; ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary"> Add </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
 </div>
