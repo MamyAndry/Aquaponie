@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="row">
         <div class="row title">
             <h3 class="text-center">
@@ -6,20 +6,29 @@
             </h3>
         </div>
     </div>
-    <div class="row m-auto">
-        <div class="row m-auto">
-            <div class="col-4 offset-2">
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="singelBarChart" width="750" height="500"></canvas>
-                    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-12 col-lg-5 my-5">
+            <div class="card">
+                <div class="card-header">
+                    <label for="type" class="form-label col-lg-2 col-sm-3 mx-2">Type:</label>
+                    <select id="type" name="type" class="form-select col-9">
+                        <option value="">Fish</option>
+                        <option value="">Plant</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                    <canvas id="singelBarChart" width="750" height="500"></canvas>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="monthly" width="750" height="500"></canvas>
-                    </div>
+        </div>
+        <div class="col-sm-12 col-lg-5 my-5">
+            <div class="card">
+                <div class="card-header">
+                    <label for="year" class="form-label col-sm-3 col-lg-1">Year:</label>
+                    <input id="year" type="text" name="year" placeholder="year" class="form-control col-sm-7 col-lg-12">
+                </div>
+                <div class="card-body">
+                    <canvas id="monthly" width="750" height="500"></canvas>
                 </div>
             </div>
         </div>

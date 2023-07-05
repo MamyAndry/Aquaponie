@@ -24,7 +24,7 @@
             </div>
             <?php
             foreach( $ponds as $pond ){ ?>
-                <div class="card col-lg-3 shadow p-3 my-2 col-md-5 mx-5 mx-sm-0 mx-md-3 mx-lg-5 border-0  col-sm-12 " data-aos="fade-down" data-aos-delay="100">
+                <div class="card col-lg-3 shadow p-3 my-2 col-md-5 mx-5 mx-sm-0 mx-md-3 mx-lg-5 border-0  col-sm-12      " data-aos="fade-down" data-aos-delay="100">
                     <div class="card-body rounded">
                         <div class="row details-rows">
                             <div class="title-row row">
@@ -47,9 +47,6 @@
                                     <tfoot>
                                         <tr>
                                         	<td>
-                                                <a href="" class="btn btn-dark">
-                                                    Add Fishes      
-                                                </a>   
                                             </td>
                                         	<td class="text-end">
                                         		<a href="<?php echo base_url('pond/Ponds/see')?>/<?php echo $pond->id_pond;?>" class="btn btn-primary">
