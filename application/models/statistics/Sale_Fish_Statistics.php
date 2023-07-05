@@ -57,7 +57,6 @@
 		 * 
 		 */
         function details_sale(){
-         
             $result = array();
             $query = "SELECT * FROM details_fish_sold";
             // echo $query;
