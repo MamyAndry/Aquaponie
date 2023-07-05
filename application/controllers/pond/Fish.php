@@ -13,7 +13,7 @@
             $this->data['unities'] 			= $unities;
             $this->data['header_product'] 	= "text-secondary";
             $this->data['header_ponds'] 	= "text-white";
-            $this->data['header_home'] 		= "text-secondary";
+            $this->data['he	ader_home'] 		= "text-secondary";
 		}
 
 		public function index(){

@@ -16,7 +16,8 @@ class Field extends CI_Controller
     public function index(){
         $field_plantations = $this->field_plantation->get_field_plantation();
 
-        $this->data['field_plantations'] = $field_plantations;
+        $this->data['field_plantations'] = $this->field_plantation->add_number_plant( $field_plantations );
+
         $this->data['page_title'] = "Field plantation pages";
         $this->data['body'] = 'fields/index';
 

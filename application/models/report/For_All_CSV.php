@@ -25,10 +25,17 @@
                         $data[] = $ligne;
                     }
 
-                    if(count($data) > $number){
-                        throw new Exception("Recheck the number of the columns, there are too many for this!");
-                    }else if(count($data) < $number){
-                        throw new Exception("There is not enough columns, please double check!");
+                    if (is_array($data)) {
+                        if (is_array($data[0])) {
+                
+                            if (count($data[0]) > $number) {
+                                throw new Exception("Recheck the number of columns, there are too many for this!");
+                            }
+                        } else {
+                            throw new Exception("Invalid data format, expecting a two-dimensional array.");
+                        }
+                    }else if(count($data) < 1){
+                        throw new Exception("Please recheck the data!");
                     }
 					
                     // Fermer le file
@@ -42,18 +49,27 @@
 			return $data;
         }
 
-		public function searchAverage($data){
+		public function searchAveragePond($data){
             $weight = 0;
             $size = 0;
 			for ($i=0; $i < count($data) ; $i++) { 
-                $weight = $weight + $data[$i][0];
-                $size = $size + $data[$i][1];
+                $weight = $weight + floatval($data[$i][0]);
+                $size = $size + floatval($data[$i][1]);
             }
 
             $resultat = [ $weight /count($data), $size/count($data) ];
             return $resultat;
 		}
 
+        public function searchAverageField($data){
+            $weight = 0;
+            var_dump($data);
+			for ($i=0; $i < count($data) ; $i++) { 
+                $weight = $weight + floatval($data[$i]);
+            }
+            $resultat = $weight / count($data);
+            return $resultat;
+		}
 	}
 
 
