@@ -1,5 +1,5 @@
 <header>
-    <main class="" style="box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.5);">
+    <main id="header" class="" style="box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.5);">
         <nav class="navbar navbar-dark bg-dark p-3" aria-label="Dark offcanvas navbar">
             <div class="container-fluid">
                 <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto col-lg-2 col-md-2 col-sm-1 col-3 justify-content-md-start justify-content-center">
@@ -45,7 +45,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo site_url('field/Fields'); ?>" class="dropdown-item">
+                                        <a href="<?php echo site_url('field/Field'); ?>" class="dropdown-item">
                                             Field
                                         </a>
                                     </li>
@@ -62,7 +62,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo site_url('statistcs/Plantation_statistics'); ?>" class="dropdown-item">
+                                        <a href="<?php echo site_url('statistics/Plantation_statistics'); ?>" class="dropdown-item">
                                             Plantation
                                         </a>
                                     </li>

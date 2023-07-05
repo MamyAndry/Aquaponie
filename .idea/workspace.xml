@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ec9092cb-16bf-42fe-84de-d28bb889f872" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Fish.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Plantation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Plantation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/auth/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/auth/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/field/Field.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/field/Field.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/pond/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Fish.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/report/Field_Report.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/report/Field_Report.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/report/Pond_Report.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/report/Pond_Report.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/sale/Fish_Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/sale/Fish_Sale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/statistics/Fish_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/statistics/Fish_Statistics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/statistics/Plantation_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/statistics/Plantation_Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/cache/sessions/ci_sessionv8c99qj4mi6ngo4dt5qajq76bmbfem22" beforeDir="false" afterPath="$PROJECT_DIR$/application/cache/sessions/ci_sessionv8c99qj4mi6ngo4dt5qajq76bmbfem22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fields/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fields/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fish/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fish/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/plantation/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/plantation/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ponds/fish/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ponds/fish/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ponds/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ponds/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/statistics/Fish_sold.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/statistics/Fish_sold.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/template/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/Header.php" afterDir="false" />
     </list>
