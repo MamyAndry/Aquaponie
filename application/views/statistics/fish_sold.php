@@ -56,6 +56,28 @@
     });
 
     // Monthly
-
-    
+    monthly.height = 500;
+    var myChart = new Chart(monthly, {
+        type: 'bar',
+        data: {
+            labels: month_identifier,
+            datasets: [
+                {
+                    label: "Quantity of Fish Sold by month",
+                    data: month_value,
+                    borderWidth: "0",
+                    backgroundColor: color[2]
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxis: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+            }
+        }
+    });
 </script>

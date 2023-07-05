@@ -32,7 +32,7 @@ class Pond_Report extends CI_Controller {
         $dead = $this->input->post('dead');
         $id_fish_pond = $this->input->post('id_fish_pond');
         $data = $this->all_csv->readCSV('category',2);
-		$somme = $this->all_csv->searchAverage($data);
+		$somme = $this->all_csv->searchAveragePond($data);
 		$this->report_pond->insert_report_pond($somme, $id_fish_pond, $date, $alive, $dead);
 		redirect(base_url('report/Pond_Report'));
     }

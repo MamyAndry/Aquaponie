@@ -1,10 +1,11 @@
 --get all pond id
-create view v_get_pond as 
-    select id_pond from pond
+
+create or replace view v_get_pond as 
+    select id_pond from pond;
 
 --get the recent fish_pond of one pond
-    create function f_get_recent_fish_pond(id_pond_seak varchar(8))
-    returns table (id_fish_pond int)
+    create  or replace function f_get_recent_fish_pond(id_pond_seak varchar(8))
+    returns table (id_fish_pond varchar(8))
     language plpgsql
     as 
     $$
@@ -19,10 +20,10 @@ create view v_get_pond as
 
 
 --get the last report of one fish_pond
-create function f_get_last_fish_pond_report(id_recent_fish_pond int)
+create or replace function f_get_last_fish_pond_report(id_recent_fish_pond varchar(8))
     returns table (
-        id_report_pond int,
-        id_fish_pond int ,
+        id_report_pond varchar(8),
+        id_fish_pond varchar(8) ,
         report_date_pond date,
         fish_number int,
         category int
@@ -40,7 +41,7 @@ create function f_get_last_fish_pond_report(id_recent_fish_pond int)
     $$;
 
 --get all the saling after the date report of one fish_pond
-    create function f_get_count_last_fish_pond_saling(id_recent_fish_pond int)
+    create or replace function f_get_count_last_fish_pond_saling(id_recent_fish_pond varchar(8))
         returns table (fish_sale bigint)
 
         language plpgsql
@@ -48,16 +49,21 @@ create function f_get_last_fish_pond_report(id_recent_fish_pond int)
         $$
         declare
             last_date_report_pond date;
+            quantity bigint;
         begin
             select report_date_pond into last_date_report_pond from f_get_last_fish_pond_report(id_recent_fish_pond);
+            select sum(quantity_sold)  into quantity from sale_fish where id_fish_pond = id_recent_fish_pond and sale_date > last_date_report_pond;
+            if quantity is null then
+                quantity = 0;
+            end if;
             return query
-            select sum(quantity_sold)  from sale_fish where id_fish_pond = id_recent_fish_pond and sale_date > last_date_report_pond;
-
+            select quantity;
+            
         end;
         $$;
 
 --get actual number of fish in one fish_pond including those are saling
-create function f_get_actual_fish_pond_number(id_recent_fish_pond int)
+create or replace function f_get_actual_fish_pond_number(id_recent_fish_pond varchar(8))
     returns table(fish_actual_number bigint)
 
     language plpgsql
@@ -76,16 +82,15 @@ create function f_get_actual_fish_pond_number(id_recent_fish_pond int)
     end;
     $$;
 
-create function f_actual_pond_state()
+create or replace function f_actual_pond_state()
     returns table(actual_pond_state bigint)
-
     language plpgsql
     as 
     $$
     declare
         fish_number bigint = 0;
         temp_number bigint;
-        fish_pond int;
+        fish_pond varchar(8);
         pond VARCHAR(8); 
     begin
         for pond in select id_pond from v_get_pond
@@ -100,3 +105,4 @@ create function f_actual_pond_state()
         select fish_number;
     end;
     $$;
+

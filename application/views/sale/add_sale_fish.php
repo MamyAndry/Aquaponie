@@ -21,11 +21,11 @@
                 <form class="form-control justify-content-center" method="POST" action="<?php echo site_url('sale/Fish_Sale/insert_sale_fish');?>" enctype="multipart/form-data">
                     <div class="row mt-4 mb-3">
                         <div class="row mt-2 mb-3" >
-                            <label for="pond" class="form-label w-25">Fish Pond</label>
-                            <select name="id_fish_pond" id="id_fish_pond" name="id_fish_pond" class="form-select w-75">
+                            <label for="pond" class="form-label w-25">Pond</label>
+                            <select name="id_pond" id="id_pond" name="id_pond" class="form-select w-75">
                                 <?php foreach( $ponds as $pond ){ ?>
-                                    <option value="<?php echo $pond->id_fish_pond; ?>">
-                                <?php echo $pond->id_fish_pond; ?>
+                                    <option value="<?php echo $pond->id_pond; ?>">
+                                <?php echo $pond->id_pond; ?>
                                     </option>
                                 <?php } ?>
                             </select>

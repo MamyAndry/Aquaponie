@@ -103,6 +103,10 @@
 			$this->max_quantity = $data["max_quantity"];
 		}
 
+		public function get_fish_actual_number(){
+			$number = $this->db->get("f_actual_pond_state");
+			return $number->result();
+		}
 	}
 
 
