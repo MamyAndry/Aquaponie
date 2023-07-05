@@ -1,3 +1,17 @@
+<div class="px-3 py-2 border-bottom mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+            <a href="" class="btn btn-primary">
+                Add report
+            </a>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="row text-title p-2 m-3">
