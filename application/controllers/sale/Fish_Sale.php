@@ -8,9 +8,12 @@ class Fish_Sale extends CI_Controller {
 		parent::__construct();
 		$this->load->model('ponds/Pond' , 'pond');
 		$this->load->model('fish/Sale_Fish','sale_fish');
-        $this->data['header_product'] = "text-white";
-        $this->data['header_ponds'] = "text-secondary";
-        $this->data['header_home'] = "text-secondary";
+        $this->data['header_product'] 	= "";
+        $this->data['header_ponds'] 	= "";
+        $this->data['header_home'] 		= "";
+        $this->data['header_statistics'] = "";
+        $this->data['header_report'] = "";
+        $this->data['header_sale'] = "active";
 	}
 
 	public function index(){

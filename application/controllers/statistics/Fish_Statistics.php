@@ -8,10 +8,12 @@ class Fish_statistics extends CI_Controller {
 		parent::__construct();
 		$this->load->model('statistics/Sale_Fish_Statistics' , 'fish_statistics');
 		$this->load->model('fish/Type_Fish' , 'fish');
-        $this->data['header_product'] 	= "text-secondary";
-        $this->data['header_ponds'] 	= "text-secondary";
-        $this->data['header_home'] 		= "text-secondary";
-        $this->data['header_statistcs'] = "text-white";
+        $this->data['header_product'] 	= "";
+        $this->data['header_ponds'] 	= "";
+        $this->data['header_home'] 		= "";
+        $this->data['header_statistics'] = "active";
+        $this->data['header_report'] = "";
+        $this->data['header_sale'] = "";
 	}
 
 	// To list all type of fishes
