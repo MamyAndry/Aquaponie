@@ -17,10 +17,14 @@ class Field_Report extends CI_Controller {
 	public function index(){
 
 		$this->data['ponds'] = $this->fish_pond->get_fish_ponds();
-		$this->data['page_title'] = "Insert Report Pond";
+		$this->data['page_title'] = "Insert Report Field";
 		$this->data['body'] = 'report/Insert_report_pond';
 		$this->load->view('template/index' , $this->data);
 
+	}
+
+	public function save(){
+		
 	}
 
     public function insert_report_field(){

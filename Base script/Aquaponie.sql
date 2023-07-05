@@ -177,3 +177,11 @@ select * from report_field;
 select * from field_plantation;
 
 select * from price_fish;
+
+select * from report_field;
+
+select * from details_fields;
+
+
+
+select * from field_plantation;
