@@ -10,7 +10,7 @@ class Fish_Statistic extends CI_Model{
         * 	
         * Getting all statistic by month and by fish
         * 
-        * args : none
+        * args : none;
         * 
     **/
     public function get_all_by_month(){
