@@ -19,7 +19,7 @@ class Fish_statistics extends CI_Controller {
 
 		$this->data['year'] = $this->fish_statistics->get_all_year();
 		$this->data['sold'] = $this->fish_statistics->get_fish_sold();
-		$this->fish->obtain_statistics();
+		$this->fish->obtain_statistics();;
 		
 		$monthly_identifier = array();
 		$monthly_value = array();
