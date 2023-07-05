@@ -7,10 +7,12 @@ class Plantation_statistics extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('statistics/Sale_Plantation_Statistics' , 'plantation_statistics');
-        $this->data['header_product'] 	= "text-secondary";
-        $this->data['header_ponds'] 	= "text-secondary";
-        $this->data['header_home'] 		= "text-secondary";
-        $this->data['header_statistcs'] = "text-white";
+        $this->data['header_product'] 	= "";
+        $this->data['header_ponds'] 	= "";
+        $this->data['header_home'] 		= "";
+        $this->data['header_statistics'] = "active";
+        $this->data['header_report'] = "";
+        $this->data['header_sale'] = "";
 	}
 
 	// To get the quantity of fishes sold in the year

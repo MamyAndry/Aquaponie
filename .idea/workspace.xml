@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec9092cb-16bf-42fe-84de-d28bb889f872" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/statistics/fish_sold.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/statistics/fish_sold.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Fish.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Plantation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Plantation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/auth/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/auth/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/field/Field.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/field/Field.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/pond/Fish.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Fish.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/pond/Ponds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/report/Field_Report.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/report/Field_Report.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/report/Pond_Report.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/report/Pond_Report.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/sale/Fish_Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/sale/Fish_Sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/statistics/Fish_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/statistics/Fish_Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/statistics/Plantation_Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/statistics/Plantation_Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/statistics/Fish_sold.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/statistics/Fish_sold.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/Header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
-      <method v="2" />
-    </configuration>
   </component>
   <component name="TaskManager">
     <servers />

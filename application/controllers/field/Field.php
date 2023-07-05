@@ -7,10 +7,12 @@ class Field extends CI_Controller
         $this->load->model('field/Field_plantation' , 'field_plantation');
         $unities = get_unities();
         $this->data['unities'] = $unities;
-        $this->data['header_product'] 	= "text-secondary";
-        $this->data['header_ponds'] 	= "text-white";
-        $this->data['header_home'] 		= "text-secondary";
-        $this->data['header_statistcs'] = "text-secondary";
+        $this->data['header_product'] 	= "";
+        $this->data['header_ponds'] 	= "active";
+        $this->data['header_home'] 		= "";
+        $this->data['header_statistics'] = "";
+        $this->data['header_report'] = "";
+        $this->data['header_sale'] = "";
     }
 
     public function index(){

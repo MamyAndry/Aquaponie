@@ -9,9 +9,12 @@ class Field_Report extends CI_Controller {
 		$this->load->model('report/Report_Field' , 'report_field');
 		$this->load->model('report/For_All_CSV' , 'all_csv');
 		// $this->load->model('ponds/Fish_Pond' , 'fish_pond');
-        $this->data['header_product'] = "text-white";
-        $this->data['header_ponds'] = "text-secondary";
-        $this->data['header_home'] = "text-secondary";
+        $this->data['header_product'] 	= "";
+        $this->data['header_ponds'] 	= "";
+        $this->data['header_home'] 		= "";
+        $this->data['header_statistics'] = "";
+        $this->data['header_report'] = "active";
+        $this->data['header_sale'] = "";
 	}
 
 	public function index(){
