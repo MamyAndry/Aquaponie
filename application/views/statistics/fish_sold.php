@@ -6,7 +6,7 @@
             </h3>
         </div>
     </div>
-    <div class="row m-auto w-50">
+    <div class="row m-auto">
         <div class="col-5">
             <div class="card">
                 <div class="card-body">
