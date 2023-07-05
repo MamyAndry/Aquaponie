@@ -45,5 +45,6 @@ from v_fishs_ponds as v
 
 select * from fish_pond;
 insert into fish_pond values('FIP3', 'FISH0001' , 'POND0001' , 't' ,70 , '2023-06-25');
+insert into fish_pond values('FIP4', 'FISH0001' , 'POND0001' , 'f' ,70 , '2023-06-25');
 insert into sale_fish values('SFS3', 'FIP2' , 3 , '2023-07-25');
 delete from fish_pond where id_fish_pond = 'FIP3';

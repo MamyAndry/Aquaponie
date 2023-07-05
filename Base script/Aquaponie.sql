@@ -141,7 +141,6 @@ select * from sale_fish ;
 SELECT SUM(quantity_sold) FROM sale_fish WHERE EXTRACT('year' from sale_date) = 2023;
 
 
-drop view v_fish_month_statistic;
 create or replace view v_fish_month_statistic as
 SELECT
     id_type_fish,
@@ -159,29 +158,10 @@ ORDER BY
     extract('year' from sale_date),
     id_type_fish;
 
-select * from profile;
+/*select * from profile;
 insert into aqua_user(id_user, id_profile, name, identifier, password) values ('AUR0001', 'PRO0001', 'rakharrs', 'rakharrs', 'pixel');
 select * from fish_pond;
 
 
 select sale_fish.*, fp.id_type_fish from sale_fish
-    join public.fish_pond fp on sale_fish.id_fish_pond = fp.id_fish_pond
-
-select * from sale_fish;
-
-select * from type_fish;
-select * from v_fish_month_statistic;
-
-select * from report_field;
-
-select * from field_plantation;
-
-select * from price_fish;
-
-select * from report_field;
-
-select * from details_fields;
-
-
-
-select * from field_plantation;
+    join public.fish_pond fp on sale_fish.id_fish_pond = fp.id_fish_pond*/

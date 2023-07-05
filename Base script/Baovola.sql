@@ -1,6 +1,4 @@
-create DATABASE aquaponie;
 
-\c aquaponie
 
 -- database name : 
     --aquaponie
@@ -147,7 +145,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('FILD0003'),
         ('FILD0004');
 
-
+select * from field_plantation;
 
     INSERT INTO field_plantation (id_field_plantation, id_field, id_type_plantation, density, surface_covered, plant_weight, insertion_date) VALUES
         ('FIL'||nextval('s_field_plantation'), 'FILD0001', 'PLNT0001', 1, 0.01, 1, TO_DATE('04-20-2015', 'MM-dd-YYYY')),
@@ -201,6 +199,7 @@ create table price_plantation( -- Le prix untaire designe pour une VENTE de plan
         ('FIP18','FISH0001','POND0002',FALSE,55,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
         ('FIP19','FISH0002','POND0003',TRUE,49,TO_DATE('03-01-2023', 'MM-dd-YYYY')),
         ('FIP20','FISH0002','POND0004',FALSE,50,TO_DATE('03-01-2023', 'MM-dd-YYYY'));
+
     insert into report_pond (id_report_pond, id_fish_pond, report_date_pond, alive_fish_number, dead_fish_number) values
         ('RPD'||nextval('s_report_pond'), 'FIP1', to_date('2015-02-05','yyyy-mm-dd'), 54, 2),
         ('RPD'||nextval('s_report_pond'), 'FIP2', to_date('2015-02-05','yyyy-mm-dd'), 47, 3),
