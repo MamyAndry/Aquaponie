@@ -28,11 +28,11 @@
                             </div>
 
                             <div class="row mt-4 mb-3">
-                                <label for="pond" class="form-label w-25">Pond</label>
+                                <label for="pond" class="form-label w-25">Fish pond</label>
                                 <select name="id_fish_pond" id="id_fish_pond" name="id_fish_pond" class="form-select w-75">
-                                    <?php foreach( $ponds as $pond ){ ?>
-                                        <option value="<?php echo $pond->id_fish_pond; ?>">
-                                        <?php echo $pond->id_fish_pond; ?>
+                                    <?php foreach( $fish_ponds as $fish_pond ){ ?>
+                                        <option value="<?php echo $fish_pond['id_fish_pond']; ?>">
+                                        <?php echo $fish_pond['name_type_fish']; ?> - <?php echo $fish_pond['insertion_date']; ?>
                                         </option>
                                     <?php } ?>
                                 </select>

@@ -13,7 +13,7 @@ create or replace view v_get_pond as
         return query
         select f.id_fish_pond from fish_pond f
         where f.id_pond=id_pond_seak  
-        order by id_fish_pond
+        order by insertion_date
          desc limit 1;
     end;
     $$;
@@ -91,15 +91,22 @@ create or replace function f_actual_pond_state()
         fish_number bigint = 0;
         temp_number bigint;
         fish_pond varchar(8);
-        pond VARCHAR(8); 
+        pond_id VARCHAR(8);
     begin
-        for pond in select id_pond from v_get_pond
-        loop
-            select id_fish_pond into fish_pond from f_get_recent_fish_pond(pond);
-          
+        FOR pond_id IN (SELECT id_pond FROM v_get_pond)
+        LOOP
+            select id_fish_pond into fish_pond from f_get_recent_fish_pond(pond_id);
+            RAISE NOTICE 'Fish Pond: %', fish_pond;
+            IF fish_pond IS NULL THEN
+                CONTINUE;
+            END IF;
             select fish_actual_number into temp_number from f_get_actual_fish_pond_number(fish_pond);
+            IF temp_number IS NULL THEN
+                CONTINUE;
+            END IF;
             fish_number = fish_number + temp_number;
-        end loop;
+
+        END LOOP;
         
         return query
         select fish_number;

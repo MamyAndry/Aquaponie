@@ -165,3 +165,37 @@ select * from fish_pond;
 
 select sale_fish.*, fp.id_type_fish from sale_fish
     join public.fish_pond fp on sale_fish.id_fish_pond = fp.id_fish_pond*/
+
+select id_fish_pond, name_type_fish from v_fishs_ponds where id_pond = 'POND0001';
+
+select * from v_fishs_ponds;
+select * from fish_pond order by insertion_date desc;
+select * from report_pond;
+select * from sale_fish;
+
+select * from f_actual_pond_state();
+
+-- select * from details_fish_sold;
+
+select * from v_details_ponds;
+
+select * from pond;
+
+select * from f_get_actual_fish_pond_number('FIP3');
+select * from f_get_recent_fish_pond('POND001');
+
+select * from v_get_pond;
+
+select * from f_get_actual_fish_pond_number('FIP3');
+
+select * from f_actual_pond_state();
+
+
+create or replace view v_fish_pond_quantity_date as
+select max(id_fish_pond) id_fish_pond, id_pond, fish_pond.id_type_fish, name_type_fish, insertion_date, sum(quantity) quantity from fish_pond join public.type_fish tf on fish_pond.id_type_fish = tf.id_type_fish group by fish_pond.id_type_fish, id_pond, name_type_fish, insertion_date;
+
+select * from v_fish_pond_quantity_date;
+
+select * from pond;
+select * from report_pond;
+select * from fish_pond where id_pond = 'POND0001'

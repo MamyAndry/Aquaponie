@@ -74,6 +74,21 @@
 			return $results;
 		}
 
+		public function get_fish_pond_quantity_date($id_pond){
+			$sql = "select * from %s where id_pond like %s";
+			$sql = sprintf( $sql, 'v_fish_pond_quantity_date', $this->db->escape('%'.$id_pond.'%') );
+			$sql = $this->db->query( $sql );
+			$sql_results = $sql->result_array();
+			$results = array();
+
+			foreach( $sql_results as $rows ){
+				$results[] = $rows;
+			}
+
+
+			return $results;
+		}
+
 		public function get_fish_pond( $id ){
 			
 			$sql = "select * from %s where id_fish_pond like %s";

@@ -19,7 +19,9 @@ class Pond_Report extends CI_Controller {
 
 	public function index(){
 
+		$id_pond = $_GET['fish'];
 		$this->data['ponds'] = $this->fish_pond->get_fish_ponds();
+		$this->data['fish_ponds'] = $this->fish_pond->get_fish_pond_quantity_date($id_pond);
 		$this->data['page_title'] = "Insert Report Pond";
 		$this->data['body'] = 'report/Insert_report_pond';
 		$this->load->view('template/index' , $this->data);
@@ -36,7 +38,6 @@ class Pond_Report extends CI_Controller {
 		$this->report_pond->insert_report_pond($somme, $id_fish_pond, $date, $alive, $dead);
 		redirect(base_url('report/Pond_Report'));
     }
-
 
 }
 
