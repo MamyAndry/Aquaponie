@@ -36,14 +36,14 @@
 		 * 		Insert sale fish in the database with an Id beginning with "SAF"
 		**/
 
-		public function insert_sale_fish( $id_fish_pond, $quantity_saled, $saling_date ){
+		public function insert_sale_fish( $id_pond, $quantity_saled, $saling_date ){
 			if( $quantity_saled <= 0 ) throw new Exception("Why you insert if the quantity is negative or null ?");
 			if( $saling_date <= 0 ) throw new Exception("Please, insert a date!");
  
 			$id = create_primary_key(Sale_Fish::$PREFIX , Sale_Fish::$SEQUENCE, Sale_Fish::$LENGTH);
 			$data = array(
 				'id_sale_fish' => ($id),
-				'id_fish_pond' => ($id_fish_pond),
+				'id_fish_pond' => $this->get_last_id_fish_pond($id_pond),
 				'quantity_sold' => ($quantity_saled),
 				'sale_date' => ($this->format_date($saling_date))
 			);
@@ -84,10 +84,15 @@
 			return $results;
 		}
 
-		// public function get_fish_by_category($category)
-		// {
-
-		// }
+		public function get_last_id_fish_pond($id_pond)
+		{
+			$query = " select f_get_recent_fish_pond( '%s' )";
+			echo $query;
+			$query = sprintf($query , $id_pond);
+			$query = $this->db->query($query);
+			$row = $query->row();
+			return $row->result;
+		}
 
 		public function check_sale_quantity($id_fish_pond, $quantity_to_sell)
 		{
