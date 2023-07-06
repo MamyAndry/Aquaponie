@@ -43,6 +43,12 @@ from v_fishs_ponds as v
     join sale_fish as s_f
         on v.id_fish_pond = s_f.id_fish_pond;
 
+select *
+from v_fishs_ponds as v 
+    join sale_fish as s_f
+        on v.id_fish_pond = s_f.id_fish_pond;
+
+
 select * from fish_pond;
 insert into fish_pond values('FIP3', 'FISH0001' , 'POND0001' , 't' ,70 , '2023-06-25');
 insert into fish_pond values('FIP4', 'FISH0001' , 'POND0001' , 'f' ,70 , '2023-06-25');
