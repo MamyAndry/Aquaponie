@@ -8,7 +8,7 @@ class Field_Report extends CI_Controller {
 		parent::__construct();
 		$this->load->model('report/Report_Field' , 'report_field');
 		$this->load->model('report/For_All_CSV' , 'all_csv');
-		// $this->load->model('ponds/Fish_Pond' , 'fish_pond');
+		$this->load->model('field/Field_plantation' , 'field_plantation');
         $this->data['header_product'] 	= "";
         $this->data['header_ponds'] 	= "";
         $this->data['header_home'] 		= "";

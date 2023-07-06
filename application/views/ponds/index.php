@@ -1,12 +1,17 @@
-<div class="px-3 py-2 border-bottom mb-3">
+<div class="px-3 py-3 border-bottom mb-3">
     <div class="container d-flex flex-wrap justify-content-center">
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form>
 
-        <div class="text-end">
+        <div class="text-end mx-2">
             <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#report">
                 Add report
+            </a>
+        </div>
+        <div class="text-end">
+            <a href="<?php echo base_url('sale/Fish_Sale');?>" class="btn btn-dark">
+                <i class="fa fa-cart-shopping"></i>
             </a>
         </div>
     </div>
@@ -83,6 +88,7 @@
 	</div>
 </div>
 
+<!-- Modal-report -->
 <div class="modal fade" id="report" tabindex="-1" aria-labelledby="report" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -115,3 +121,4 @@
         </div>
     </div>
 </div>
+<!-- Modal report end -->

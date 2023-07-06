@@ -1,3 +1,21 @@
+<div class="px-3 py-3 border-bottom mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end mx-2">
+            <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#report">
+                Add report
+            </a>
+        </div>
+        <div class="text-end">
+            <a href="<?php echo base_url('sale/_Sale');?>" class="btn btn-dark">
+                <i class="fa fa-cart-shopping"></i>
+            </a>
+        </div>
+    </div>
+</div>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="row text-title p-2 m-3">
@@ -73,3 +91,38 @@
         </div>
     </div>
 </div>
+
+<!-- Modal-report -->
+<div class="modal fade" id="report" tabindex="-1" aria-labelledby="report" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="report">Report</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?php echo base_url('report/Field_Report') ?>" method="get" class="form" id="form-modal">
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <h3 class="text-center">
+                            Add report
+                        </h3>
+                    </div>
+                    <div class="my-3">
+                        <select name="fish" id="fish" class="form-select">
+                            <?php foreach ($field_plantations as $field_plantation){ ?>
+                                <option value="<?php echo $field_plantation->id_field_plantation; ?>"> <?php echo $field_plantation->id_field_plantation; ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary"> Add </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- Modal report end -->
