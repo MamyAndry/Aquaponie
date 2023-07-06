@@ -121,7 +121,6 @@
 		public static function __get_instance( $data ){
 			$pond = new Pond();
 			$pond->id_pond = $data['id_pond'];
-			$pond->capacity = $data['capacity'];
 			$pond->load_pond_details();
 			return $pond;
 		}

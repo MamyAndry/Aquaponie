@@ -48,9 +48,6 @@
             $type->plant_weight          = $data['plant_weight'];
             $type->insertion_date        = $data['insertion_date'];
             $type->id_type_plantation    = $data['id_type_plantation'];
-            $type->name_type_plantation  = $data['name_type_plantation'];
-            $type->weight_max_baby       = $data['weight_max_baby'];
-            $type->weight_max_semi_mature= $data['weight_max_semi_mature'];
             return $type;
         }
 
@@ -60,6 +57,9 @@
             $result_array = $query->result_array();
             foreach( $result_array as $row ){
                 $type = Field_Plantation::get_instance($row);
+                $type->name_type_plantation  = $row['name_type_plantation'];
+                $type->weight_max_baby       = $row['weight_max_baby'];
+                $type->weight_max_semi_mature= $row['weight_max_semi_mature'];
                 $results[] = $type;
             }
             return $results;
@@ -74,6 +74,26 @@
             $plantations = array();
             foreach( $results as $row ){
                 $type = Field_Plantation::get_instance( $row );
+                $type->name_type_plantation  = $row['name_type_plantation'];
+                $type->weight_max_baby       = $row['weight_max_baby'];
+                $type->weight_max_semi_mature= $row['weight_max_semi_mature'];
+                $plantations[] = $type;
+            }
+            return $plantations;
+        }
+
+        public function get_field_plantation_by_id_field( $id_field ){
+            if ( empty( $id_field ) ) throw new Exception("This type of plantation doesn't exist");
+            $sql = "select * from %s where id_field like %s order by id_field_plantation";
+            $sql = sprintf( $sql, "details_fields", $this->db->escape('%'.$id_field.'%'));
+            $sql = $this->db->query($sql);
+            $results = $sql->result_array();
+            $plantations = array();
+            foreach( $results as $row ){
+                $type = Field_Plantation::get_instance( $row );
+                $type->name_type_plantation  = $row['name_type_plantation'];
+                $type->weight_max_baby       = $row['weight_max_baby'];
+                $type->weight_max_semi_mature= $row['weight_max_semi_mature'];
                 $plantations[] = $type;
             }
             return $plantations;
@@ -88,9 +108,18 @@
             $plantations = array();
             foreach( $results as $row ){
                 $type = Field_Plantation::get_instance( $row );
+                $type->name_type_plantation  = $row['name_type_plantation'];
+                $type->weight_max_baby       = $row['weight_max_baby'];
+                $type->weight_max_semi_mature= $row['weight_max_semi_mature'];
                 $plantations[] = $type;
             }
             return $plantations;
+        }
+
+        public static function get_instance_from_field( $field ) {
+            $detail = new self();
+            $details = $detail->get_field_plantation_by_id_field($field->id_field);
+            return $details;
         }
 
         public function get_number_plant( $id_field_plantation ){

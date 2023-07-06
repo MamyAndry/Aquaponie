@@ -23,9 +23,9 @@
                         <div class="row mt-2 mb-3" >
                             <label for="pond" class="form-label w-25">Pond</label>
                             <select name="id_pond" id="id_pond" name="id_pond" class="form-select w-75">
-                                <?php foreach( $ponds as $pond ){ ?>
-                                    <option value="<?php echo $pond->id_pond; ?>">
-                                <?php echo $pond->id_pond; ?>
+                                <?php foreach( $fish_ponds as $pond ){ ?>
+                                    <option value="<?php echo $pond->id_fish_pond; ?>">
+                                        <?php echo $pond->id_fish_pond; ?>
                                     </option>
                                 <?php } ?>
                             </select>

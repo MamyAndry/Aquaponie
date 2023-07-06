@@ -10,7 +10,7 @@
 				<div class="row title">
 					<h3 class="text-center"> Fishes insides the pond </h3>
 				</div>
-				<div class="row contents">
+				<div class="row contents justify-content-center">
 					<div class="card col-lg-6 my-2 p-3 offset-col ml-auto mr-auto">
 						<div class="card-title">
 							<h3 class="text-center">

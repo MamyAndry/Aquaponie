@@ -10,7 +10,7 @@
             </a>
         </div>
         <div class="text-end">
-            <a href="<?php echo base_url('sale/_Sale');?>" class="btn btn-dark">
+            <a href="" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#sale">
                 <i class="fa fa-cart-shopping"></i>
             </a>
         </div>
@@ -20,35 +20,34 @@
     <div class="row justify-content-center">
         <div class="row text-title p-2 m-3">
             <h3 class="text-center text-decoration-underline">
-                Lists of all fields plantations
+                Lists of all fields
             </h3>
         </div>
         <div class=" my-3 row fishes-types d-flex justify-content-center">
-            <div class="card col-lg-3 shadow p-3 my-lg-2 col-md-5 mx-5 mx-sm-0 mx-md-3 mx-lg-5 border-0  col-sm-12"  data-aos="zoom-in">
+            <div class="card col-lg-3 shadow p-3 my-lg-2 col-md-5 mx-5 mx-sm-0 mx-md-3 mx-lg-5 border-0  col-sm-12 "  data-aos="zoom-in">
                 <div class="card-body">
                     <div class="row my-lg-5 my-md-3 my-sm-2 my-5">
                         <div class="img-fluid text-decoration-none text-center">
-                            <a href="<?php echo site_url(''); ?>" class="links text-decoration-none">
+                            <a href="<?php echo site_url('field/Field/insert'); ?>" class="links text-decoration-none">
                                 <i class="fa fa-plus-circle display-1"></i>
                             </a>
                         </div>
                         <div class="text-center">
                             <p class="text-secondary">
-                                Insert a new field
+                                Insert a new Field
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             <?php
-            foreach( $field_plantations as $field_plantation ){ ?>
-                <div class="card col-lg-3 shadow p-3 my-2 col-md-5 mx-5 mx-sm-0 mx-md-3 mx-lg-5 border-0  col-sm-12" data-aos="fade-down" data-aos-delay="100">
+            foreach( $fields as $field ){ ?>
+                <div class="card col-lg-3 shadow p-3 my-lg-2 col-md-5 mx-5 mx-sm-0 mx-md-3 mx-lg-5 border-0  col-sm-12      " data-aos="fade-down" data-aos-delay="100">
                     <div class="card-body rounded">
                         <div class="row details-rows">
                             <div class="title-row row">
-                                Field Id : <span class="h4"><?php echo $field_plantation->id_field_plantation; ?></span>
+                                Ponds Id : <span class="h4"><?php echo $field->id_field; ?></span>
                             </div>
-                            <div class="row"></div>
                             <div class="row fish-details">
                                 <table class="table">
                                     <thead>
@@ -56,24 +55,15 @@
                                     <th> </th>
                                     </thead>
                                     <tbody>
-                                    <tr >
-                                        <td class="p-2">Surface covered</td>
-                                        <td class="text-end"> <?php echo $field_plantation->surface_covered; ?></td>
-
-                                    </tr>
-                                    <tr >
-                                        <td class="p-2">Number of plants:</td>
-                                        <td class="text-end"> <?php echo $field_plantation->number_plant; ?> U</td>
-
-                                    </tr>
+                                        <tr></tr>
                                     </tbody>
                                     <tfoot>
                                     <tr>
                                         <td>
                                         </td>
                                         <td class="text-end">
-                                            <a href="<?php echo base_url('field/Field/see')?>/<?php echo $field_plantation->id_field_plantation;?>" class="btn btn-primary">
-                                                See details
+                                            <a href="<?php echo base_url('field/Field/see')?>/<?php echo $field->id_field;?>" class="btn btn-primary">
+                                                See Details
                                             </a>
                                         </td>
                                     </tr>
@@ -109,8 +99,8 @@
                     </div>
                     <div class="my-3">
                         <select name="fish" id="fish" class="form-select">
-                            <?php foreach ($field_plantations as $field_plantation){ ?>
-                                <option value="<?php echo $field_plantation->id_field_plantation; ?>"> <?php echo $field_plantation->id_field_plantation; ?> </option>
+                            <?php foreach ($fields as $field){ ?>
+                                <option value="<?php echo $field->id_field; ?>"> <?php echo $field->id_field; ?> </option>
                             <?php } ?>
                         </select>
                     </div>
@@ -126,3 +116,38 @@
     </div>
 </div>
 <!-- Modal report end -->
+
+<!-- Modal-sale -->
+<div class="modal fade" id="sale" tabindex="-1" aria-labelledby="sale" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sale">Sale</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?php echo base_url('sale/Plantation_Sale');?>" method="get" class="form" id="form-modal">
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <h3 class="text-center">
+                            Add sale
+                        </h3>
+                    </div>
+                    <div class="my-3">
+                        <select name="id_field" id="id_field" class="form-select">
+                            <?php foreach ($fields as $field){ ?>
+                                <option value="<?php echo $field->id_field; ?>"> <?php echo $field->id_field; ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary"> Add </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- Modal sale end -->

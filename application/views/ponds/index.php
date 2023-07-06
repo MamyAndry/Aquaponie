@@ -10,7 +10,7 @@
             </a>
         </div>
         <div class="text-end">
-            <a href="<?php echo base_url('sale/Fish_Sale');?>" class="btn btn-dark">
+            <a href="" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#sale">
                 <i class="fa fa-cart-shopping"></i>
             </a>
         </div>
@@ -122,3 +122,38 @@
     </div>
 </div>
 <!-- Modal report end -->
+
+<!-- Modal-sale -->
+<div class="modal fade" id="sale" tabindex="-1" aria-labelledby="sale" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sale">Sale</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?php echo base_url('sale/Fish_Sale');?>" method="get" class="form" id="form-modal">
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <h3 class="text-center">
+                            Add sale
+                        </h3>
+                    </div>
+                    <div class="my-3">
+                        <select name="id_pond" id="id_pond" class="form-select">
+                            <?php foreach ($ponds as $pond){ ?>
+                                <option value="<?php echo $pond->id_pond; ?>"> <?php echo $pond->id_pond; ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary"> Add </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- Modal sale end -->

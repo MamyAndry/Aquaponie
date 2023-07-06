@@ -19,7 +19,7 @@ class Field_Report extends CI_Controller {
 
 	public function index(){
 		$this->data['fields'] = $this->field_plantation->get_field_plantation();
-		$this->data['page_title'] = "Insert Field Plantation";
+		$this->data['page_title'] = "Insert Fields Plantation";
 		$this->data['body'] = 'report/Insert_report_field';
 		$this->load->view('template/index', $this->data);
 	}

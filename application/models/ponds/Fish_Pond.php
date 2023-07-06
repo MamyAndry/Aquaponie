@@ -93,6 +93,22 @@
 			return $results;
 		}
 
+        public function get_fish_pond_by_pond( $id ){
+
+            $sql = "select * from fish_pond where id_pond like %s";
+            $sql = sprintf( $sql, $this->db->escape('%'.$id.'%') );
+            $sql = $this->db->query( $sql );
+            $sql_results = $sql->result_array();
+            $results = array();
+
+            foreach( $sql_results as $rows ){
+                $fish_pond = Fish_pond::__get_instance($rows);
+                $results[] = $fish_pond;
+            }
+
+
+            return $results;
+        }
 
 		public static function __get_instance( $data ){
 			$fish_ponds = new Fish_pond();
