@@ -43,10 +43,13 @@ from v_fishs_ponds as v
     join sale_fish as s_f
         on v.id_fish_pond = s_f.id_fish_pond;
 
-select *
-from v_fishs_ponds as v 
-    join sale_fish as s_f
-        on v.id_fish_pond = s_f.id_fish_pond;
+create or replace view details_pond_fish_pond
+as
+select p.id_pond , f_p.id_fish_pond , f_p.id_type_fish  , f_p.fish_gender , f_p.quantity , p.capacity , f_p.insertion_date
+from fish_pond as f_p 
+    join pond as p
+        on f_p.id_pond = p.id_pond
+    WHERE f_p.quantity > 0;
 
 
 select * from fish_pond;
