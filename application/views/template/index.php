@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/Font/fontawesome-5/css/all.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/Font/fontawesome-6/css/all.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/aos/dist/aos.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
 

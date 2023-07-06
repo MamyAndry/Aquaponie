@@ -6,20 +6,18 @@
             </h3>
         </div>
     </div>
-    <div class="row m-auto">
-        <div class="row m-auto">
-            <div class="col-4 offset-2">
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="singelBarChart" width="750" height="500"></canvas>
-                    </div>
+    <div class="row m-auto w-50">
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="singelBarChart" width="750" height="500"></canvas>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="monthly" width="750" height="500"></canvas>
-                    </div>
+        </div>
+        <div class="col-5 offset-1">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="monthly" width="750" height="500"></canvas>
                 </div>
             </div>
         </div>
@@ -28,15 +26,10 @@
 <script src=<?php echo base_url("assets/js/Chart.js"); ?>></script>
 <script src=<?php echo base_url("assets/js/chart.min.js"); ?>></script>
 <script>
-    var month_identifier = <?php echo json_encode($monthly_identifier) ?>;
-    var month_value = <?php echo json_encode($monthly_value) ?>;
-
     var year = <?php echo json_encode($year); ?>;
     var sold = <?php echo json_encode($sold); ?>;
-    var color = ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"];
     var ctx = document.getElementById("singelBarChart");
-
-    ctx.height = 500;
+    ctx.height = 400;
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -45,8 +38,9 @@
                 {
                     label: "Quantity of Fish Sold",
                     data: sold,
+                    borderColor: "rgba(117, 113, 249, 0.9)",
                     borderWidth: "0",
-                    backgroundColor: color
+                    backgroundColor: "rgba(117, 113, 249, 0.5)"
                 }
             ]
         },
@@ -56,14 +50,12 @@
                     ticks: {
                         beginAtZero: true
                     }
-                }],
+                }]
             }
         }
     });
 
     // Monthly
-    var monthly = document.getElementById("monthly");
-
     monthly.height = 500;
     var myChart = new Chart(monthly, {
         type: 'bar',
@@ -88,5 +80,4 @@
             }
         }
     });
-
 </script>
