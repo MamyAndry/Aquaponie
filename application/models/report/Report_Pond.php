@@ -64,7 +64,7 @@
 			$id = create_primary_key(Report_Pond::$PREFIX , Report_Pond::$SEQUENCE, Report_Pond::$LENGTH);
 			$data = array(
 				'id_report_pond' => ($id),
-				'id_fish_pond' => ($id_fish_pond),
+				'id_fish_pond' => $this->get_last_id_fish_pond($id_fish_pond),
 				'report_date_pond' => $this->format_date($date_report_pond),
 				'alive_fish_number' => ($alive_fish_number),
 				'dead_fish_number' => ($dead_fish_number),
@@ -77,6 +77,16 @@
 				throw $exception;
 			}
 		}
+		public function get_last_id_fish_pond($id_pond)
+		{
+			$query = " select f_get_recent_fish_pond( '%s' )";
+			$query = sprintf($query , $id_pond);
+			echo $query;
+			$query = $this->db->query($query);
+			$row = $query->result_array();
+			return $row[0]["f_get_recent_fish_pond"];
+		}
+
 
 	}
 ?>

@@ -31,6 +31,12 @@
 										</td>
 									</tr>
 									<tr>
+										<td>Fish quantity : </td>
+										<td class="text-end">
+											<?php echo $fish_quantity; ?>
+										</td>
+									</tr>
+									<tr>
 										<td></td>
 										<td class="text-end">
 											<a href="<?php echo site_url('/fish/see/').$ponds[0]->details[0]->id_type_fish; ?>" class="btn btn-primary">

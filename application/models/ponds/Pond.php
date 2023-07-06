@@ -132,6 +132,24 @@
 
 		}
 
+		public function get_last_id_fish_pond($id_pond)
+		{
+			$query = " select f_get_recent_fish_pond( '%s' )";
+			$query = sprintf($query , $id_pond);
+			$query = $this->db->query($query);
+			$row = $query->result_array();
+			return $row[0]["f_get_recent_fish_pond"];
+		}
+
+		public function get_count_fish($id_pond){
+			$id_fish_pond = $this->get_last_id_fish_pond($id_pond);
+			$query = " select  f_get_actual_fish_pond_number( '%s' )";
+			$query = sprintf($query , $id_fish_pond);
+			$query = $this->db->query($query);
+			$row = $query->result_array();
+			return $row[0]["f_get_actual_fish_pond_number"];
+		}
+
 	}
 
 ?>

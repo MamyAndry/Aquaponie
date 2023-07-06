@@ -27,7 +27,9 @@
 
 		public function see( $id_ponds = '' ){
 			$ponds = $this->ponds->get_pond( $id_ponds );
+			$fish_quantity = $this->ponds->get_count_fish( $id_ponds );
 			$this->data['ponds'] = $ponds;
+			$this->data['fish_quantity'] = $fish_quantity;
 			$this->data['body'] = 'ponds/details';
 			$this->data['page_title'] = 'Ponds Pages/ Details';
 
