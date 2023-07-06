@@ -78,15 +78,21 @@ function createRow( fish, quantity ){
 }
 
 
-function validate_ponds( url ){
+function validate_ponds( url, redirection ){
 	let xhr = createXhr();
 	let form = document.querySelector('#general-form');
 	let datas = new FormData(form);
 	xhr.onreadystatechange = function(){
 		if( xhr.readyState === 4 ){
 			if( xhr.status === 200 ){
-				let response = xhr.responseText;
-				console.log(response);
+				let response = JSON.parse(xhr.responseText);
+				let success = response['success'];
+				alert(success);
+				window.location.href = redirection;
+			}else if( xhr.status === 400 ){
+				let response = JSON.parse(xhr.responseText);
+				let error = response['error'];
+				alert(error);
 			}
 		}
 	};

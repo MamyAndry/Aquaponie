@@ -20,20 +20,19 @@
 				</table>
 			</form>
 
-			<div class="col-lg-4  d-flex">
-				<button type="button mx-3" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-					Add new Details
-				</button>
+		<div class="col-lg-4  d-flex">
 
-				<button class="btn btn-danger" onclick="removeAllDetails()">
-					Remove all details
-				</button>
+			<i class="fas fa-plus mx-3 btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			  	
+			</i>
 
-				<!-- Ito no manantso ny tena izy, Izany hoe manantso AJAX ito andao ary -->
-				<button class="btn btn-success" onclick="validate_ponds('<?php echo site_url('pond/ponds/save'); ?>')">
-					Add the new Ponds
-				</button>
-			</div>
+			<i class="fas fa-trash mx-3 btn btn-danger" onclick="removeAllDetails()">
+					
+			</i>
+
+			<i class="fas fa-check-double mx-3 btn btn-success" onclick="validate_ponds('<?php echo site_url('pond/ponds/save'); ?>', '<?php echo site_url("pond/ponds"); ?>')">
+			</i>
+
 		</div>
 		
 	</div>

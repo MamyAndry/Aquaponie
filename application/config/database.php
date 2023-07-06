@@ -84,6 +84,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'postgres',
 	'password' => 'pixel',
+<<<<<<< HEAD
+=======
+	'password' => 'postgres',
+	'password' => 'zod',
+>>>>>>> d30401ebd7fbacc9e12f21c5a0d2b3ea0bc19942
 	'database' => 'aquaponie',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',

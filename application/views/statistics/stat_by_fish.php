@@ -1,0 +1,91 @@
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="row title">
+            <h3 class="text-center">
+                Statistics of Fish Sold:
+                <?php if(isset($_GET['id_fish'])){
+                    echo $_GET['id_fish'];
+                } ?>
+            </h3>
+        </div>
+    </div>
+    <div class="row m-auto">
+        <div class="row m-auto">
+            <div class="col-5 offset-1">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="monthly_this_year" width="750" height="500"></canvas>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="monthly" width="750" height="500"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="color: white;">.</p>
+<script src=<?php echo base_url("assets/js/Chart.js"); ?>></script>
+<script src=<?php echo base_url("assets/js/chart.min.js"); ?>></script>
+<script>
+    var month_identifier = <?php echo json_encode($monthly_identifier) ?>;
+    var month_value = <?php echo json_encode($monthly_value) ?>;
+    var month = <?=json_encode($month)?>;
+
+    var quantity_sold = <?=json_encode($quantity_sold)?>;
+    console.log(month);
+    console.log(quantity_sold);
+
+    var color = ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"];
+
+    // Monthly
+    var monthly = document.getElementById("monthly");
+
+    monthly.height = 500;
+    var myChart = new Chart(monthly, {
+        type: 'line',
+        data: {
+            labels: month_identifier,
+            datasets: [
+                {
+                    label: "Quantity of Fish Sold by month overall",
+                    data: month_value,
+                    borderWidth: "0",
+                    backgroundColor: color[2],
+                    spanGaps: true
+                }
+            ]
+        },
+        options: {
+
+        }
+    });
+
+        // Monthly
+    var monthly_this_year = document.getElementById("monthly_this_year");
+
+    monthly.height = 500;
+    var myChart = new Chart(monthly_this_year, {
+        type: 'bar',
+        data: {
+            labels: month,
+            datasets: [
+                {
+                    label: "Quantity of Fish Sold by month this year",
+                    data: quantity_sold,
+                    borderWidth: "0",
+                    backgroundColor: color[1],
+                    spanGaps: true
+                }
+            ]
+        },
+        options: {
+
+        }
+    });
+
+</script>

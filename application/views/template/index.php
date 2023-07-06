@@ -11,8 +11,21 @@
 
 	<title>
 		<?php echo $page_title; ?>
-
 	</title>
+
+	<style>
+		.footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5vh;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+	</style>
 </head>
 <body>
 	<div class="container-fluid" style="--bs-gutter-x: 0em; ">
@@ -22,6 +35,10 @@
 		?>
 	</div>
 	<?php $this->load->view('template/Footer'); ?>
+
+	<div class="footer">
+		<?php $this->load->view('template/Footer'); ?>
+	</div>
 
 	<script src="<?php echo base_url('assets/aos/dist/aos.js'); ?>"></script>
 	<script>
