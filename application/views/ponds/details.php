@@ -17,6 +17,7 @@
 								Fish: <?php echo $ponds[0]->details[0]->fish->name_type_fish; ?>
 							</h3>
 						</div>
+
 						<div class="card-body">
 							<table class="table">
 								<thead>

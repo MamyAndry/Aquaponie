@@ -14,6 +14,7 @@
                     <div class="row justify-content-center">
                     <div class="col-lg-5 my-2">
                         <form class="form" method="POST" action="<?php echo site_url('report/Pond_Report/insert_report_pond');?>" enctype="multipart/form-data">
+                            <input value="<?=$_GET['fish']?>" name="id_pond">
                             <div class="row mt-4 mb-3">
                                 <label for="date" class="form-label w-25">Date report</label>
                                 <input type="date" class="form-control w-75" name="date" id="date">

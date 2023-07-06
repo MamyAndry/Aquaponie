@@ -10,13 +10,13 @@
                 <div class="card-body">
                     <div class="row my-lg-5 my-md-3 my-sm-2 my-5">
                         <div class="img-fluid text-decoration-none text-center">
-                            <a href="<?php echo site_url('plantation/insert'); ?>" class="links text-decoration-none">
+                            <a href="<?php echo site_url('pond/Fish/see_Insertion'); ?>" class="links text-decoration-none">
                                 <i class="fa fa-plus-circle display-1"></i>
                             </a>
                         </div>
                         <div class="text-center">
                             <p class="text-secondary">
-                                Insert a new Pond
+                                Insert a new fish pond
                             </p>
                         </div>
                     </div>

@@ -14,6 +14,11 @@
                 Stats by pond
             </a>
         </div>
+        <div class="text-end mx-1">
+            <a href="<?=base_url('/pond/Fish')?>" class="btn btn-secondary"">
+                Add fish pond
+            </a>
+        </div>
         <div class="text-end">
             <a href="<?php echo base_url('sale/Fish_Sale');?>" class="btn btn-dark">
                 <i class="fa fa-cart-shopping"></i>

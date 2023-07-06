@@ -1,10 +1,4 @@
-<style>
-  .btn:hover {
-    background-color: #0070BC;
-    border-color:#0070BC;
-    color: #ffffff; 
-  }
-</style>
+
 
 <div class="container my-2">
 	<div class="row card shadow border-0">
@@ -26,7 +20,7 @@
                                 <select name="id_type_fish" id="id_type_fish" name="id_type_fish" class="form-select w-75">
                                     <?php foreach( $fishs as $fish ){ ?>
                                         <option value="<?php echo $fish->id_type_fish; ?>">
-                                    <?php echo $fish->id_type_fish; ?>
+                                    <?php echo $fish->name_type_fish; ?>
                                         </option>
                                     <?php } ?>
                                 </select>
@@ -68,3 +62,6 @@
 		</div>
 	</div>
 </div>
+
+
+

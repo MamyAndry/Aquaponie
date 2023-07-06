@@ -82,13 +82,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'postgres',
+	'username' => 'rakharrs',
 	'password' => 'pixel',
-<<<<<<< HEAD
-=======
-	'password' => 'postgres',
-	'password' => 'zod',
->>>>>>> d30401ebd7fbacc9e12f21c5a0d2b3ea0bc19942
 	'database' => 'aquaponie',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',

@@ -4,19 +4,20 @@ create or replace view v_get_pond as
     select id_pond from pond;
 
 --get the recent fish_pond of one pond
-    create  or replace function f_get_recent_fish_pond(id_pond_seak varchar(8))
-    returns table (id_fish_pond varchar(8))
-    language plpgsql
-    as 
-    $$
-    begin
-        return query
-        select f.id_fish_pond from fish_pond f
-        where f.id_pond=id_pond_seak  
-        order by insertion_date
-         desc limit 1;
-    end;
-    $$;
+CREATE OR REPLACE FUNCTION f_get_recent_fish_pond(id_pond_seak varchar(8))
+RETURNS TABLE (id_fish_pond varchar(8))
+LANGUAGE plpgsql
+AS
+$$
+BEGIN
+    RETURN QUERY
+    SELECT COALESCE(f.id_fish_pond, '0') FROM fish_pond f
+    WHERE f.id_pond = id_pond_seak
+    ORDER BY insertion_date DESC
+    LIMIT 1;
+END;
+$$;
+
 
 
 --get the last report of one fish_pond
@@ -113,3 +114,7 @@ create or replace function f_actual_pond_state()
     end;
     $$;
 
+select * from report_pond;
+select f_get_recent_fish_pond( 'POND0001' );
+
+select * from report_pond;

@@ -8,6 +8,7 @@
 			parent::__construct();
 			$this->load->model('ponds/Fish_Pond', 'fish_pond');
 			$this->load->model('fish/Type_Fish', 'type_fish');
+			$this->load->model('report/Report_Pond', 'report_pond');
 			$this->load->model('ponds/Pond', 'pond');
 			$unities = get_unities();
             $this->data['unities'] 			= $unities;
@@ -54,6 +55,7 @@
 			$date = $this->input->post("date");
 			try {
 				$this->fish_pond->insert_fish_pond( $id_type_fish, $id_pond, $fish_gender, $quantity, $date );
+				$this->report_pond->insert_report_pond_with_fish_pond($id_pond, $date, $quantity, 0);
 			} catch (\Exception $e) {
 				exit($e->getMessage());
 			}
