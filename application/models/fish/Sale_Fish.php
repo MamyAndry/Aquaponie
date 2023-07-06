@@ -37,8 +37,8 @@
 		**/
 
 		public function insert_sale_fish( $id_pond, $quantity_saled, $saling_date ){
-			if( $quantity_saled <= 0 ) throw new Exception("Why you insert if the quantity is negative or null ?");
-			if( $saling_date <= 0 ) throw new Exception("Please, insert a date!");
+			if( $quantity_saled <= 0 ) throw new Exception("Quantity value cannot be null or negative, please retry");
+			if( $saling_date <= 0 ) throw new Exception("Choosen date is invalid, please retry");
  
 			$id = create_primary_key(Sale_Fish::$PREFIX , Sale_Fish::$SEQUENCE, Sale_Fish::$LENGTH);
 			$data = array(

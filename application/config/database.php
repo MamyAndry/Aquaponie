@@ -85,6 +85,7 @@ $db['default'] = array(
 	'username' => 'postgres',
 	'password' => 'pixel',
 	'password' => 'postgres',
+	'password' => 'zod',
 	'database' => 'aquaponie',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
