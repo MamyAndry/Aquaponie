@@ -46,7 +46,7 @@ class Fish extends CI_Controller {
 			$this->data['body'] = 'fish/abouts';
 			$this->load->view('template/index' , $this->data);
 		}catch(Exception $e){
-			echo $e->getMessage();
+			exit($e->getMessage());
 		}
 
 	}
@@ -137,8 +137,11 @@ class Fish extends CI_Controller {
         $s_max_avg 	= $this->input->post('s_max_avg');
 
 
-
-        $this->fish->insert_type_fish( $type, $m_period, $m_length, $m_size, $w_max_baby, $w_max_avg, $s_max_baby, $s_max_avg );
+        try {
+            $this->fish->insert_type_fish( $type, $m_period, $m_length, $m_size, $w_max_baby, $w_max_avg, $s_max_baby, $s_max_avg );
+        } catch (\Exception $e) {
+			exit($e->getMessage());
+        }
 	    redirect(base_url('fish'));
     }
 

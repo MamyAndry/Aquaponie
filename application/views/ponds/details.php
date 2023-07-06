@@ -31,6 +31,12 @@
 										</td>
 									</tr>
 									<tr>
+										<td>Fish quantity : </td>
+										<td class="text-end">
+											<?php echo $fish_quantity; ?>
+										</td>
+									</tr>
+									<tr>
 										<td></td>
 										<td class="text-end">
 											<a href="<?php echo site_url('/fish/see/').$ponds[0]->details[0]->id_type_fish; ?>" class="btn btn-primary">
@@ -41,9 +47,32 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
+					</div>	
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="card-title">
+	<h3 class="text-center">
+		Transaction details
+	</h3>
+</div>
+ <table class="table">
+	<thead>
+		<tr>
+		<th scope="col">name_type_fish</th>
+		<th scope="col">quantity</th>
+		<th scope="col">insertion_date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($details as $detail) { ?>
+		<tr>
+			<td><?php echo $detail['name_type_fish'];?></td>
+			<td><?php echo $detail['quantity'];?></td>
+			<td><?php echo $detail['insertion_date'];?></td>
+		</tr>
+		<?php }?>
+	</tbody>
+</table>

@@ -19,7 +19,7 @@ class Pond_Report extends CI_Controller {
 
 	public function index(){
 
-		$this->data['ponds'] = $this->fish_pond->get_fish_ponds();
+		$this->data['ponds'] = $this->pond->get_all_ponds();
 		$this->data['page_title'] = "Insert Report Pond";
 		$this->data['body'] = 'report/Insert_report_pond';
 		$this->load->view('template/index' , $this->data);
@@ -30,12 +30,15 @@ class Pond_Report extends CI_Controller {
         $date = $this->input->post('date');
         $alive = $this->input->post('alive');
         $dead = $this->input->post('dead');
-        $id_fish_pond = $this->input->post('id_fish_pond');
+        $id_pond = $this->input->post('id_pond');
         $data = $this->all_csv->readCSV('category',2);
 		$somme = $this->all_csv->searchAveragePond($data);
-		$this->report_pond->insert_report_pond($somme, $id_fish_pond, $date, $alive, $dead);
-		redirect(base_url('report/Pond_Report'));
-    }
+		try {
+			$this->report_pond->insert_report_pond($somme, $id_pond, $date, $alive, $dead);
+		} catch (\Exception $e) {
+			exit($e->getMessage());
+		}
+	}
 
 
 }

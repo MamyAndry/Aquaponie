@@ -31,7 +31,11 @@ class Field_Report extends CI_Controller {
         $id_field_plantation = $this->input->post('id_field_plantation');
         $data = $this->all_csv->readCSV('weight',1);
 		$weight = $this->all_csv->searchAverageField($data);
-		$this->report_field->insert_report_field($id_field_plantation, $date, $weight, $density, $surface);
+		try {
+			$this->report_field->insert_report_field($id_field_plantation, $date, $weight, $density, $surface);
+		} catch (\Exception $e) {
+			exit($e->getMessage());
+		}
 		redirect(base_url('report/Field_Report'));
     }
 

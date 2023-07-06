@@ -41,7 +41,7 @@ create or replace function f_get_last_fish_pond_report(id_recent_fish_pond varch
     $$;
 
 --get all the saling after the date report of one fish_pond
-    create or replace function f_get_count_last_fish_pond_saling(id_recent_fish_pond varchar(8))
+    create or replace function f_get_count_last_fish_pond_saling( id_recent_fish_pond varchar(8))
         returns table (fish_sale bigint)
 
         language plpgsql

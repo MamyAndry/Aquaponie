@@ -1,3 +1,5 @@
 <footer class="text-center text-secondary">
-	Made By 2023 end June 
+	<div class="container-fluid footer">
+		Aquaponie &copy; 2023.
+	</div>
 </footer>

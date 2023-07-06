@@ -11,7 +11,6 @@
                 <thead>
                 <th> Density of field </th>
                 <th> Surface recovered </th>
-                <th> Density of field </th>
                 <th> Plants </th>
                 <th> Plants weight </th>
                 <th> Date insertion </th>
@@ -31,8 +30,8 @@
             </button>
 
             <!-- Ito no manantso ny tena izy, Izany hoe manantso AJAX ito andao ary -->
-            <button class="btn btn-success" onclick="validate_ponds('<?php echo site_url('pond/ponds/save'); ?>')">
-                Add the new Ponds
+            <button class="btn btn-success" onclick="validate_ponds('<?php echo site_url('field/Field/save'); ?>')">
+                Add the new Fields
             </button>
         </div>
     </div>
@@ -60,10 +59,10 @@
                         </div>
                         <div class="my-3">
                             <label for="" class="form-label"> Max quantity of that fish </label>
-                            <input type="text" id="quantity" name="max_quantity" class="form-control">
+                            <input type="text" id="surface" name="surface" class="form-control">
                         </div>
                         <div class="my-3">
-                            <select name="fish" id="fish" class="form-select">
+                            <select name="plantation" id="plantation" class="form-select">
                                 <?php
                                 foreach( $plantations as $plantation ){ ?>
                                     <option value="<?php echo $plantation->name_type_plantation; ?>">
@@ -75,7 +74,7 @@
                         </div>
                         <div class="my-3">
                             <label for="" class="form-label"> Plant weight </label>
-                            <input type="text" id="quantity" name="max_quantity" class="form-control">
+                            <input type="text" id="plant_weight" name="plant_weight" class="form-control">
                         </div>
                         <div class="my-3">
                             <label for="" class="form-label"> Date </label>
@@ -85,7 +84,7 @@
                 </div>
                 <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-primary" onclick="addDetails()" data-bs-dismiss="modal">Add details</button>
+                    <button type="button" class="btn btn-primary" onclick="addDetailsFields()" data-bs-dismiss="modal">Add details</button>
                 </div>
             </div>
         </div>

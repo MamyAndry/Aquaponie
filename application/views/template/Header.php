@@ -6,7 +6,6 @@
                     <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>-->
                     <img src="<?php echo base_url('assets/image/AquaponicV2.png')?>" class="col-lg-2 col-md-2 col-3">
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
