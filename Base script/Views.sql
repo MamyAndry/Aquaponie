@@ -118,3 +118,9 @@ select * from report_pond;
 select f_get_recent_fish_pond( 'POND0001' );
 
 select * from report_pond;
+
+
+select * from fish_pond;
+
+select * from sale_fish;
+

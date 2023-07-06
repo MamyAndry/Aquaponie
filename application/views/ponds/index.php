@@ -11,7 +11,7 @@
         </div>
         <div class="text-end mx-2">
             <a href="" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#stat_pond">
-                Stats by pond
+                Stats by fish
             </a>
         </div>
         <div class="text-end mx-1">

@@ -53,23 +53,6 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $header_statistics; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Statistics
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li >
-                                        <a href="<?php echo site_url('statistics/Fish_Statistics'); ?>" class="dropdown-item">
-                                            Fish
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo site_url('statistics/Plantation_statistics'); ?>" class="dropdown-item">
-                                            Plantation
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle <?php echo $header_sale; ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Sale
                                 </a>
@@ -77,28 +60,6 @@
                                     <li>
                                         <a href=<?php echo site_url("sale/Fish_Sale"); ?> class="dropdown-item">
                                             Fish
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="dropdown-item">
-                                            Plantation
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $header_report; ?>" role="button" data-bs-toggle="dropdown" data-bs-delay="1000" aria-expanded="false">
-                                    Report
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href=<?php echo site_url("report/Pond_Report"); ?> class="dropdown-item">
-                                            Fish
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo site_url("report/Field_Report"); ?>" class="dropdown-item">
-                                            Plantation
                                         </a>
                                     </li>
                                 </ul>

@@ -12,9 +12,11 @@
 				</div>
 				<div class="row contents">
 					<div class="card col-lg-6 my-2 p-3 offset-col ml-auto mr-auto">
+						<?php foreach ($ponds[0]->details as $detail) { ?>
 						<div class="card-title">
+							
 							<h3 class="text-center">
-								Fish: <?php echo $ponds[0]->details[0]->fish->name_type_fish; ?>
+								Fish: <?php echo $detail->fish->name_type_fish; ?>
 							</h3>
 						</div>
 
@@ -28,7 +30,7 @@
 									<tr>
 										<td>Max quantity : </td>
 										<td class="text-end">
-											<?php echo $ponds[0]->details[0]->max_quantity; ?>
+											<?php echo $detail->max_quantity; ?>
 										</td>
 									</tr>
 									<tr>
@@ -40,7 +42,7 @@
 									<tr>
 										<td></td>
 										<td class="text-end">
-											<a href="<?php echo site_url('/fish/see/').$ponds[0]->details[0]->id_type_fish; ?>" class="btn btn-primary">
+											<a href="<?php echo site_url('/fish/see/').$detail->id_type_fish; ?>" class="btn btn-primary">
 												See about that fish
 											</a>
 										</td>
@@ -48,6 +50,7 @@
 								</tbody>
 							</table>
 						</div>
+						<?php } ?>
 					</div>	
 				</div>
 			</div>
