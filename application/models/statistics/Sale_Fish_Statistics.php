@@ -73,6 +73,35 @@
             // var_dump($result);
             return $result;   
         }
+
+        /**
+         * 
+         * @author Yoann
+         * @todo Get stat by month of fish sold for this year
+         * 
+         */
+        function get_this_year_by_month(){
+            $query = $this->db->get('v_quantity_fish_sold_month');
+            $rows = $query->result_array();
+            $result = array();
+            foreach ($rows as $row) {
+                $result[] = $row;
+            }
+            return $result;
+        }
+
+        function get_this_year_by_month_by_id($id){
+            $sql = 'select month.*, COALESCE(quantity_sold,0), COALESCE(id_type_fish,%s) id_type_fish from month left join (select * from v_fish_sold_this_year where id_type_fish LIKE %s) v_ok on month.id_month=v_ok.month';
+            $sql = sprintf( $sql, $this->db->escape($id), $this->db->escape($id));
+            $sql = $this->db->query($sql);
+            $results = $sql->result_array();
+            // echo json_encode($results);
+			$stats = array();
+			foreach( $results as $row ){
+				$stats[] = $row;
+			}
+			return $stats;
+        }
 	}
 
 ?>

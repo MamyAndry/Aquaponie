@@ -5,6 +5,7 @@ class Field extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('field/Field_plantation' , 'field_plantation');
+        $this->load->model('statistics/Sale_Plantation_Statistics' , 'plantation_statistics');
         $unities = get_unities();
         $this->data['unities'] = $unities;
         $this->data['header_product'] 	= "";
@@ -18,6 +19,9 @@ class Field extends CI_Controller
     public function index(){
         $field_plantations = $this->field_plantation->get_field_plantation();
 
+        $this->data['year'] = $this->plantation_statistics->get_all_year();
+		$this->data['sold'] = $this->plantation_statistics->get_plantation_sold();
+		$this->data['details'] = $this->plantation_statistics->details_sale();
         $this->data['field_plantations'] = $this->field_plantation->add_number_plant( $field_plantations );
 
         $this->data['page_title'] = "Field plantation pages";

@@ -8,6 +8,8 @@
 			parent::__construct();
 			$this->load->model('ponds/Pond' , 'ponds');
 			$this->load->model('fish/Type_Fish' , 'fish');
+			$this->load->model('statistics/Sale_Fish_Statistics' , 'fish_statistics');
+
             $unities = get_unities();
             $this->data['unities'] 			= $unities;
             $this->data['header_product'] 	= "";
@@ -23,6 +25,31 @@
 			$this->data['body'] 		= 'ponds/index';
 			$this->data['page_title'] 	= 'Ponds Page';
 			$this->data['ponds'] 		= $ponds;
+
+			//Stat(s)
+			$this->data['year'] = $this->fish_statistics->get_all_year();
+			$this->data['sold'] = $this->fish_statistics->get_fish_sold();
+			$this->data['fishes'] = $this->fish->get_all_type();
+			$this->fish->obtain_statistics();;
+			
+			$monthly_identifier = array();
+			$monthly_value = array();
+	
+			foreach ($this->fish->statistics as $stat) {
+				$monthly_identifier[] = $stat->identifier;
+				$monthly_value[] = $stat->quantity_sold;
+			}
+			$this->data['monthly_identifier'] = $monthly_identifier;
+			$this->data['monthly_value'] = $monthly_value;
+
+			$this_year_stat = $this->fish_statistics->get_this_year_by_month();
+			$this->data['month'] = array();
+			$this->data['quantity_sold'] = array();
+			foreach ($this_year_stat as $st) {
+				$this->data['month'][] = $st['name'];
+				$this->data['quantity_sold'][] = $st['coalesce'];
+			}
+
 
 			$this->load->view( 'template/index' , $this->data );
 		}

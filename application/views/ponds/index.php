@@ -4,9 +4,14 @@
             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form>
 
-        <div class="text-end mx-2">
-            <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#report">
+        <div class="text-end mr-2">
+            <a href="" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#report">
                 Add report
+            </a>
+        </div>
+        <div class="text-end mx-2">
+            <a href="" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#stat_pond">
+                Stats by pond
             </a>
         </div>
         <div class="text-end">
@@ -16,8 +21,10 @@
         </div>
     </div>
 </div>
-
 <div class="container-fluid">
+    <div>
+    <?php $this->load->view('statistics/fish_sold'); ?>
+    </div><hr>
 	<div class="row justify-content-center">
 		<div class="row text-title p-2 m-3">
 			<h3 class="text-center text-decoration-underline">
@@ -90,7 +97,7 @@
 
 <!-- Modal-report -->
 <div class="modal fade" id="report" tabindex="-1" aria-labelledby="report" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="report">Report</h5>
@@ -113,7 +120,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="text-end">
-                        <button type="submit" class="btn btn-primary"> Add </button>
+                        <button type="submit" class="btn btn-secondary"> Add </button>
                     </div>
                 </div>
             </form>
@@ -122,3 +129,36 @@
     </div>
 </div>
 <!-- Modal report end -->
+
+<div class="modal fade" id="stat_pond" tabindex="-1" aria-labelledby="stat_pond" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="stat_pond">Stats by fish</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?php echo base_url('statistics/by_fish/Statistics') ?>" method="get" class="form" id="form-modal">
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <h3 class="text-center">
+                            - Which Fish -
+                        </h3>
+                    </div>
+                    <div class="my-3">
+                        <select name="id_fish" id="fish" class="form-select">
+                            <?php foreach ($fishes as $fish){ ?>
+                                <option value="<?php echo $fish->id_type_fish; ?>"> <?php echo $fish->name_type_fish; ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-secondary"> Show </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -195,6 +195,13 @@
 			return $month_summary;
 		}
 
+		public function retrieve_statistics($id){
+			$this->load->model('statistics/Fish_Statistic', 'stat');
+			$month_summary = $this->stat->get_fish_by_month($id);
+			$this->statistics = $month_summary;
+			return $month_summary;
+		}
+
 
 	}
 

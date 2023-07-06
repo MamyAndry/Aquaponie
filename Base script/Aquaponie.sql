@@ -154,9 +154,9 @@ GROUP BY
     to_char(sale_date,'mm'),
     extract('year' from sale_date)
 ORDER BY
-    to_char(sale_date,'mm'),
-    extract('year' from sale_date),
-    id_type_fish;
+    to_date(to_char(sale_date,'mm') || '-' || extract('year' from sale_date), 'mm-yyyy');
+
+select * from v_fish_month_statistic;
 
 /*select * from profile;
 insert into aqua_user(id_user, id_profile, name, identifier, password) values ('AUR0001', 'PRO0001', 'rakharrs', 'rakharrs', 'pixel');
@@ -177,6 +177,8 @@ select * from f_actual_pond_state();
 
 -- select * from details_fish_sold;
 
+SELECT * from report_pond join public.fish_pond fp on report_pond.id_fish_pond = fp.id_fish_pond where id_pond = 'POND0001';
+
 select * from v_details_ponds;
 
 select * from pond;
@@ -185,6 +187,9 @@ select * from f_get_actual_fish_pond_number('FIP3');
 select * from f_get_recent_fish_pond('POND001');
 
 select * from v_get_pond;
+
+select * from type_fish;
+select * from v_quantity_fish_sold_month;
 
 select * from f_get_actual_fish_pond_number('FIP3');
 
@@ -199,3 +204,66 @@ select * from v_fish_pond_quantity_date;
 select * from pond;
 select * from report_pond;
 select * from fish_pond where id_pond = 'POND0001'
+
+create table month(
+    id_month serial primary key ,
+    name varchar(20)
+);
+drop table month;
+INSERT INTO month (name) VALUES
+    ('January'),
+    ('February'),
+    ('March'),
+    ('April'),
+    ('May'),
+    ('June'),
+    ('July');
+
+
+create or replace view v_fish_sold_by_month_recent_year as
+SELECT
+    *
+FROM
+    v_fish_sold
+WHERE
+    EXTRACT('year' FROM TO_DATE(identifier, 'mm-yyyy')) = (
+        SELECT
+            MAX(EXTRACT('year' FROM TO_DATE(identifier, 'mm-yyyy')))
+        FROM
+            v_fish_month_statistic
+    );
+
+create view v_fish_sold_this_year as
+SELECT
+    *
+from v_fish_sold
+join month on month.id_month = month
+WHERE
+    EXTRACT('year' FROM TO_DATE(identifier, 'mm-yyyy')) = date_part('year', current_date);
+
+create or replace view v_fish_sold as
+SELECT
+    EXTRACT('month' FROM TO_DATE(identifier, 'mm-yyyy')) AS month,
+    id_type_fish, identifier, sum(quantity_sold) as quantity_sold
+FROM
+    v_fish_month_statistic
+group by id_type_fish, month, identifier;
+
+select * from v_fish_sold;
+select * from v_quantity_fish_sold_month;
+select * from v_quantity_fish_sold_month;
+
+
+select * from v_fish_sold_this_year;
+select * from v_fish_sold;
+
+
+create or replace view v_quantity_fish_sold_month as
+select month.*, COALESCE(quantity_sold,0) from month left join v_fish_sold_this_year on month.id_month=v_fish_sold_this_year.month;
+
+select * from v_fish_sold_this_year;
+create or replace view v_quantity_fish_sold_month_by_fish as;
+
+select month.*, COALESCE(quantity_sold,0), COALESCE(id_type_fish,'FISH0001') from month left join (select * from v_fish_sold_this_year where id_type_fish LIKE 'FISH0001') v_ok on month.id_month=v_ok.month;
+select month.*, COALESCE(quantity_sold,0), COALESCE(id_type_fish,'FISH0002') from month left join (select * from v_fish_sold_this_year where id_type_fish LIKE 'FISH0002') v_ok on month.id_month=v_ok.month;
+

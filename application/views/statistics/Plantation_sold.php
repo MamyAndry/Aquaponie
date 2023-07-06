@@ -23,7 +23,7 @@
     var ctx = document.getElementById("singelBarChart");
         ctx.height = 400;   
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: year,
                 datasets: [
