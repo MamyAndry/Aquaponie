@@ -26,8 +26,17 @@ class Fish_Sale extends CI_Controller {
         $id_pond = $this->input->post('id_pond');
         $date = $this->input->post('date');
         $quantity = $this->input->post('quantity');
-		$this->sale_fish->insert_sale_fish($id_pond, $quantity, $date);
-		redirect(base_url('sale/Fish_Sale'));
+		try {
+			if ($quantity <= 0){
+				throw new \Exception('Negative fish quantity');			
+			}
+			else{
+				$this->sale_fish->insert_sale_fish($id_pond, $quantity, $date);
+				redirect(base_url('sale/Fish_Sale'));
+			}
+		} catch (\Exception $e) {
+			exit($e->getMessage());
+		}
     }
 
 

@@ -49,6 +49,13 @@
 			$fish_gender = $this->input->post('fish_gender');
 			$quantity = $this->input->post('quantity');
 			$date = $this->input->post("date");
+			try {
+				if ($fish_gender == null || $quantity <= 0) {
+					throw new Exception('Please verify your entry, fish gender must not be empty and quantity must be superior to 0');
+				}
+			} catch (\Exception $e) {
+				exit($e->getMessage());
+			}
 			$this->fish_pond->insert_fish_pond( $id_type_fish, $id_pond, $fish_gender, $quantity, $date );
 			redirect(base_url('pond/Fish'));
 		}

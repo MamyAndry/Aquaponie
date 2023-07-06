@@ -44,7 +44,6 @@ class Plantation extends CI_Controller
     public function insert(){
         $this->data['page_title'] = "Plantation Pages / Insert Plantation";
         $this->data['body'] = 'plantation/insert_plantation';
-
         $this->load->view('template/index' , $this->data);
     }
 
