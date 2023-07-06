@@ -6,6 +6,7 @@ class Field extends CI_Controller
         parent::__construct();
         $this->load->model('field/Field_plantation' , 'field_plantation');
         $this->load->model('field/Fields' , 'field');
+        $this->load->model('plantation/Type_Plantation' , 'plantation');
         $unities = get_unities();
         $this->data['unities'] = $unities;
         $this->data['header_product'] 	= "";
@@ -37,12 +38,10 @@ class Field extends CI_Controller
     }
 
     public function insert(){
-        $this->field->insert_field();
-
         $this->data['page_title'] = 'Fields Pages/ Add new field';
-        $this->data['body'] = 'fields/add_fields';
-
-
-        redirect(base_url('field/fields/add_details'));
+        $this->data['body'] = 'fields/add_details';
+        $this->data['plantations'] = $this->plantation->get_all_type();
+        $this->session->set_userdata('id_field', create_primary_Key('FILD', 's_field',10));
+        $this->load->view('template/index' , $this->data);
     }
 }

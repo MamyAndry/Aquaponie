@@ -87,8 +87,8 @@
 		public function get_last_id_fish_pond($id_pond)
 		{
 			$query = " select f_get_recent_fish_pond( '%s' )";
-			echo $query;
 			$query = sprintf($query , $id_pond);
+            echo $query;
 			$query = $this->db->query($query);
 			$row = $query->row();
 			return $row->result;
