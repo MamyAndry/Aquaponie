@@ -87,8 +87,11 @@ class Plantation extends CI_Controller
         $w_max_baby = $this->input->post('w_max_baby');
         $w_max_semi_mature 	= $this->input->post('w_max_semi_mature');
 
-
-        $this->plantation->insert_type_plantation( $type, $w_max_baby, $w_max_semi_mature );
+        try {
+            $this->plantation->insert_type_plantation( $type, $w_max_baby, $w_max_semi_mature );
+        } catch (\Exception $e) {
+			exit($e->getMessage());
+        }
         redirect(base_url('plantation'));
     }
 }
