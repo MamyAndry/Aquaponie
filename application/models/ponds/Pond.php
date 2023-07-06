@@ -150,6 +150,24 @@
 			return $row[0]["f_get_actual_fish_pond_number"];
 		}
 
+		public function get_details_transaction($id_pond){
+			$query = " select id_pond , name_type_fish , quantity , insertion_date from details_pond_fish_pond_v2 where id_pond like '%s' ";
+			$query = sprintf($query , $id_pond);
+			$query = $this->db->query($query);
+			$result = $query->result_array();
+			$data = [];	
+			foreach( $result as $row){
+				$data1 = array(
+					'id_pond' => $row['id_pond'],
+					'name_type_fish' => $row['name_type_fish'],
+					'quantity' => $row['quantity'],
+					'insertion_date' => $row['insertion_date']
+				);
+				$data[] = $data1;
+			}
+			return $data;
+
+		}
 	}
 
 ?>
