@@ -49,7 +49,11 @@
 			$fish_gender = $this->input->post('fish_gender');
 			$quantity = $this->input->post('quantity');
 			$date = $this->input->post("date");
-			$this->fish_pond->insert_fish_pond( $id_type_fish, $id_pond, $fish_gender, $quantity, $date );
+			try {
+				$this->fish_pond->insert_fish_pond( $id_type_fish, $id_pond, $fish_gender, $quantity, $date );
+			} catch (\Exception $e) {
+				exit($e->getMessage());
+			}
 			redirect(base_url('pond/Fish'));
 		}
 

@@ -52,11 +52,11 @@
         },
         options: {
             scales: {
-                yAxis: [{
+                yAxis: {
                     ticks: {
                         beginAtZero: true
                     }
-                }],
+                }
             }
         }
     });

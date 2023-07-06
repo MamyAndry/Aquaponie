@@ -27,7 +27,11 @@
 
 		public function see( $id_ponds = '' ){
 			$ponds = $this->ponds->get_pond( $id_ponds );
+			$details = $this->ponds->get_details_transaction( $id_ponds );
+			$fish_quantity = $this->ponds->get_count_fish( $id_ponds );
 			$this->data['ponds'] = $ponds;
+			$this->data['fish_quantity'] = $fish_quantity;
+			$this->data['details'] = $details;
 			$this->data['body'] = 'ponds/details';
 			$this->data['page_title'] = 'Ponds Pages/ Details';
 
@@ -71,11 +75,11 @@
 					$this->ponds->insert_only_pond( $pond );
 				}
 				$this->output->set_status_header('200');
-				$this->data['message'] = "Added Successfully";
+				$this->data['success'] = "Added Successfully";
 				echo json_encode($this->data);
 			}catch( Exception $e ){
 				$this->output->set_status_header('400');
-				$this->data['message'] = $e->getMessage();
+				$this->data['error'] = $e->getMessage();
 				echo json_encode($this->data);
 			}
 		}
