@@ -83,7 +83,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="dropdown-item">
+                    <a href=<?php echo site_url("report/Field_report");?> class="dropdown-item">
                       Plantation
                     </a>
                   </li>
