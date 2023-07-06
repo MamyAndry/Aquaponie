@@ -51,8 +51,13 @@ from fish_pond as f_p
         on f_p.id_pond = p.id_pond
     WHERE f_p.quantity > 0;
 
+create or replace view details_pond_fish_pond_v2
+as
+select det.id_pond , det.id_fish_pond , ty.name_type_fish , det.quantity , det.insertion_date
+from details_pond_fish_pond as det 
+    join type_fish as ty
+        on det.id_type_fish = ty.id_type_fish;
 
-select * from fish_pond;
 insert into fish_pond values('FIP3', 'FISH0001' , 'POND0001' , 't' ,70 , '2023-06-25');
 insert into fish_pond values('FIP4', 'FISH0001' , 'POND0001' , 'f' ,70 , '2023-06-25');
 insert into sale_fish values('SFS3', 'FIP2' , 3 , '2023-07-25');
