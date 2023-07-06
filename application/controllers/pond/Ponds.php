@@ -71,11 +71,11 @@
 					$this->ponds->insert_only_pond( $pond );
 				}
 				$this->output->set_status_header('200');
-				$this->data['message'] = "Added Successfully";
+				$this->data['success'] = "Added Successfully";
 				echo json_encode($this->data);
 			}catch( Exception $e ){
 				$this->output->set_status_header('400');
-				$this->data['message'] = $e->getMessage();
+				$this->data['error'] = $e->getMessage();
 				echo json_encode($this->data);
 			}
 		}
