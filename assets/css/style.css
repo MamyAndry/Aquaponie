@@ -1,0 +1,60 @@
+html, body{
+    height: 100%;
+}
+
+div.my-box{
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.154); background-color: white;
+}
+
+tr.product-index td:first-child {
+    letter-spacing: 1px;
+}
+tr.product-title{
+    font-weight:300;
+}
+tr.product-index td:last-child,
+tr.product-index td:nth-last-child(2){
+  text-align: right;
+}
+tr.product-index td:nth-child(2),
+tr.product-index td:nth-child(3){
+    text-align: center;
+}
+tr.product-title th:last-child,
+tr.product-title th:nth-last-child(2){
+  text-align: right;
+}
+tr.invoice-result{
+    text-align: right;
+}
+
+tr.invoice-result td:first-child{
+    font-weight:300;
+}
+table#invoice{
+    font-weight:300;
+}
+tr.invoice-result td ul{
+    list-style-type: none;
+}
+
+
+tbody tr.product-index td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+tr.last-invoice-result td{
+    font-weight: normal;
+}
+
+tr.last-invoice-result ul li:last-child{
+    font-size: medium;
+    font-weight: lighter;
+}
+.hide-invoice{
+    font-size:medium;
+}
+
+
+

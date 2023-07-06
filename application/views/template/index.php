@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/Font/fontawesome-5/css/all.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/aos/dist/aos.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
 
 	<title>
 		<?php echo $page_title; ?>
@@ -17,9 +18,9 @@
 		<?php 
 			$this->load->view('template/Header');
 			$this->load->view( $body );
-			$this->load->view('template/Footer');
 		?>
 	</div>
+	<?php $this->load->view('template/Footer'); ?>
 
 	<script src="<?php echo base_url('assets/aos/dist/aos.js'); ?>"></script>
 	<script>

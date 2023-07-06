@@ -3,34 +3,39 @@
 	<!-- Tokony hoe apoitra eto ny anaran'ilay izy rehefa azo ampidirina -->
 	
 	<div class="row">
-		<h3 class="text-center">
-			Available details
-		</h3>
-		<form action="" class="form" id="general-form">
-			<table class="table">
-				<thead>
-					<th> Fish </th>
-					<th> Max quantity </th>
-				</thead>
-				<tbody id="details-container">
-				</tbody>
-			</table>
-		</form>
+		<div class="col-8 offset-2 p-4 my-box">
+			<div class="my-box-title">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-down-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm5.904-2.803a.5.5 0 1 0-.707.707L9.293 10H6.525a.5.5 0 0 0 0 1H10.5a.5.5 0 0 0 .5-.5V6.525a.5.5 0 0 0-1 0v2.768L5.904 5.197z"/>
+            	</svg>  <span style="float: right;">Available details</span>
+			</div><hr>
+			<form action="" class="form" id="general-form">
+				<table class="table">
+					<thead>
+						<th> Fish </th>
+						<th> Max quantity </th>
+					</thead>
+					<tbody id="details-container">
+					</tbody>
+				</table>
+			</form>
 
-		<div class="col-lg-4  d-flex">
-			<button type="button mx-3" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-			  Add new Details
-			</button>
+			<div class="col-lg-4  d-flex">
+				<button type="button mx-3" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+					Add new Details
+				</button>
 
-			<button class="btn btn-danger" onclick="removeAllDetails()">
-				Remove all details
-			</button>
+				<button class="btn btn-danger" onclick="removeAllDetails()">
+					Remove all details
+				</button>
 
-			<!-- Ito no manantso ny tena izy, Izany hoe manantso AJAX ito andao ary -->
-			<button class="btn btn-success" onclick="validate_ponds('<?php echo site_url('pond/ponds/save'); ?>')">
-				Add the new Ponds
-			</button>
+				<!-- Ito no manantso ny tena izy, Izany hoe manantso AJAX ito andao ary -->
+				<button class="btn btn-success" onclick="validate_ponds('<?php echo site_url('pond/ponds/save'); ?>')">
+					Add the new Ponds
+				</button>
+			</div>
 		</div>
+		
 	</div>
 
 	<!-- Button trigger modal -->
